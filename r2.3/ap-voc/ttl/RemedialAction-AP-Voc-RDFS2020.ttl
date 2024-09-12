@@ -1,0 +1,3757 @@
+@prefix cim:     <https://cim.ucaiug.io/ns#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix nc:      <https://cim4.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix profcim: <https://cim.ucaiug.io/ns/prof-cim#> .
+@prefix ra:      <https://ap.cim4.eu/RemedialAction#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+
+cim:ACDCConverter  rdf:type     rdfs:Class ;
+        rdfs:comment            "A unit with valves for three phases, together with unit control equipment, essential protective and switching devices, DC storage capacitors, phase reactors and auxiliaries, if any, used for conversion." ;
+        rdfs:label              "ACDCConverter"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:ACDCTerminal  rdf:type      rdfs:Class ;
+        rdfs:comment            "An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes." ;
+        rdfs:label              "ACDCTerminal"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:ActivePower  rdf:type       rdfs:Class ;
+        rdfs:comment            "Product of RMS value of the voltage and the RMS value of the in-phase component of the current." ;
+        rdfs:label              "ActivePower"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:ActivePower.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ActivePower ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "M" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ActivePower.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:ActivePower ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "W" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ActivePower.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ActivePower ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:BatteryUnit  rdf:type       rdfs:Class ;
+        rdfs:comment            "An electrochemical energy storage device." ;
+        rdfs:label              "BatteryUnit"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:Boolean  rdf:type           rdfs:Class ;
+        rdfs:comment            "A type with the value space \"true\" and \"false\"." ;
+        rdfs:label              "Boolean"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Contingency  rdf:type       rdfs:Class ;
+        rdfs:comment            "An event threatening system reliability, consisting of one or more contingency elements." ;
+        rdfs:label              "Contingency"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:Currency  rdf:type          rdfs:Class ;
+        rdfs:comment            "Monetary currencies.  ISO 4217 standard including 3-character currency code." ;
+        rdfs:label              "Currency"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:Currency.AED  rdf:type  cim:Currency ;
+        rdfs:comment     "United Arab Emirates dirham." ;
+        rdfs:label       "AED"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AFN  rdf:type  cim:Currency ;
+        rdfs:comment     "Afghan afghani." ;
+        rdfs:label       "AFN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ALL  rdf:type  cim:Currency ;
+        rdfs:comment     "Albanian lek." ;
+        rdfs:label       "ALL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AMD  rdf:type  cim:Currency ;
+        rdfs:comment     "Armenian dram." ;
+        rdfs:label       "AMD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ANG  rdf:type  cim:Currency ;
+        rdfs:comment     "Netherlands Antillean guilder." ;
+        rdfs:label       "ANG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AOA  rdf:type  cim:Currency ;
+        rdfs:comment     "Angolan kwanza." ;
+        rdfs:label       "AOA"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ARS  rdf:type  cim:Currency ;
+        rdfs:comment     "Argentine peso." ;
+        rdfs:label       "ARS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AUD  rdf:type  cim:Currency ;
+        rdfs:comment     "Australian dollar." ;
+        rdfs:label       "AUD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AWG  rdf:type  cim:Currency ;
+        rdfs:comment     "Aruban florin." ;
+        rdfs:label       "AWG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AZN  rdf:type  cim:Currency ;
+        rdfs:comment     "Azerbaijani manat." ;
+        rdfs:label       "AZN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BAM  rdf:type  cim:Currency ;
+        rdfs:comment     "Bosnia and Herzegovina convertible mark." ;
+        rdfs:label       "BAM"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BBD  rdf:type  cim:Currency ;
+        rdfs:comment     "Barbados dollar." ;
+        rdfs:label       "BBD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BDT  rdf:type  cim:Currency ;
+        rdfs:comment     "Bangladeshi taka." ;
+        rdfs:label       "BDT"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BGN  rdf:type  cim:Currency ;
+        rdfs:comment     "Bulgarian lev." ;
+        rdfs:label       "BGN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BHD  rdf:type  cim:Currency ;
+        rdfs:comment     "Bahraini dinar." ;
+        rdfs:label       "BHD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BIF  rdf:type  cim:Currency ;
+        rdfs:comment     "Burundian franc." ;
+        rdfs:label       "BIF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BMD  rdf:type  cim:Currency ;
+        rdfs:comment     "Bermudian dollar (customarily known as Bermuda dollar)." ;
+        rdfs:label       "BMD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BND  rdf:type  cim:Currency ;
+        rdfs:comment     "Brunei dollar." ;
+        rdfs:label       "BND"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BOB  rdf:type  cim:Currency ;
+        rdfs:comment     "Boliviano." ;
+        rdfs:label       "BOB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BOV  rdf:type  cim:Currency ;
+        rdfs:comment     "Bolivian Mvdol (funds code)." ;
+        rdfs:label       "BOV"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BRL  rdf:type  cim:Currency ;
+        rdfs:comment     "Brazilian real." ;
+        rdfs:label       "BRL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BSD  rdf:type  cim:Currency ;
+        rdfs:comment     "Bahamian dollar." ;
+        rdfs:label       "BSD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BTN  rdf:type  cim:Currency ;
+        rdfs:comment     "Bhutanese ngultrum." ;
+        rdfs:label       "BTN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BWP  rdf:type  cim:Currency ;
+        rdfs:comment     "Botswana pula." ;
+        rdfs:label       "BWP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BYR  rdf:type  cim:Currency ;
+        rdfs:comment     "Belarusian ruble." ;
+        rdfs:label       "BYR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BZD  rdf:type  cim:Currency ;
+        rdfs:comment     "Belize dollar." ;
+        rdfs:label       "BZD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CAD  rdf:type  cim:Currency ;
+        rdfs:comment     "Canadian dollar." ;
+        rdfs:label       "CAD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CDF  rdf:type  cim:Currency ;
+        rdfs:comment     "Congolese franc." ;
+        rdfs:label       "CDF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CHF  rdf:type  cim:Currency ;
+        rdfs:comment     "Swiss franc." ;
+        rdfs:label       "CHF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CLF  rdf:type  cim:Currency ;
+        rdfs:comment     "Unidad de Fomento (funds code), Chile." ;
+        rdfs:label       "CLF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CLP  rdf:type  cim:Currency ;
+        rdfs:comment     "Chilean peso." ;
+        rdfs:label       "CLP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CNY  rdf:type  cim:Currency ;
+        rdfs:comment     "Chinese yuan." ;
+        rdfs:label       "CNY"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.COP  rdf:type  cim:Currency ;
+        rdfs:comment     "Colombian peso." ;
+        rdfs:label       "COP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.COU  rdf:type  cim:Currency ;
+        rdfs:comment     "Unidad de Valor Real." ;
+        rdfs:label       "COU"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CRC  rdf:type  cim:Currency ;
+        rdfs:comment     "Costa Rican colon." ;
+        rdfs:label       "CRC"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CUC  rdf:type  cim:Currency ;
+        rdfs:comment     "Cuban convertible peso." ;
+        rdfs:label       "CUC"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CUP  rdf:type  cim:Currency ;
+        rdfs:comment     "Cuban peso." ;
+        rdfs:label       "CUP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CVE  rdf:type  cim:Currency ;
+        rdfs:comment     "Cape Verde escudo." ;
+        rdfs:label       "CVE"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CZK  rdf:type  cim:Currency ;
+        rdfs:comment     "Czech koruna." ;
+        rdfs:label       "CZK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.DJF  rdf:type  cim:Currency ;
+        rdfs:comment     "Djiboutian franc." ;
+        rdfs:label       "DJF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.DKK  rdf:type  cim:Currency ;
+        rdfs:comment     "Danish krone." ;
+        rdfs:label       "DKK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.DOP  rdf:type  cim:Currency ;
+        rdfs:comment     "Dominican peso." ;
+        rdfs:label       "DOP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.DZD  rdf:type  cim:Currency ;
+        rdfs:comment     "Algerian dinar." ;
+        rdfs:label       "DZD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.EEK  rdf:type  cim:Currency ;
+        rdfs:comment     "Estonian kroon." ;
+        rdfs:label       "EEK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.EGP  rdf:type  cim:Currency ;
+        rdfs:comment     "Egyptian pound." ;
+        rdfs:label       "EGP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ERN  rdf:type  cim:Currency ;
+        rdfs:comment     "Eritrean nakfa." ;
+        rdfs:label       "ERN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ETB  rdf:type  cim:Currency ;
+        rdfs:comment     "Ethiopian birr." ;
+        rdfs:label       "ETB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.EUR  rdf:type  cim:Currency ;
+        rdfs:comment     "Euro." ;
+        rdfs:label       "EUR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.FJD  rdf:type  cim:Currency ;
+        rdfs:comment     "Fiji dollar." ;
+        rdfs:label       "FJD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.FKP  rdf:type  cim:Currency ;
+        rdfs:comment     "Falkland Islands pound." ;
+        rdfs:label       "FKP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GBP  rdf:type  cim:Currency ;
+        rdfs:comment     "Pound sterling." ;
+        rdfs:label       "GBP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GEL  rdf:type  cim:Currency ;
+        rdfs:comment     "Georgian lari." ;
+        rdfs:label       "GEL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GHS  rdf:type  cim:Currency ;
+        rdfs:comment     "Ghanaian cedi." ;
+        rdfs:label       "GHS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GIP  rdf:type  cim:Currency ;
+        rdfs:comment     "Gibraltar pound." ;
+        rdfs:label       "GIP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GMD  rdf:type  cim:Currency ;
+        rdfs:comment     "Gambian dalasi." ;
+        rdfs:label       "GMD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GNF  rdf:type  cim:Currency ;
+        rdfs:comment     "Guinean franc." ;
+        rdfs:label       "GNF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GTQ  rdf:type  cim:Currency ;
+        rdfs:comment     "Guatemalan quetzal." ;
+        rdfs:label       "GTQ"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GYD  rdf:type  cim:Currency ;
+        rdfs:comment     "Guyanese dollar." ;
+        rdfs:label       "GYD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HKD  rdf:type  cim:Currency ;
+        rdfs:comment     "Hong Kong dollar." ;
+        rdfs:label       "HKD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HNL  rdf:type  cim:Currency ;
+        rdfs:comment     "Honduran lempira." ;
+        rdfs:label       "HNL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HRK  rdf:type  cim:Currency ;
+        rdfs:comment     "Croatian kuna." ;
+        rdfs:label       "HRK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HTG  rdf:type  cim:Currency ;
+        rdfs:comment     "Haitian gourde." ;
+        rdfs:label       "HTG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HUF  rdf:type  cim:Currency ;
+        rdfs:comment     "Hungarian forint." ;
+        rdfs:label       "HUF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.IDR  rdf:type  cim:Currency ;
+        rdfs:comment     "Indonesian rupiah." ;
+        rdfs:label       "IDR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ILS  rdf:type  cim:Currency ;
+        rdfs:comment     "Israeli new sheqel." ;
+        rdfs:label       "ILS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.INR  rdf:type  cim:Currency ;
+        rdfs:comment     "Indian rupee." ;
+        rdfs:label       "INR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.IQD  rdf:type  cim:Currency ;
+        rdfs:comment     "Iraqi dinar." ;
+        rdfs:label       "IQD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.IRR  rdf:type  cim:Currency ;
+        rdfs:comment     "Iranian rial." ;
+        rdfs:label       "IRR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ISK  rdf:type  cim:Currency ;
+        rdfs:comment     "Icelandic króna." ;
+        rdfs:label       "ISK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.JMD  rdf:type  cim:Currency ;
+        rdfs:comment     "Jamaican dollar." ;
+        rdfs:label       "JMD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.JOD  rdf:type  cim:Currency ;
+        rdfs:comment     "Jordanian dinar." ;
+        rdfs:label       "JOD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.JPY  rdf:type  cim:Currency ;
+        rdfs:comment     "Japanese yen." ;
+        rdfs:label       "JPY"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KES  rdf:type  cim:Currency ;
+        rdfs:comment     "Kenyan shilling." ;
+        rdfs:label       "KES"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KGS  rdf:type  cim:Currency ;
+        rdfs:comment     "Kyrgyzstani som." ;
+        rdfs:label       "KGS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KHR  rdf:type  cim:Currency ;
+        rdfs:comment     "Cambodian riel." ;
+        rdfs:label       "KHR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KMF  rdf:type  cim:Currency ;
+        rdfs:comment     "Comoro franc." ;
+        rdfs:label       "KMF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KPW  rdf:type  cim:Currency ;
+        rdfs:comment     "North Korean won." ;
+        rdfs:label       "KPW"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KRW  rdf:type  cim:Currency ;
+        rdfs:comment     "South Korean won." ;
+        rdfs:label       "KRW"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KWD  rdf:type  cim:Currency ;
+        rdfs:comment     "Kuwaiti dinar." ;
+        rdfs:label       "KWD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KYD  rdf:type  cim:Currency ;
+        rdfs:comment     "Cayman Islands dollar." ;
+        rdfs:label       "KYD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KZT  rdf:type  cim:Currency ;
+        rdfs:comment     "Kazakhstani tenge." ;
+        rdfs:label       "KZT"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LAK  rdf:type  cim:Currency ;
+        rdfs:comment     "Lao kip." ;
+        rdfs:label       "LAK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LBP  rdf:type  cim:Currency ;
+        rdfs:comment     "Lebanese pound." ;
+        rdfs:label       "LBP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LKR  rdf:type  cim:Currency ;
+        rdfs:comment     "Sri Lanka rupee." ;
+        rdfs:label       "LKR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LRD  rdf:type  cim:Currency ;
+        rdfs:comment     "Liberian dollar." ;
+        rdfs:label       "LRD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LSL  rdf:type  cim:Currency ;
+        rdfs:comment     "Lesotho loti." ;
+        rdfs:label       "LSL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LTL  rdf:type  cim:Currency ;
+        rdfs:comment     "Lithuanian litas." ;
+        rdfs:label       "LTL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LVL  rdf:type  cim:Currency ;
+        rdfs:comment     "Latvian lats." ;
+        rdfs:label       "LVL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LYD  rdf:type  cim:Currency ;
+        rdfs:comment     "Libyan dinar." ;
+        rdfs:label       "LYD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MAD  rdf:type  cim:Currency ;
+        rdfs:comment     "Moroccan dirham." ;
+        rdfs:label       "MAD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MDL  rdf:type  cim:Currency ;
+        rdfs:comment     "Moldovan leu." ;
+        rdfs:label       "MDL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MGA  rdf:type  cim:Currency ;
+        rdfs:comment     "Malagasy ariary." ;
+        rdfs:label       "MGA"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MKD  rdf:type  cim:Currency ;
+        rdfs:comment     "Macedonian denar." ;
+        rdfs:label       "MKD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MMK  rdf:type  cim:Currency ;
+        rdfs:comment     "Myanma kyat." ;
+        rdfs:label       "MMK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MNT  rdf:type  cim:Currency ;
+        rdfs:comment     "Mongolian tugrik." ;
+        rdfs:label       "MNT"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MOP  rdf:type  cim:Currency ;
+        rdfs:comment     "Macanese pataca." ;
+        rdfs:label       "MOP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MRO  rdf:type  cim:Currency ;
+        rdfs:comment     "Mauritanian ouguiya." ;
+        rdfs:label       "MRO"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MUR  rdf:type  cim:Currency ;
+        rdfs:comment     "Mauritian rupee." ;
+        rdfs:label       "MUR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MVR  rdf:type  cim:Currency ;
+        rdfs:comment     "Maldivian rufiyaa." ;
+        rdfs:label       "MVR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MWK  rdf:type  cim:Currency ;
+        rdfs:comment     "Malawian kwacha." ;
+        rdfs:label       "MWK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MXN  rdf:type  cim:Currency ;
+        rdfs:comment     "Mexican peso." ;
+        rdfs:label       "MXN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MYR  rdf:type  cim:Currency ;
+        rdfs:comment     "Malaysian ringgit." ;
+        rdfs:label       "MYR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MZN  rdf:type  cim:Currency ;
+        rdfs:comment     "Mozambican metical." ;
+        rdfs:label       "MZN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NAD  rdf:type  cim:Currency ;
+        rdfs:comment     "Namibian dollar." ;
+        rdfs:label       "NAD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NGN  rdf:type  cim:Currency ;
+        rdfs:comment     "Nigerian naira." ;
+        rdfs:label       "NGN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NIO  rdf:type  cim:Currency ;
+        rdfs:comment     "Cordoba oro." ;
+        rdfs:label       "NIO"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NOK  rdf:type  cim:Currency ;
+        rdfs:comment     "Norwegian krone." ;
+        rdfs:label       "NOK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NPR  rdf:type  cim:Currency ;
+        rdfs:comment     "Nepalese rupee." ;
+        rdfs:label       "NPR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NZD  rdf:type  cim:Currency ;
+        rdfs:comment     "New Zealand dollar." ;
+        rdfs:label       "NZD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.OMR  rdf:type  cim:Currency ;
+        rdfs:comment     "Omani rial." ;
+        rdfs:label       "OMR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PAB  rdf:type  cim:Currency ;
+        rdfs:comment     "Panamanian balboa." ;
+        rdfs:label       "PAB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PEN  rdf:type  cim:Currency ;
+        rdfs:comment     "Peruvian nuevo sol." ;
+        rdfs:label       "PEN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PGK  rdf:type  cim:Currency ;
+        rdfs:comment     "Papua New Guinean kina." ;
+        rdfs:label       "PGK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PHP  rdf:type  cim:Currency ;
+        rdfs:comment     "Philippine peso." ;
+        rdfs:label       "PHP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PKR  rdf:type  cim:Currency ;
+        rdfs:comment     "Pakistani rupee." ;
+        rdfs:label       "PKR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PLN  rdf:type  cim:Currency ;
+        rdfs:comment     "Polish zloty." ;
+        rdfs:label       "PLN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PYG  rdf:type  cim:Currency ;
+        rdfs:comment     "Paraguayan guaraní." ;
+        rdfs:label       "PYG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.QAR  rdf:type  cim:Currency ;
+        rdfs:comment     "Qatari rial." ;
+        rdfs:label       "QAR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.RON  rdf:type  cim:Currency ;
+        rdfs:comment     "Romanian new leu." ;
+        rdfs:label       "RON"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.RSD  rdf:type  cim:Currency ;
+        rdfs:comment     "Serbian dinar." ;
+        rdfs:label       "RSD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.RUB  rdf:type  cim:Currency ;
+        rdfs:comment     "Russian rouble." ;
+        rdfs:label       "RUB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.RWF  rdf:type  cim:Currency ;
+        rdfs:comment     "Rwandan franc." ;
+        rdfs:label       "RWF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SAR  rdf:type  cim:Currency ;
+        rdfs:comment     "Saudi riyal." ;
+        rdfs:label       "SAR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SBD  rdf:type  cim:Currency ;
+        rdfs:comment     "Solomon Islands dollar." ;
+        rdfs:label       "SBD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SCR  rdf:type  cim:Currency ;
+        rdfs:comment     "Seychelles rupee." ;
+        rdfs:label       "SCR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SDG  rdf:type  cim:Currency ;
+        rdfs:comment     "Sudanese pound." ;
+        rdfs:label       "SDG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SEK  rdf:type  cim:Currency ;
+        rdfs:comment     "Swedish krona/kronor." ;
+        rdfs:label       "SEK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SGD  rdf:type  cim:Currency ;
+        rdfs:comment     "Singapore dollar." ;
+        rdfs:label       "SGD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SHP  rdf:type  cim:Currency ;
+        rdfs:comment     "Saint Helena pound." ;
+        rdfs:label       "SHP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SLL  rdf:type  cim:Currency ;
+        rdfs:comment     "Sierra Leonean leone." ;
+        rdfs:label       "SLL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SOS  rdf:type  cim:Currency ;
+        rdfs:comment     "Somali shilling." ;
+        rdfs:label       "SOS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SRD  rdf:type  cim:Currency ;
+        rdfs:comment     "Surinamese dollar." ;
+        rdfs:label       "SRD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.STD  rdf:type  cim:Currency ;
+        rdfs:comment     "São Tomé and Príncipe dobra." ;
+        rdfs:label       "STD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SYP  rdf:type  cim:Currency ;
+        rdfs:comment     "Syrian pound." ;
+        rdfs:label       "SYP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SZL  rdf:type  cim:Currency ;
+        rdfs:comment     "Lilangeni." ;
+        rdfs:label       "SZL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.THB  rdf:type  cim:Currency ;
+        rdfs:comment     "Thai baht." ;
+        rdfs:label       "THB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TJS  rdf:type  cim:Currency ;
+        rdfs:comment     "Tajikistani somoni." ;
+        rdfs:label       "TJS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TMT  rdf:type  cim:Currency ;
+        rdfs:comment     "Turkmenistani manat." ;
+        rdfs:label       "TMT"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TND  rdf:type  cim:Currency ;
+        rdfs:comment     "Tunisian dinar." ;
+        rdfs:label       "TND"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TOP  rdf:type  cim:Currency ;
+        rdfs:comment     "Tongan pa'anga." ;
+        rdfs:label       "TOP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TRY  rdf:type  cim:Currency ;
+        rdfs:comment     "Turkish lira." ;
+        rdfs:label       "TRY"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TTD  rdf:type  cim:Currency ;
+        rdfs:comment     "Trinidad and Tobago dollar." ;
+        rdfs:label       "TTD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TWD  rdf:type  cim:Currency ;
+        rdfs:comment     "New Taiwan dollar." ;
+        rdfs:label       "TWD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TZS  rdf:type  cim:Currency ;
+        rdfs:comment     "Tanzanian shilling." ;
+        rdfs:label       "TZS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.UAH  rdf:type  cim:Currency ;
+        rdfs:comment     "Ukrainian hryvnia." ;
+        rdfs:label       "UAH"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.UGX  rdf:type  cim:Currency ;
+        rdfs:comment     "Ugandan shilling." ;
+        rdfs:label       "UGX"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.USD  rdf:type  cim:Currency ;
+        rdfs:comment     "United States dollar." ;
+        rdfs:label       "USD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.UYU  rdf:type  cim:Currency ;
+        rdfs:comment     "Uruguayan peso." ;
+        rdfs:label       "UYU"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.UZS  rdf:type  cim:Currency ;
+        rdfs:comment     "Uzbekistan som." ;
+        rdfs:label       "UZS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.VEF  rdf:type  cim:Currency ;
+        rdfs:comment     "Venezuelan bolívar fuerte." ;
+        rdfs:label       "VEF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.VND  rdf:type  cim:Currency ;
+        rdfs:comment     "Vietnamese Dong." ;
+        rdfs:label       "VND"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.VUV  rdf:type  cim:Currency ;
+        rdfs:comment     "Vanuatu vatu." ;
+        rdfs:label       "VUV"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.WST  rdf:type  cim:Currency ;
+        rdfs:comment     "Samoan tala." ;
+        rdfs:label       "WST"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.XAF  rdf:type  cim:Currency ;
+        rdfs:comment     "CFA franc BEAC." ;
+        rdfs:label       "XAF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.XCD  rdf:type  cim:Currency ;
+        rdfs:comment     "East Caribbean dollar." ;
+        rdfs:label       "XCD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.XOF  rdf:type  cim:Currency ;
+        rdfs:comment     "CFA Franc BCEAO." ;
+        rdfs:label       "XOF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.XPF  rdf:type  cim:Currency ;
+        rdfs:comment     "CFP franc." ;
+        rdfs:label       "XPF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.YER  rdf:type  cim:Currency ;
+        rdfs:comment     "Yemeni rial." ;
+        rdfs:label       "YER"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ZAR  rdf:type  cim:Currency ;
+        rdfs:comment     "South African rand." ;
+        rdfs:label       "ZAR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ZMK  rdf:type  cim:Currency ;
+        rdfs:comment     "Zambian kwacha." ;
+        rdfs:label       "ZMK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ZWL  rdf:type  cim:Currency ;
+        rdfs:comment     "Zimbabwe dollar." ;
+        rdfs:label       "ZWL"@en ;
+        cims:stereotype  "enum" .
+
+cim:DCTerminal  rdf:type        rdfs:Class ;
+        rdfs:comment            "An electrical connection point to generic DC conducting equipment." ;
+        rdfs:label              "DCTerminal"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:Date  rdf:type              rdfs:Class ;
+        rdfs:comment            "Date as \"yyyy-mm-dd\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddZ\". A local timezone relative UTC is specified as \"yyyy-mm-dd(+/-)hh:mm\"." ;
+        rdfs:label              "Date"@en ;
+        cims:belongsToCategory  ra:Package_DocRemedialActionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:DateTime  rdf:type          rdfs:Class ;
+        rdfs:comment            "Date and time as \"yyyy-mm-ddThh:mm:ss.sss\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddThh:mm:ss.sssZ\". A local timezone relative UTC is specified as \"yyyy-mm-ddThh:mm:ss.sss-hh:mm\". The second component (shown here as \"ss.sss\") could have any number of digits in its fractional part to allow any kind of precision beyond seconds." ;
+        rdfs:label              "DateTime"@en ;
+        cims:belongsToCategory  ra:Package_DocRemedialActionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Duration  rdf:type          rdfs:Class ;
+        rdfs:comment            "Duration as \"PnYnMnDTnHnMnS\" which conforms to ISO 8601, where nY expresses a number of years, nM a number of months, nD a number of days. The letter T separates the date expression from the time expression and, after it, nH identifies a number of hours, nM a number of minutes and nS a number of seconds. The number of seconds could be expressed as a decimal number, but all other numbers are integers." ;
+        rdfs:label              "Duration"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:EnergyConsumer  rdf:type    rdfs:Class ;
+        rdfs:comment            "Generic user of energy - a  point of consumption on the power system model.\nEnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only if there is no LoadResponseCharacteristic associated with EnergyConsumer or if LoadResponseCharacteristic.exponentModel is set to False." ;
+        rdfs:label              "EnergyConsumer"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:EnergySource  rdf:type      rdfs:Class ;
+        rdfs:comment            "A generic equivalent for an energy supplier on a transmission or distribution voltage level." ;
+        rdfs:label              "EnergySource"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:Equipment  rdf:type         rdfs:Class ;
+        rdfs:comment            "The parts of a power system that are physical devices, electronic or mechanical." ;
+        rdfs:label              "Equipment"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:EquivalentInjection
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "This class represents equivalent injections (generation or load).  Voltage regulation is allowed only at the point of connection." ;
+        rdfs:label              "EquivalentInjection"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:ExternalNetworkInjection
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "This class represents the external network and it is used for IEC 60909 calculations." ;
+        rdfs:label              "ExternalNetworkInjection"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:Float  rdf:type             rdfs:Class ;
+        rdfs:comment            "A floating point number. The range is unspecified and not limited." ;
+        rdfs:label              "Float"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:IdentifiedObject  rdf:type  rdfs:Class ;
+        rdfs:comment            "This is a root class to provide common identification for all classes needing identification and naming attributes." ;
+        rdfs:label              "IdentifiedObject"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:IdentifiedObject.description
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "description"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:IdentifiedObject.mRID
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:IdentifiedObject.name
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The name is any free human readable and possibly non unique text naming the object." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "name"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Integer  rdf:type           rdfs:Class ;
+        rdfs:comment            "An integer number. The range is unspecified and not limited." ;
+        rdfs:label              "Integer"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Line  rdf:type              rdfs:Class ;
+        rdfs:comment            "Contains equipment beyond a substation belonging to a power transmission line. " ;
+        rdfs:label              "Line"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "Description" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+cim:Measurement  rdf:type       rdfs:Class ;
+        rdfs:comment            "A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement. \nThe PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leaves, e.g. Substation-VoltageLevel-Bay-Switch-Measurement.\nSome Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (VT) or potential transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment. \nIf both a Terminal and PSR are associated, and the PSR is of type ConductingEquipment, the associated Terminal should belong to that ConductingEquipment instance.\nWhen the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone." ;
+        rdfs:label              "Measurement"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:OperationalLimit  rdf:type  rdfs:Class ;
+        rdfs:comment            "A value and normal value associated with a specific kind of limit. \nThe sub class value and normalValue attributes vary inversely to the associated OperationalLimitType.acceptableDuration (acceptableDuration for short).  \nIf a particular piece of equipment has multiple operational limits of the same kind (apparent power, current, etc.), the limit with the greatest acceptableDuration shall have the smallest limit value and the limit with the smallest acceptableDuration shall have the largest limit value.  Note: A large current can only be allowed to flow through a piece of equipment for a short duration without causing damage, but a lesser current can be allowed to flow for a longer duration. " ;
+        rdfs:label              "OperationalLimit"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:PerCent  rdf:type           rdfs:Class ;
+        rdfs:comment            "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base." ;
+        rdfs:label              "PerCent"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:PerCent.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent.value  rdf:type  rdf:Property ;
+        rdfs:comment       "Normally 0 to 100 on a defined base." ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PinTerminalKind  rdf:type   rdfs:Class ;
+        rdfs:comment            "Categorisation of type of compare done on Terminal." ;
+        rdfs:label              "PinTerminalKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:PinTerminalKind.activePower
+        rdf:type         cim:PinTerminalKind ;
+        rdfs:comment     "Active Power on the Terminal." ;
+        rdfs:label       "activePower"@en ;
+        cims:stereotype  "enum" .
+
+cim:PinTerminalKind.apparentPower
+        rdf:type         cim:PinTerminalKind ;
+        rdfs:comment     "Apparent Power on the Terminal." ;
+        rdfs:label       "apparentPower"@en ;
+        cims:stereotype  "enum" .
+
+cim:PinTerminalKind.reactivePower
+        rdf:type         cim:PinTerminalKind ;
+        rdfs:comment     "Reactive Power on the Terminal." ;
+        rdfs:label       "reactivePower"@en ;
+        cims:stereotype  "enum" .
+
+cim:PinTerminalKind.voltage
+        rdf:type         cim:PinTerminalKind ;
+        rdfs:comment     "Voltage on the Terminal." ;
+        rdfs:label       "voltage"@en ;
+        cims:stereotype  "enum" .
+
+cim:PowerElectronicsConnection
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A connection to the AC network for energy production or consumption that uses power electronics rather than rotating machines." ;
+        rdfs:label              "PowerElectronicsConnection"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:PowerSystemResource
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated." ;
+        rdfs:label              "PowerSystemResource"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:ReactivePower  rdf:type     rdfs:Class ;
+        rdfs:comment            "Product of RMS value of the voltage and the RMS value of the quadrature component of the current." ;
+        rdfs:label              "ReactivePower"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:ReactivePower.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ReactivePower ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "M" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ReactivePower.unit
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ReactivePower ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "VAr" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ReactivePower.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ReactivePower ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:RegulatingControl
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Specifies a set of equipment that works together to control a power system quantity such as voltage or flow. \nRemote bus voltage control is possible by specifying the controlled terminal located at some place remote from the controlling equipment.\nThe specified terminal shall be associated with the connectivity node of the controlled point.  The most specific subtype of RegulatingControl shall be used in case such equipment participate in the control, e.g. TapChangerControl for tap changers.\nFor flow control, load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.\nThe attribute minAllowedTargetValue and maxAllowedTargetValue are required in the following cases:\n- For a power generating module operated in power factor control mode to specify maximum and minimum power factor values;\n- Whenever it is necessary to have an off center target voltage for the tap changer regulator. For instance, due to long cables to off shore wind farms and the need to have a simpler setup at the off shore transformer platform, the voltage is controlled from the land at the connection point for the off shore wind farm. Since there usually is a voltage rise along the cable, there is typical and overvoltage of up 3-4 kV compared to the on shore station. Thus in normal operation the tap changer on the on shore station is operated with a target set point, which is in the lower parts of the dead band.\nThe attributes minAllowedTargetValue and maxAllowedTargetValue are not related to the attribute targetDeadband and thus they are not treated as an alternative of the targetDeadband. They are needed due to limitations in the local substation controller. The attribute targetDeadband is used to prevent the power flow from move the tap position in circles (hunting) that is to be used regardless of the attributes minAllowedTargetValue and maxAllowedTargetValue." ;
+        rdfs:label              "RegulatingControl"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:RotatingMachine  rdf:type   rdfs:Class ;
+        rdfs:comment            "A rotating machine which may be used as a generator or motor." ;
+        rdfs:label              "RotatingMachine"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:Seconds  rdf:type           rdfs:Class ;
+        rdfs:comment            "Time, in seconds." ;
+        rdfs:label              "Seconds"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:Seconds.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:Seconds ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Seconds.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Seconds ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "s" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Seconds.value  rdf:type  rdf:Property ;
+        rdfs:comment       "Time, in seconds" ;
+        rdfs:domain        cim:Seconds ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ShuntCompensator  rdf:type  rdfs:Class ;
+        rdfs:comment            "A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor. A negative value for bPerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied." ;
+        rdfs:label              "ShuntCompensator"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:StaticVarCompensator
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.\n\nThe SVC may operate in fixed MVar output mode or in voltage control mode. When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero." ;
+        rdfs:label              "StaticVarCompensator"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:String  rdf:type            rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited." ;
+        rdfs:label              "String"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Substation  rdf:type        rdfs:Class ;
+        rdfs:comment            "A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics. " ;
+        rdfs:label              "Substation"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "Description" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+cim:Switch  rdf:type            rdfs:Class ;
+        rdfs:comment            "A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches. The ACDCTerminal.connected at the two sides of the switch shall not be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen and .locked are relevant." ;
+        rdfs:label              "Switch"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:TapChanger  rdf:type        rdfs:Class ;
+        rdfs:comment            "Mechanism for changing transformer winding tap positions." ;
+        rdfs:label              "TapChanger"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:Terminal  rdf:type          rdfs:Class ;
+        rdfs:comment            "An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes." ;
+        rdfs:label              "Terminal"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile .
+
+cim:UnitMultiplier  rdf:type    rdfs:Class ;
+        rdfs:comment            "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type. \n\nFor example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol \"Þ\" represents the derived unit \"m2Pers\", then applying the multiplier \"k\" can be conceptualized simply as \"kÞ\".\n\nFor example, the SI unit for mass is \"kg\" and not \"g\".  If the unit symbol is defined as \"kg\", then the multiplier is applied to \"kg\" as a whole and does not replace the \"k\" in front of the \"g\". In this case, the multiplier of \"m\" would be used with the unit symbol of \"kg\" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the \"kg\" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the \"kg\" were replaced by a symbol \"Þ\", then it is easier to conceptualize the multiplier \"m\" as creating the proper unit \"mÞ\", and not the forbidden unit \"mkg\"." ;
+        rdfs:label              "UnitMultiplier"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitMultiplier.M  rdf:type  cim:UnitMultiplier ;
+        rdfs:comment     "Mega 10**6." ;
+        rdfs:label       "M"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitMultiplier.none
+        rdf:type         cim:UnitMultiplier ;
+        rdfs:comment     "No multiplier or equivalently multiply by 1." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol  rdf:type        rdfs:Class ;
+        rdfs:comment            "The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as \"F\" instead of \"CPerV\". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as \"kgPerm3\". With the exception of the \"kg\", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole. \nEvery unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.\nTo allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol \"/\" is replaced by the letters \"Per\". Exponents are written in plain text after the unit as \"m3\" instead of being formatted as \"m\" with a superscript of 3  or introducing a symbol as in \"m^3\". The degree symbol \"°\" is replaced with the letters \"deg\". Any clarification of the meaning for a substitution is included in the description for the unit symbol.\nNon-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units. \nThe integer values are used for harmonization with IEC 61850." ;
+        rdfs:label              "UnitSymbol"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitSymbol.VAr  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Reactive power in volt amperes reactive. The “reactive” or “imaginary” component of electrical power (VIsin(phi)). (See also real power and apparent power).\nNote: Different meter designs use different methods to arrive at their results. Some meters may compute reactive power as an arithmetic value, while others compute the value vectorially. The data consumer should determine the method in use and the suitability of the measurement for the intended purpose." ;
+        rdfs:label       "VAr"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.W  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power." ;
+        rdfs:label       "W"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.none  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Dimension less quantity, e.g. count, per unit, etc." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.s  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Time in seconds." ;
+        rdfs:label       "s"@en ;
+        cims:stereotype  "enum" .
+
+nc:ACDCConverter.DCConverterAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action that is applied to an ACDCConverter." ;
+        rdfs:domain           cim:ACDCConverter ;
+        rdfs:label            "DCConverterAction"@en ;
+        rdfs:range            nc:ACDCConverterAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:ACDCConverterAction.ACDCConverter ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:ACDCConverterAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Alternate current Direct current (ACDC) converter action." ;
+        rdfs:label              "ACDCConverterAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ACDCConverterAction.ACDCConverter
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The ACDCConverter that is associated with an action." ;
+        rdfs:domain           nc:ACDCConverterAction ;
+        rdfs:label            "ACDCConverter"@en ;
+        rdfs:range            cim:ACDCConverter ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:ACDCConverter.DCConverterAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Availability remedial action is a remedial action that cancels or reschedules an availability schedule." ;
+        rdfs:label              "AvailabilityRemedialAction"@en ;
+        rdfs:subClassOf         nc:RemedialAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:BatteryUnit.BatteryUnitAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action that is applied to a BatteryUnit." ;
+        rdfs:domain           cim:BatteryUnit ;
+        rdfs:label            "BatteryUnitAction"@en ;
+        rdfs:range            nc:BatteryUnitAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:BatteryUnitAction.BatteryUnit ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:BatteryUnitAction  rdf:type  rdfs:Class ;
+        rdfs:comment            "Battery unit setpoint action." ;
+        rdfs:label              "BatteryUnitAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:BatteryUnitAction.BatteryUnit
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The BatteryUnit that is associated with an action." ;
+        rdfs:domain           nc:BatteryUnitAction ;
+        rdfs:label            "BatteryUnit"@en ;
+        rdfs:range            cim:BatteryUnit ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:BatteryUnit.BatteryUnitAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:BiddingZone  rdf:type        rdfs:Class ;
+        rdfs:comment            "A bidding zone is a market-based method for handling power transmission congestion. It consists of scheduling areas that include the relevant production (supply) and consumption (demand) to form an electrical area with the same market price without capacity allocation." ;
+        rdfs:label              "BiddingZone"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:BiddingZone.BiddingZoneAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The bidding zone action that relates to this bidding zone." ;
+        rdfs:domain           nc:BiddingZone ;
+        rdfs:label            "BiddingZoneAction"@en ;
+        rdfs:range            nc:BiddingZoneAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:BiddingZoneAction.BiddingZone ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:BiddingZone.PowerRemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The power remedial action applied to this BiddingZone." ;
+        rdfs:domain           nc:BiddingZone ;
+        rdfs:label            "PowerRemedialAction"@en ;
+        rdfs:range            nc:PowerRemedialAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PowerRemedialAction.BiddingZone ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:BiddingZoneAction  rdf:type  rdfs:Class ;
+        rdfs:comment            "Bidding zone set point action." ;
+        rdfs:label              "BiddingZoneAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:BiddingZoneAction.BiddingZone
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The bidding zone that has this bidding zone action." ;
+        rdfs:domain           nc:BiddingZoneAction ;
+        rdfs:label            "BiddingZone"@en ;
+        rdfs:range            nc:BiddingZone ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:BiddingZone.BiddingZoneAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:BiddingZoneBorder  rdf:type  rdfs:Class ;
+        rdfs:comment            "Defines the aggregated connection capacity between two Bidding Zones." ;
+        rdfs:label              "BiddingZoneBorder"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:BiddingZoneBorder.PowerRemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Power remedial action applied to this Bidding Zone Border." ;
+        rdfs:domain           nc:BiddingZoneBorder ;
+        rdfs:label            "PowerRemedialAction"@en ;
+        rdfs:range            nc:PowerRemedialAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PowerRemedialAction.BiddingZoneBorder ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:CalculationKind  rdf:type    rdfs:Class ;
+        rdfs:comment            "Kind of calculation operation that can be done to Measurement." ;
+        rdfs:label              "CalculationKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:CalculationKind.division
+        rdf:type         nc:CalculationKind ;
+        rdfs:comment     "Division operation on the input values (operands)." ;
+        rdfs:label       "division"@en ;
+        cims:stereotype  "enum" .
+
+nc:CalculationKind.multiplication
+        rdf:type         nc:CalculationKind ;
+        rdfs:comment     "Multiplication operation on the input values (operands)." ;
+        rdfs:label       "multiplication"@en ;
+        cims:stereotype  "enum" .
+
+nc:CalculationKind.squareRoot
+        rdf:type         nc:CalculationKind ;
+        rdfs:comment     "Square root operator - only one input value (operands)." ;
+        rdfs:label       "squareRoot"@en ;
+        cims:stereotype  "enum" .
+
+nc:CalculationKind.summation
+        rdf:type         nc:CalculationKind ;
+        rdfs:comment     "Summation operation on the input values (operands)." ;
+        rdfs:label       "summation"@en ;
+        cims:stereotype  "enum" .
+
+nc:Contingency.ContingencyWithRemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The contingency and remedial action combination for this contingency." ;
+        rdfs:domain           cim:Contingency ;
+        rdfs:label            "ContingencyWithRemedialAction"@en ;
+        rdfs:range            nc:ContingencyWithRemedialAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:ContingencyWithRemedialAction.Contingency ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Contingency.PinContingency
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The pin that uses this input." ;
+        rdfs:domain           cim:Contingency ;
+        rdfs:label            "PinContingency"@en ;
+        rdfs:range            nc:PinContingency ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinContingency.Contingency ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:ContingencyWithRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Combination of a contingency and a remedial action. ContingencyWithRemedialAction shall not be instantiated for preventive RemedialAction (RemedialAction.kind equals RemedialActionKind.preventive)." ;
+        rdfs:label              "ContingencyWithRemedialAction"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ContingencyWithRemedialAction.Contingency
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The contingency that is associated with a remedial action, i.e. the contingency that is the cause for the creation of a remedial action and justifies it or would usually be resolved with a remedial action." ;
+        rdfs:domain           nc:ContingencyWithRemedialAction ;
+        rdfs:label            "Contingency"@en ;
+        rdfs:range            cim:Contingency ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Contingency.ContingencyWithRemedialAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:ContingencyWithRemedialAction.RemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action defined for this contingency and remedial action combination." ;
+        rdfs:domain           nc:ContingencyWithRemedialAction ;
+        rdfs:label            "RemedialAction"@en ;
+        rdfs:range            nc:RemedialAction ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialAction.ContingencyWithRemedialAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:ContingencyWithRemedialAction.combinationConstraintKind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Defines the combination constraint of the Contingency and Remedial Action. If included, this remedial action can only be applied for this contingency. Else if excluded, this remedial action should not be used for this contingency. Else if considered, this remedial action can be considered for this contingency." ;
+        rdfs:domain        nc:ContingencyWithRemedialAction ;
+        rdfs:label         "combinationConstraintKind"@en ;
+        rdfs:range         nc:ElementCombinationConstraintKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ContingencyWithRemedialAction.mRID
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        nc:ContingencyWithRemedialAction ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ContingencyWithRemedialAction.normalEnabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "If true, the contingency with remedial action is enabled, otherwise it is disabled under normal operating conditions." ;
+        rdfs:domain        nc:ContingencyWithRemedialAction ;
+        rdfs:label         "normalEnabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ControlFunctionBlock
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Control function block is a function block that contains an algorithm for controlling the equipment." ;
+        rdfs:label              "ControlFunctionBlock"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:ControlFunctionBlock.ControlFunctionBlockAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action that is applied to this control function block." ;
+        rdfs:domain           nc:ControlFunctionBlock ;
+        rdfs:label            "ControlFunctionBlockAction"@en ;
+        rdfs:range            nc:ControlFunctionBlockAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:ControlFunctionBlockAction.ControlFunctionBlock ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:ControlFunctionBlockAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Action for setting the control function block target values." ;
+        rdfs:label              "ControlFunctionBlockAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ControlFunctionBlockAction.ControlFunctionBlock
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The control function block that is associated with a ControlFunctionBlockAction." ;
+        rdfs:domain           nc:ControlFunctionBlockAction ;
+        rdfs:label            "ControlFunctionBlock"@en ;
+        rdfs:range            nc:ControlFunctionBlock ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:ControlFunctionBlock.ControlFunctionBlockAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:CountertradeRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Countertrade is a remedial action to relieve physical congestions where the location of activated resources within the bidding zone is not known." ;
+        rdfs:label              "CountertradeRemedialAction"@en ;
+        rdfs:subClassOf         nc:PowerRemedialAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:CountertradeRemedialAction.maxEconomicPMargin
+        rdf:type           rdf:Property ;
+        rdfs:comment       "High economic active power limit given by the percentage of the relevant units operating p.   e.g. If a generating unit (G1) with maximum operating active power of 100 MW and a conform load with active maximum load of 50 MW (L1). Max economic p margin of 90% will give the limit of the shift key to be 90 MW for the G1 and 45 MW for the L1.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:CountertradeRemedialAction ;
+        rdfs:label         "maxEconomicPMargin"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:CountertradeRemedialAction.minEconomicPMargin
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Low economic active power limit given by the percentage of the relevant units operating p.   e.g. If a generating unit (G1) with minimum operating active power of 10 MW and a conform load with active maximum load of 5 MW (L1). Min economic p margin of 90%  will give the limit of the shift key to be 11 MW for the G1 and 5.5 MW for the L1.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:CountertradeRemedialAction ;
+        rdfs:label         "minEconomicPMargin"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCTerminal.PinDCTerminal
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The pin DC terminal for this DC terminal." ;
+        rdfs:domain           cim:DCTerminal ;
+        rdfs:label            "PinDCTerminal"@en ;
+        rdfs:range            nc:PinDCTerminal ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinDCTerminal.DCTerminal ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:ElementCombinationConstraintKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of constraint for an element combination." ;
+        rdfs:label              "ElementCombinationConstraintKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:ElementCombinationConstraintKind.considered
+        rdf:type         nc:ElementCombinationConstraintKind ;
+        rdfs:comment     "Element combination can be considered." ;
+        rdfs:label       "considered"@en ;
+        cims:stereotype  "enum" .
+
+nc:ElementCombinationConstraintKind.excluded
+        rdf:type         nc:ElementCombinationConstraintKind ;
+        rdfs:comment     "Element combination is excluded." ;
+        rdfs:label       "excluded"@en ;
+        cims:stereotype  "enum" .
+
+nc:ElementCombinationConstraintKind.included
+        rdf:type         nc:ElementCombinationConstraintKind ;
+        rdfs:comment     "Element combination is included." ;
+        rdfs:label       "included"@en ;
+        cims:stereotype  "enum" .
+
+nc:EnergyConsumer.LoadAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action appled to an EnergyConsumer." ;
+        rdfs:domain           cim:EnergyConsumer ;
+        rdfs:label            "LoadAction"@en ;
+        rdfs:range            nc:LoadAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:LoadAction.EnergyConsumer ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:EnergySource.EnergySourceAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The energy source action applied to an EnergySource." ;
+        rdfs:domain           cim:EnergySource ;
+        rdfs:label            "EnergySourceAction"@en ;
+        rdfs:range            nc:EnergySourceModification ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:EnergySourceModification.EnergySource ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:EnergySourceModification
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Energy source action." ;
+        rdfs:label              "EnergySourceModification"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:EnergySourceModification.EnergySource
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The EnergySource which is associated with an EnergySourceAction." ;
+        rdfs:domain           nc:EnergySourceModification ;
+        rdfs:label            "EnergySource"@en ;
+        rdfs:range            cim:EnergySource ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:EnergySource.EnergySourceAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:Equipment.PinEquipment
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The pin that uses this input." ;
+        rdfs:domain           cim:Equipment ;
+        rdfs:label            "PinEquipment"@en ;
+        rdfs:range            nc:PinEquipment ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinEquipment.Equipment ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Equipment.PinEquipmentTripping
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Pin equipment that is used as gate input." ;
+        rdfs:domain           cim:Equipment ;
+        rdfs:label            "PinEquipmentTripping"@en ;
+        rdfs:range            nc:PinEquipmentTripping ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinEquipmentTripping.Equipment ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:EquipmentController
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Equipment controller is an automation function that can control one or multiple equipment function to achieve all the targets inside the given tolerance. " ;
+        rdfs:label              "EquipmentController"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:EquipmentController.EquipmentControllerAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Equipment controller action for this equipment controller." ;
+        rdfs:domain           nc:EquipmentController ;
+        rdfs:label            "EquipmentControllerAction"@en ;
+        rdfs:range            nc:EquipmentControllerAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:EquipmentControllerAction.EquipmentController ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:EquipmentControllerAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Action for setting the equipment controller action." ;
+        rdfs:label              "EquipmentControllerAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:EquipmentControllerAction.EquipmentController
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Equipment controller that has associated equipment controller actions." ;
+        rdfs:domain           nc:EquipmentControllerAction ;
+        rdfs:label            "EquipmentController"@en ;
+        rdfs:range            nc:EquipmentController ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:EquipmentController.EquipmentControllerAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:EquivalentInjection.EquivalentInjectionAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action that is applied to an EquivalentInjection." ;
+        rdfs:domain           cim:EquivalentInjection ;
+        rdfs:label            "EquivalentInjectionAction"@en ;
+        rdfs:range            nc:EquivalentInjectionAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:EquivalentInjectionAction.EquivalentInjection ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:EquivalentInjectionAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Equivalent injection action." ;
+        rdfs:label              "EquivalentInjectionAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:EquivalentInjectionAction.EquivalentInjection
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The EquivalentInjection that is associated with an action." ;
+        rdfs:domain           nc:EquivalentInjectionAction ;
+        rdfs:label            "EquivalentInjection"@en ;
+        rdfs:range            cim:EquivalentInjection ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:EquivalentInjection.EquivalentInjectionAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:ExternalNetworkInjection.ExternalNetworkInjectionAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action that is applied to an ExternalNetworkInjection." ;
+        rdfs:domain           cim:ExternalNetworkInjection ;
+        rdfs:label            "ExternalNetworkInjectionAction"@en ;
+        rdfs:range            nc:ExternalNetworkInjectionAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:ExternalNetworkInjectionAction.ExternalNetworkInjection ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:ExternalNetworkInjectionAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "External network injection action." ;
+        rdfs:label              "ExternalNetworkInjectionAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ExternalNetworkInjectionAction.ExternalNetworkInjection
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The ExternalNetworkInjection that is associated with an action." ;
+        rdfs:domain           nc:ExternalNetworkInjectionAction ;
+        rdfs:label            "ExternalNetworkInjection"@en ;
+        rdfs:range            cim:ExternalNetworkInjection ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:ExternalNetworkInjection.ExternalNetworkInjectionAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:FunctionInputVariable
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Functional input variable defines the domain of the function." ;
+        rdfs:label              "FunctionInputVariable"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:Gate  rdf:type               rdfs:Class ;
+        rdfs:comment            "Logical gate that supports a logical operation based on the input." ;
+        rdfs:label              "Gate"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:Gate.GateInputPin  rdf:type  rdf:Property ;
+        rdfs:comment          "This is the input to the gate." ;
+        rdfs:domain           nc:Gate ;
+        rdfs:label            "GateInputPin"@en ;
+        rdfs:range            nc:GateInputPin ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:GateInputPin.Gate ;
+        cims:multiplicity     cims:M:1..n ;
+        cims:stereotype       "NC" .
+
+nc:Gate.PinGate  rdf:type     rdf:Property ;
+        rdfs:comment          "The pin for this gate output." ;
+        rdfs:domain           nc:Gate ;
+        rdfs:label            "PinGate"@en ;
+        rdfs:range            nc:PinGate ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinGate.GateOutput ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Gate.RemedialActionScheme
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action scheme which has an armed gate." ;
+        rdfs:domain           nc:Gate ;
+        rdfs:label            "RemedialActionScheme"@en ;
+        rdfs:range            nc:RemedialActionScheme ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialActionScheme.GateArmed ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Gate.StageTrigger  rdf:type  rdf:Property ;
+        rdfs:comment          "The stage trigger associated with the gate trigger." ;
+        rdfs:domain           nc:Gate ;
+        rdfs:label            "StageTrigger"@en ;
+        rdfs:range            nc:StageTrigger ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:StageTrigger.GateTrigger ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Gate.StageTriggerArmed
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The stage trigger associated with the armed gate." ;
+        rdfs:domain           nc:Gate ;
+        rdfs:label            "StageTriggerArmed"@en ;
+        rdfs:range            nc:StageTrigger ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:StageTrigger.GateArmed ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Gate.StageTriggerCom
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The stage trigger associated with the communication gate." ;
+        rdfs:domain           nc:Gate ;
+        rdfs:label            "StageTriggerCom"@en ;
+        rdfs:range            nc:StageTrigger ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:StageTrigger.GateComCondition ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Gate.TriggerCondition
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The trigger condition that has a gate trigger." ;
+        rdfs:domain           nc:Gate ;
+        rdfs:label            "TriggerCondition"@en ;
+        rdfs:range            nc:TriggerCondition ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:TriggerCondition.GateTrigger ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Gate.kind  rdf:type     rdf:Property ;
+        rdfs:comment       "The logical operation of the gate." ;
+        rdfs:domain        nc:Gate ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:GateLogicKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GateInputPin  rdf:type       rdfs:Class ;
+        rdfs:comment            "Input pin for a logical gate. The condition described in the input pin gives a logical true or false. The result from measurement and calculation are converted to a true or false." ;
+        rdfs:label              "GateInputPin"@en ;
+        rdfs:subClassOf         nc:FunctionInputVariable ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:GateInputPin.Gate  rdf:type  rdf:Property ;
+        rdfs:comment          "The Gate that has this input." ;
+        rdfs:domain           nc:GateInputPin ;
+        rdfs:label            "Gate"@en ;
+        rdfs:range            nc:Gate ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Gate.GateInputPin ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:GateInputPin.absoluteValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Indicates if the absolute value is used for comparison. If true, use the absolute value. If false, use the complex value (vector). " ;
+        rdfs:domain        nc:GateInputPin ;
+        rdfs:label         "absoluteValue"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GateInputPin.duration
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The time duration for which the condition is satisfied before acting. Default is 0 seconds." ;
+        rdfs:domain        nc:GateInputPin ;
+        rdfs:label         "duration"@en ;
+        cims:dataType      cim:Duration ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GateInputPin.isValuePreFault
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Indicates if the gate input pin value is referring to the value prior to a fault (e.g. simulated by a contingency or due to a SIPS activation in a N-x-y case). If it is true, it means that the value is referring to pre-fault. If it is false or not populated, then it is post-fault." ;
+        rdfs:domain        nc:GateInputPin ;
+        rdfs:label         "isValuePreFault"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GateInputPin.logicKind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The logical operator kind used for comparison." ;
+        rdfs:domain        nc:GateInputPin ;
+        rdfs:label         "logicKind"@en ;
+        rdfs:range         nc:LogicalOperatorsKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GateInputPin.negate
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Invert/negate the result of the comparison." ;
+        rdfs:domain        nc:GateInputPin ;
+        rdfs:label         "negate"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GateInputPin.thresholdPercentage
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The threshold percentage that should be used for compare with the percentage change between input value and threshold value.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:GateInputPin ;
+        rdfs:label         "thresholdPercentage"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GateInputPin.thresholdValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The threshold value that should be used for compare with the input value." ;
+        rdfs:domain        nc:GateInputPin ;
+        rdfs:label         "thresholdValue"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GateLogicKind  rdf:type      rdfs:Class ;
+        rdfs:comment            "Define the different logical operations." ;
+        rdfs:label              "GateLogicKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:GateLogicKind.and  rdf:type  nc:GateLogicKind ;
+        rdfs:comment     "A logical AND operation. True when all inputs are true." ;
+        rdfs:label       "and"@en ;
+        cims:stereotype  "enum" .
+
+nc:GateLogicKind.nand
+        rdf:type         nc:GateLogicKind ;
+        rdfs:comment     "A logical NAND operation. False when all inputs are true." ;
+        rdfs:label       "nand"@en ;
+        cims:stereotype  "enum" .
+
+nc:GateLogicKind.nor  rdf:type  nc:GateLogicKind ;
+        rdfs:comment     "A logical NOR operation. False when one or more inputs are true." ;
+        rdfs:label       "nor"@en ;
+        cims:stereotype  "enum" .
+
+nc:GateLogicKind.not  rdf:type  nc:GateLogicKind ;
+        rdfs:comment     "A logical NOT operation. Only one input and true input will give false out and false in will give true out. An inverter." ;
+        rdfs:label       "not"@en ;
+        cims:stereotype  "enum" .
+
+nc:GateLogicKind.or  rdf:type  nc:GateLogicKind ;
+        rdfs:comment     "A logical OR operation. True when one or more inputs are true." ;
+        rdfs:label       "or"@en ;
+        cims:stereotype  "enum" .
+
+nc:GateLogicKind.xnor
+        rdf:type         nc:GateLogicKind ;
+        rdfs:comment     "A logical XNOR operation. The function is the inverse of the exclusive OR (XOR) gate. All input false or true will give true. Otherwise false." ;
+        rdfs:label       "xnor"@en ;
+        cims:stereotype  "enum" .
+
+nc:GateLogicKind.xor  rdf:type  nc:GateLogicKind ;
+        rdfs:comment     "A logical XOR operation.  All input false or true will give false. Otherwise true." ;
+        rdfs:label       "xor"@en ;
+        cims:stereotype  "enum" .
+
+nc:GridStateAlteration
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Grid state alteration is a change of values describing state (operating point) of one element in the grid model compared to the base case." ;
+        rdfs:label              "GridStateAlteration"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:GridStateAlteration.GridStateAlterationCollection
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The collection that has a GridStateAlteration." ;
+        rdfs:domain           nc:GridStateAlteration ;
+        rdfs:label            "GridStateAlterationCollection"@en ;
+        rdfs:range            nc:GridStateAlterationCollection ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:GridStateAlterationCollection.GridStateAlteration ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:GridStateAlteration.GridStateAlterationRemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The grid state alteration remedial action associated with a given grid state alteration." ;
+        rdfs:domain           nc:GridStateAlteration ;
+        rdfs:label            "GridStateAlterationRemedialAction"@en ;
+        rdfs:range            nc:GridStateAlterationRemedialAction ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:GridStateAlterationRemedialAction.GridStateAlteration ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:GridStateAlteration.PropertyReference
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The property reference for this grid state alteration." ;
+        rdfs:domain           nc:GridStateAlteration ;
+        rdfs:label            "PropertyReference"@en ;
+        rdfs:range            nc:PropertyReference ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:PropertyReference.GridStateAlteration ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:GridStateAlteration.RangeConstraint
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The range constraint associated with a given GridStateAlteration." ;
+        rdfs:domain           nc:GridStateAlteration ;
+        rdfs:label            "RangeConstraint"@en ;
+        rdfs:range            nc:RangeConstraint ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RangeConstraint.GridStateAlteration ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:GridStateAlteration.maximumPerDay
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum number of alterations per day." ;
+        rdfs:domain        nc:GridStateAlteration ;
+        rdfs:label         "maximumPerDay"@en ;
+        cims:dataType      cim:Integer ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GridStateAlteration.minimumActivation
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Minimum time duration between activating the same grid state alteration." ;
+        rdfs:domain        nc:GridStateAlteration ;
+        rdfs:label         "minimumActivation"@en ;
+        cims:dataType      cim:Duration ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GridStateAlteration.normalEnabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The default/normal value used when other active signal/values are missing." ;
+        rdfs:domain        nc:GridStateAlteration ;
+        rdfs:label         "normalEnabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GridStateAlteration.timePerStage
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Time to implement a stage of a grid state alteration. If a grid state alteration consists of multiple stages (e.g. A step on a power transformer), this duration comes in addition to the timeToImplement and need to be multiplied by the number of stages. A stage can also be defined as MW in the case of regulating production." ;
+        rdfs:domain        nc:GridStateAlteration ;
+        rdfs:label         "timePerStage"@en ;
+        cims:dataType      cim:Duration ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GridStateAlterationCollection
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A collection of grid state alterations." ;
+        rdfs:label              "GridStateAlterationCollection"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:GridStateAlterationCollection.GridStateAlteration
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The GridStateAlteration that belongs to the collection." ;
+        rdfs:domain           nc:GridStateAlterationCollection ;
+        rdfs:label            "GridStateAlteration"@en ;
+        rdfs:range            nc:GridStateAlteration ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:GridStateAlteration.GridStateAlterationCollection ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:GridStateAlterationCollection.StageAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The stage action related to this GridStateAlterationCollection." ;
+        rdfs:domain           nc:GridStateAlterationCollection ;
+        rdfs:label            "StageAction"@en ;
+        rdfs:range            nc:Stage ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:Stage.GridStateAlterationCollection ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:GridStateAlterationRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Grid state alteration remedial action describes one or many grid state alterations applied to a grid model state or a particular scenario in order to resolve one or more identified constraints. " ;
+        rdfs:label              "GridStateAlterationRemedialAction"@en ;
+        rdfs:subClassOf         nc:RemedialAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:GridStateAlterationRemedialAction.GridStateAlteration
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The grid state alteration which is part of the grid state alteration remedial action." ;
+        rdfs:domain           nc:GridStateAlterationRemedialAction ;
+        rdfs:label            "GridStateAlteration"@en ;
+        rdfs:range            nc:GridStateAlteration ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:GridStateAlteration.GridStateAlterationRemedialAction ;
+        cims:multiplicity     cims:M:1..n ;
+        cims:stereotype       "NC" .
+
+nc:IntertemporalPropertyRange
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "It represents the intertemporal range, which means that this is the maximum change of an attribute value between two time stamps or per time unit (e.g. hour). Both up and down directions are defined by the direction attribute, i.e. There are different schedules per direction. \nThe class is not instantiated for PropertyReference which refers to Boolean type attributes. \nFor instance the following example illustrates the approach:\n- A tap changer related grid state alteration having two intertemporal range schedules.\n-   For a particular point in time, the value from up schedule is 6 and the value from down schedule is 3.\n- Then, the GridStateIntensity for the same point in time cannot be more than plus 6 taps from the current, or more than minus 3 taps from the current." ;
+        rdfs:label              "IntertemporalPropertyRange"@en ;
+        rdfs:subClassOf         nc:RangeConstraint ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:LoadAction  rdf:type         rdfs:Class ;
+        rdfs:comment            "Load action." ;
+        rdfs:label              "LoadAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:LoadAction.EnergyConsumer
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The EnergyConsumer that is associated with a load action." ;
+        rdfs:domain           nc:LoadAction ;
+        rdfs:label            "EnergyConsumer"@en ;
+        rdfs:range            cim:EnergyConsumer ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:EnergyConsumer.LoadAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:LogicalOperatorsKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kinds of logical operators for comparison." ;
+        rdfs:label              "LogicalOperatorsKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:LogicalOperatorsKind.equals
+        rdf:type         nc:LogicalOperatorsKind ;
+        rdfs:comment     "Equals (like) comparison operation." ;
+        rdfs:label       "equals"@en ;
+        cims:stereotype  "enum" .
+
+nc:LogicalOperatorsKind.greaterThan
+        rdf:type         nc:LogicalOperatorsKind ;
+        rdfs:comment     "Greater than comparison operation." ;
+        rdfs:label       "greaterThan"@en ;
+        cims:stereotype  "enum" .
+
+nc:LogicalOperatorsKind.greaterThanOrEquals
+        rdf:type         nc:LogicalOperatorsKind ;
+        rdfs:comment     "Greater than or equals comparison operation." ;
+        rdfs:label       "greaterThanOrEquals"@en ;
+        cims:stereotype  "enum" .
+
+nc:LogicalOperatorsKind.lessThan
+        rdf:type         nc:LogicalOperatorsKind ;
+        rdfs:comment     "Less than comparison operation." ;
+        rdfs:label       "lessThan"@en ;
+        cims:stereotype  "enum" .
+
+nc:LogicalOperatorsKind.lessThanOrEquals
+        rdf:type         nc:LogicalOperatorsKind ;
+        rdfs:comment     "Less than or equals comparison operation." ;
+        rdfs:label       "lessThanOrEquals"@en ;
+        cims:stereotype  "enum" .
+
+nc:LogicalOperatorsKind.notEqual
+        rdf:type         nc:LogicalOperatorsKind ;
+        rdfs:comment     "Not equal (unlike) comparison operation." ;
+        rdfs:label       "notEqual"@en ;
+        cims:stereotype  "enum" .
+
+nc:Measurement.MeasurementCalculatorInput
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The calculator input used for this measurement." ;
+        rdfs:domain           cim:Measurement ;
+        rdfs:label            "MeasurementCalculatorInput"@en ;
+        rdfs:range            nc:MeasurementCalculatorInput ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:MeasurementCalculatorInput.Measurement ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Measurement.PinMeasurement
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The pin that uses this input." ;
+        rdfs:domain           cim:Measurement ;
+        rdfs:label            "PinMeasurement"@en ;
+        rdfs:range            nc:PinMeasurement ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinMeasurement.Measurement ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:MeasurementCalculator
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Result of a calculation of one or more measurement. " ;
+        rdfs:label              "MeasurementCalculator"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:MeasurementCalculator.MeasurementCalculatorInput
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The input used for the calculator." ;
+        rdfs:domain           nc:MeasurementCalculator ;
+        rdfs:label            "MeasurementCalculatorInput"@en ;
+        rdfs:range            nc:MeasurementCalculatorInput ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:MeasurementCalculatorInput.MeasurementCalculator ;
+        cims:multiplicity     cims:M:1..n ;
+        cims:stereotype       "NC" .
+
+nc:MeasurementCalculator.PinMeasurement
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The pin that uses this input." ;
+        rdfs:domain           nc:MeasurementCalculator ;
+        rdfs:label            "PinMeasurement"@en ;
+        rdfs:range            nc:PinMeasurement ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinMeasurement.MeasurementCalculator ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:MeasurementCalculator.kind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Calculation operation executed on the operands." ;
+        rdfs:domain        nc:MeasurementCalculator ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:CalculationKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:MeasurementCalculatorInput
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Input to measurement calculation. It supports Analog, Discrete and Accumulator measurements." ;
+        rdfs:label              "MeasurementCalculatorInput"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:MeasurementCalculatorInput.Measurement
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Measurement used as input to a calculation." ;
+        rdfs:domain           nc:MeasurementCalculatorInput ;
+        rdfs:label            "Measurement"@en ;
+        rdfs:range            cim:Measurement ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Measurement.MeasurementCalculatorInput ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:MeasurementCalculatorInput.MeasurementCalculator
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The measurement calculator using this calculator input." ;
+        rdfs:domain           nc:MeasurementCalculatorInput ;
+        rdfs:label            "MeasurementCalculator"@en ;
+        rdfs:range            nc:MeasurementCalculator ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:MeasurementCalculator.MeasurementCalculatorInput ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:MeasurementCalculatorInput.absoluteValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Indicates if the absolute value is used for comparison. If true, use the absolute value. If false, use the complex value (vector). " ;
+        rdfs:domain        nc:MeasurementCalculatorInput ;
+        rdfs:label         "absoluteValue"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:MeasurementCalculatorInput.order
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Positive number that defines the order of the operand in the calculation. 0 means default in which case the order is not relevant." ;
+        rdfs:domain        nc:MeasurementCalculatorInput ;
+        rdfs:label         "order"@en ;
+        cims:dataType      cim:Integer ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:OperationalLimit.PinOperationallLimit
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The operational limit pin pin that uses this operational limit." ;
+        rdfs:domain           cim:OperationalLimit ;
+        rdfs:label            "PinOperationallLimit"@en ;
+        rdfs:range            nc:PinOperationalLimit ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinOperationalLimit.OperationalLimit ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:PTCActivePowerSupport
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Defines the active power capability (support) of the scheme in relation to a PowerTransferCorridor." ;
+        rdfs:label              "PTCActivePowerSupport"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PTCActivePowerSupport.PowerTransferCorridor
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The PowerTransferCorridor that has a specific active power support." ;
+        rdfs:domain           nc:PTCActivePowerSupport ;
+        rdfs:label            "PowerTransferCorridor"@en ;
+        rdfs:range            nc:PowerTransferCorridor ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:PowerTransferCorridor.PTCActivePowerSupport ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PTCActivePowerSupport.RemedialActionScheme
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The RemedialActionScheme which has active power support from the PowerTransferCorridor." ;
+        rdfs:domain           nc:PTCActivePowerSupport ;
+        rdfs:label            "RemedialActionScheme"@en ;
+        rdfs:range            nc:RemedialActionScheme ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialActionScheme.PTCActivePowerSupport ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PTCActivePowerSupport.maximum
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum support that a System Integrity Protection Scheme (SIPS) can provide to a Power Transfer Corridor (PTC). This is normally limited by the maximum power system disconnect allowed." ;
+        rdfs:domain        nc:PTCActivePowerSupport ;
+        rdfs:label         "maximum"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PTCActivePowerSupport.normal
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Normal support that a System Integrity Protection Scheme (SIPS) is expected to provide when enabled to a Power Transfer Corridor (PTC)." ;
+        rdfs:domain        nc:PTCActivePowerSupport ;
+        rdfs:label         "normal"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PinContingency  rdf:type     rdfs:Class ;
+        rdfs:comment            "Input pin associated with a Contingency. It is used for comparison." ;
+        rdfs:label              "PinContingency"@en ;
+        rdfs:subClassOf         nc:GateInputPin ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PinContingency.Contingency
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The Contingency that is used in the input pin." ;
+        rdfs:domain           nc:PinContingency ;
+        rdfs:label            "Contingency"@en ;
+        rdfs:range            cim:Contingency ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Contingency.PinContingency ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PinDCTerminal  rdf:type      rdfs:Class ;
+        rdfs:comment            "Input pin associated with a DCTerminal. It is used for comparison." ;
+        rdfs:label              "PinDCTerminal"@en ;
+        rdfs:subClassOf         nc:GateInputPin ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PinDCTerminal.DCTerminal
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The DC terminal that has this pin DC terminal." ;
+        rdfs:domain           nc:PinDCTerminal ;
+        rdfs:label            "DCTerminal"@en ;
+        rdfs:range            cim:DCTerminal ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:DCTerminal.PinDCTerminal ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:PinDCTerminal.kind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The kind of quantity which is used as an input value." ;
+        rdfs:domain        nc:PinDCTerminal ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:PinDCTerminalKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PinDCTerminalKind  rdf:type  rdfs:Class ;
+        rdfs:comment            "The kind of quantities that can serve as an input value for the DCTerminal pin." ;
+        rdfs:label              "PinDCTerminalKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:PinDCTerminalKind.current
+        rdf:type         nc:PinDCTerminalKind ;
+        rdfs:comment     "Direct current in the DCTerminal." ;
+        rdfs:label       "current"@en ;
+        cims:stereotype  "enum" .
+
+nc:PinDCTerminalKind.voltage
+        rdf:type         nc:PinDCTerminalKind ;
+        rdfs:comment     "Direct current voltage in the DCTerminal." ;
+        rdfs:label       "voltage"@en ;
+        cims:stereotype  "enum" .
+
+nc:PinEquipment  rdf:type       rdfs:Class ;
+        rdfs:comment            "Input pin associated with an Equipment. It is used for the comparison." ;
+        rdfs:label              "PinEquipment"@en ;
+        rdfs:subClassOf         nc:GateInputPin ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PinEquipment.Equipment
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The Equipment that is used in the input pin." ;
+        rdfs:domain           nc:PinEquipment ;
+        rdfs:label            "Equipment"@en ;
+        rdfs:range            cim:Equipment ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Equipment.PinEquipment ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PinEquipment.PropertyReference
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The property reference for this pin equipment." ;
+        rdfs:domain           nc:PinEquipment ;
+        rdfs:label            "PropertyReference"@en ;
+        rdfs:range            nc:PropertyReference ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:PropertyReference.PinEquipment ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PinEquipmentTripping
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Input pin associated with an Equipment. It is used to determine if the equipment is tripped between two consecutive stages, i.e. the equipment is in service at pre-fault stage and it is out of service at post-fault stage." ;
+        rdfs:label              "PinEquipmentTripping"@en ;
+        rdfs:subClassOf         nc:GateInputPin ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PinEquipmentTripping.Equipment
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Equipment that is tripped." ;
+        rdfs:domain           nc:PinEquipmentTripping ;
+        rdfs:label            "Equipment"@en ;
+        rdfs:range            cim:Equipment ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Equipment.PinEquipmentTripping ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PinGate  rdf:type            rdfs:Class ;
+        rdfs:comment            "An output from one gate represents an input to another gate." ;
+        rdfs:label              "PinGate"@en ;
+        rdfs:subClassOf         nc:GateInputPin ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PinGate.GateOutput
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The output of the gate." ;
+        rdfs:domain           nc:PinGate ;
+        rdfs:label            "GateOutput"@en ;
+        rdfs:range            nc:Gate ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Gate.PinGate ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PinMeasurement  rdf:type     rdfs:Class ;
+        rdfs:comment            "Input pin associated with a Measurement. It is used for comparison." ;
+        rdfs:label              "PinMeasurement"@en ;
+        rdfs:subClassOf         nc:GateInputPin ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PinMeasurement.Measurement
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The Measurement that is used in the input pin." ;
+        rdfs:domain           nc:PinMeasurement ;
+        rdfs:label            "Measurement"@en ;
+        rdfs:range            cim:Measurement ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Measurement.PinMeasurement ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:PinMeasurement.MeasurementCalculator
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The result of the calculation used as input to a gate." ;
+        rdfs:domain           nc:PinMeasurement ;
+        rdfs:label            "MeasurementCalculator"@en ;
+        rdfs:range            nc:MeasurementCalculator ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:MeasurementCalculator.PinMeasurement ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:PinOperationalLimit
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Input pin associated with the limits of a Terminal. It is used for comparison." ;
+        rdfs:label              "PinOperationalLimit"@en ;
+        rdfs:subClassOf         nc:GateInputPin ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PinOperationalLimit.OperationalLimit
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The operational limit that is used in the input pin." ;
+        rdfs:domain           nc:PinOperationalLimit ;
+        rdfs:label            "OperationalLimit"@en ;
+        rdfs:range            cim:OperationalLimit ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:OperationalLimit.PinOperationallLimit ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PinPowerTransferCorridor
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Input pin associated with a PowerTransferCorridor. It is used for comparison." ;
+        rdfs:label              "PinPowerTransferCorridor"@en ;
+        rdfs:subClassOf         nc:GateInputPin ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PinPowerTransferCorridor.PowerTransferCorridor
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The PowerTransferCorridor that is used in the input pin." ;
+        rdfs:domain           nc:PinPowerTransferCorridor ;
+        rdfs:label            "PowerTransferCorridor"@en ;
+        rdfs:range            nc:PowerTransferCorridor ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:PowerTransferCorridor.PinPowerTransferCorridor ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PinPowerTransferCorridor.kind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The kind of quantity which is used as an input value." ;
+        rdfs:domain        nc:PinPowerTransferCorridor ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:PinPowerTransferCorridorKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PinPowerTransferCorridorKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "The kind of quantities that can serve as an input value for the PowerTransferCorridor pin." ;
+        rdfs:label              "PinPowerTransferCorridorKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:PinPowerTransferCorridorKind.activePower
+        rdf:type         nc:PinPowerTransferCorridorKind ;
+        rdfs:comment     "Active power in the branch group." ;
+        rdfs:label       "activePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:PinPowerTransferCorridorKind.reactivePower
+        rdf:type         nc:PinPowerTransferCorridorKind ;
+        rdfs:comment     "Reactive power in the branch group." ;
+        rdfs:label       "reactivePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:PinTerminal  rdf:type        rdfs:Class ;
+        rdfs:comment            "Input pin associated with a Terminal. It is used for comparison." ;
+        rdfs:label              "PinTerminal"@en ;
+        rdfs:subClassOf         nc:GateInputPin ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PinTerminal.Terminal
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The Terminal that is used in the input pin." ;
+        rdfs:domain           nc:PinTerminal ;
+        rdfs:label            "Terminal"@en ;
+        rdfs:range            cim:Terminal ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Terminal.PinTerminal ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PinTerminal.kind  rdf:type  rdf:Property ;
+        rdfs:comment       "The kind of quantity which is used as an input value." ;
+        rdfs:domain        nc:PinTerminal ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         cim:PinTerminalKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerElectronicsConnection.PowerElectronicsConnectionAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action that is applied to a PowerElectronicsConnection." ;
+        rdfs:domain           cim:PowerElectronicsConnection ;
+        rdfs:label            "PowerElectronicsConnectionAction"@en ;
+        rdfs:range            nc:PowerElectronicsConnectionAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PowerElectronicsConnectionAction.PowerElectronicsConnection ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:PowerElectronicsConnectionAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Power electronics setpoint action. " ;
+        rdfs:label              "PowerElectronicsConnectionAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PowerElectronicsConnectionAction.PowerElectronicsConnection
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The PowerElectronicsConnection that is applied to an action." ;
+        rdfs:domain           nc:PowerElectronicsConnectionAction ;
+        rdfs:label            "PowerElectronicsConnection"@en ;
+        rdfs:range            cim:PowerElectronicsConnection ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:PowerElectronicsConnection.PowerElectronicsConnectionAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PowerRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Energy remedial action describes actions to rearrange power schedules." ;
+        rdfs:label              "PowerRemedialAction"@en ;
+        rdfs:subClassOf         nc:RemedialAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:PowerRemedialAction.BiddingZone
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The Bidding Zone where the power remedial action is done." ;
+        rdfs:domain           nc:PowerRemedialAction ;
+        rdfs:label            "BiddingZone"@en ;
+        rdfs:range            nc:BiddingZone ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:BiddingZone.PowerRemedialAction ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:PowerRemedialAction.BiddingZoneBorder
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Bidding zone border where the power remedial action is done." ;
+        rdfs:domain           nc:PowerRemedialAction ;
+        rdfs:label            "BiddingZoneBorder"@en ;
+        rdfs:range            nc:BiddingZoneBorder ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:BiddingZoneBorder.PowerRemedialAction ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:PowerRemedialAction.PowerShiftKeyStrategy
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Power Shift Key Strategy which applies to this power remedial action." ;
+        rdfs:domain           nc:PowerRemedialAction ;
+        rdfs:label            "PowerShiftKeyStrategy"@en ;
+        rdfs:range            nc:PowerShiftKeyStrategy ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PowerShiftKeyStrategy.PowerRemedialAction ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:PowerShiftKeyStrategy
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Strategy of the power shift key." ;
+        rdfs:label              "PowerShiftKeyStrategy"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PowerShiftKeyStrategy.PowerRemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Power remedial acion which has power shift key strategy." ;
+        rdfs:domain           nc:PowerShiftKeyStrategy ;
+        rdfs:label            "PowerRemedialAction"@en ;
+        rdfs:range            nc:PowerRemedialAction ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:PowerRemedialAction.PowerShiftKeyStrategy ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:PowerTransferCorridor
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A power transfer corridor is defined as a set of circuits (transmission lines or transformers) separating two portions of the power system, or a subset of circuits exposed to a substantial portion of the transmission exchange between two parts of the system." ;
+        rdfs:label              "PowerTransferCorridor"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:PowerTransferCorridor.ObservingTerminal
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The terminal that identifies the power transfer corridor." ;
+        rdfs:domain           nc:PowerTransferCorridor ;
+        rdfs:label            "ObservingTerminal"@en ;
+        rdfs:range            cim:Terminal ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Terminal.PowerTransferCorridor ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:PowerTransferCorridor.PTCActivePowerSupport
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The active power capability associated with this PowerTransferCorridor." ;
+        rdfs:domain           nc:PowerTransferCorridor ;
+        rdfs:label            "PTCActivePowerSupport"@en ;
+        rdfs:range            nc:PTCActivePowerSupport ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PTCActivePowerSupport.PowerTransferCorridor ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:PowerTransferCorridor.PinPowerTransferCorridor
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The pin that uses this input." ;
+        rdfs:domain           nc:PowerTransferCorridor ;
+        rdfs:label            "PinPowerTransferCorridor"@en ;
+        rdfs:range            nc:PinPowerTransferCorridor ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinPowerTransferCorridor.PowerTransferCorridor ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:PropertyReference  rdf:type  rdfs:Class ;
+        rdfs:comment            "The reference to a class and one of its properties." ;
+        rdfs:label              "PropertyReference"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:PropertyReference.GridStateAlteration
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The grid state alteration for this property reference." ;
+        rdfs:domain           nc:PropertyReference ;
+        rdfs:label            "GridStateAlteration"@en ;
+        rdfs:range            nc:GridStateAlteration ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:GridStateAlteration.PropertyReference ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:PropertyReference.PinEquipment
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The pin equipment that has this property reference." ;
+        rdfs:domain           nc:PropertyReference ;
+        rdfs:label            "PinEquipment"@en ;
+        rdfs:range            nc:PinEquipment ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinEquipment.PropertyReference ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:PropertyReference.StaticPropertyRange
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Static property range that has this property reference." ;
+        rdfs:domain           nc:PropertyReference ;
+        rdfs:label            "StaticPropertyRange"@en ;
+        rdfs:range            nc:StaticPropertyRange ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:StaticPropertyRange.PropertyReference ;
+        cims:multiplicity     cims:M:0..n .
+
+nc:RangeConstraint  rdf:type    rdfs:Class ;
+        rdfs:comment            "Defines the rage constraint." ;
+        rdfs:label              "RangeConstraint"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:RangeConstraint.GridStateAlteration
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The grid state alteration which has static range." ;
+        rdfs:domain           nc:RangeConstraint ;
+        rdfs:label            "GridStateAlteration"@en ;
+        rdfs:range            nc:GridStateAlteration ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:GridStateAlteration.RangeConstraint ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:RangeConstraint.direction
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Defines the direction of the attribute value referenced by the PropertyReference." ;
+        rdfs:domain        nc:RangeConstraint ;
+        rdfs:label         "direction"@en ;
+        rdfs:range         nc:RelativeDirectionKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RangeConstraint.normalValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The normal (initial) value. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false.\nIf the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).\nIf the valueKind is incrementalPercentage, then the value shall be in the range [0, 100]." ;
+        rdfs:domain        nc:RangeConstraint ;
+        rdfs:label         "normalValue"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RangeConstraint.valueKind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Kind of value offset for the range that applies to the attribute referenced by the PropertyReference." ;
+        rdfs:domain        nc:RangeConstraint ;
+        rdfs:label         "valueKind"@en ;
+        rdfs:range         nc:ValueOffsetKind ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RedispatchRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Redispatch remedial action is a remedial action that through rearranging power schedules is eliminating breaches of constraints." ;
+        rdfs:label              "RedispatchRemedialAction"@en ;
+        rdfs:subClassOf         nc:PowerRemedialAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:Region  rdf:type             rdfs:Class ;
+        rdfs:comment            "A region where the system operator belongs to." ;
+        rdfs:label              "Region"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:Region.RemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action which is considered in the region." ;
+        rdfs:domain           nc:Region ;
+        rdfs:label            "RemedialAction"@en ;
+        rdfs:range            nc:RemedialAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialAction.AppointedToRegion ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RegulatingControl.RegulatingControlAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action that is applied to a regulating control." ;
+        rdfs:domain           cim:RegulatingControl ;
+        rdfs:label            "RegulatingControlAction"@en ;
+        rdfs:range            nc:RegulatingControlAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RegulatingControlAction.RegulatingControl ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RegulatingControlAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Control action means the set point change of a regulating control power system resource in the grid model compared to the base case." ;
+        rdfs:label              "RegulatingControlAction"@en ;
+        rdfs:subClassOf         nc:GridStateAlteration ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+nc:RegulatingControlAction.RegulatingControl
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The regulating control which has an action." ;
+        rdfs:domain           nc:RegulatingControlAction ;
+        rdfs:label            "RegulatingControl"@en ;
+        rdfs:range            cim:RegulatingControl ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RegulatingControl.RegulatingControlAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:RelativeDirectionKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of direction for the changes." ;
+        rdfs:label              "RelativeDirectionKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:RelativeDirectionKind.down
+        rdf:type         nc:RelativeDirectionKind ;
+        rdfs:comment     "Down signifies that the changes are decreasing from the current status." ;
+        rdfs:label       "down"@en ;
+        cims:stereotype  "enum" .
+
+nc:RelativeDirectionKind.none
+        rdf:type         nc:RelativeDirectionKind ;
+        rdfs:comment     "There is no direction on the changes." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+nc:RelativeDirectionKind.up
+        rdf:type         nc:RelativeDirectionKind ;
+        rdfs:comment     "Up signifies that the changes are increasing from the current status." ;
+        rdfs:label       "up"@en ;
+        cims:stereotype  "enum" .
+
+nc:RelativeDirectionKind.upAndDown
+        rdf:type         nc:RelativeDirectionKind ;
+        rdfs:comment     "Up and down signifies that both up and down values are equal." ;
+        rdfs:label       "upAndDown"@en ;
+        cims:stereotype  "enum" .
+
+nc:RemedialAction  rdf:type     rdfs:Class ;
+        rdfs:comment            "Remedial action describes one or more actions that can be performed on a given power system model situation to eliminate one or more identified breaches of constraints. The remedial action can be costly, and have a cost characteristic, or non costly. " ;
+        rdfs:label              "RemedialAction"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:RemedialAction.AppointedToRegion
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The region in which the remedial action is appointed." ;
+        rdfs:domain           nc:RemedialAction ;
+        rdfs:label            "AppointedToRegion"@en ;
+        rdfs:range            nc:Region ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Region.RemedialAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialAction.ContingencyWithRemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The contingency and remedial action combination." ;
+        rdfs:domain           nc:RemedialAction ;
+        rdfs:label            "ContingencyWithRemedialAction"@en ;
+        rdfs:range            nc:ContingencyWithRemedialAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:ContingencyWithRemedialAction.RemedialAction ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialAction.DependentRemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Remedial action dependent on a remedial action." ;
+        rdfs:domain           nc:RemedialAction ;
+        rdfs:label            "DependentRemedialAction"@en ;
+        rdfs:range            nc:RemedialActionDependency ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialActionDependency.RemedialAction ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialAction.RemedialActionSystemOperator
+        rdf:type              rdf:Property ;
+        rdfs:comment          "System operator operating remedial actions." ;
+        rdfs:domain           nc:RemedialAction ;
+        rdfs:label            "RemedialActionSystemOperator"@en ;
+        rdfs:range            nc:SystemOperator ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:SystemOperator.RemedialAction ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialAction.impactThresholdMargin
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Impact threshold margin for the use of the remedial action. Meaning that the remedial action should not be used if it cannot resolve violation with more than the given impact threshold margin.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:RemedialAction ;
+        rdfs:label         "impactThresholdMargin"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialAction.isCrossBorderRelevant
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Indicates if the remedial action is cross border relevant.  True, means that the remedial action is cross border relevant." ;
+        rdfs:domain        nc:RemedialAction ;
+        rdfs:label         "isCrossBorderRelevant"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialAction.isManual
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Indicates if the remedial action is manually executed which involves one or many actions performed by human. A SIPS remedial action cannot be manual.  True, means that the remedial action is manual. False, means that the remedial action is automatically executed without human communication." ;
+        rdfs:domain        nc:RemedialAction ;
+        rdfs:label         "isManual"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialAction.kind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The kind of the remedial action. If curative remedial action, it is required to have an association with ContingencyWithRemedialAction.\nIf preventive remedial action, RemedialAction class shall not have association with ContingencyWithRemedialAction." ;
+        rdfs:domain        nc:RemedialAction ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:RemedialActionKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialAction.normalAvailable
+        rdf:type           rdf:Property ;
+        rdfs:comment       "It identifies if the remedial action is available under normal condition. True means available, False means unavailable." ;
+        rdfs:domain        nc:RemedialAction ;
+        rdfs:label         "normalAvailable"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialAction.penaltyFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Defines the relative penalty for a given remedial action. This is a positive number greater than zero and default is one, meaning the remedial action does not have negative nor positive effect on the quality of the solution. A remedial action that provide changes in the transmission loss can have negative (Between zero and one) or positive effect (Bigger than one) given by 1 / (1 – Incremental Transmission Loss). In a similar way remedial action using generating units or compensation units can have negative or positive effect. Typical value would be between 0.8 and 1.1." ;
+        rdfs:domain        nc:RemedialAction ;
+        rdfs:label         "penaltyFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialAction.timeToImplement
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Time to implement a remedial action." ;
+        rdfs:domain        nc:RemedialAction ;
+        rdfs:label         "timeToImplement"@en ;
+        cims:dataType      cim:Duration ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionDependency
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Remedial action dependency is making two remedial actions depending on each other. Multiple dependency is done by multiple instances of this class. The dependency can arrive by having one of the following examples.\n<ul>\n\t<li>The dependent remedial action is controlled by different system operator (Modeling Authority)  (e.g. SIPS that goes across control area).</li>\n\t<li>The dependent remedial action is representing  two or more remedial action that represent the same grid state alteration but with different modeling resolution (e.g. detail direct current model versus a simplified model).</li>\n\t<li>The remedial action can be combined with other remedial action without the need to create multiple remedial action with the same grid alteration for enabling dependency.</li>\n</ul>" ;
+        rdfs:label              "RemedialActionDependency"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RemedialActionDependency.DependingRemedialActionGroup
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Remedial action group which the remedial action is depending on." ;
+        rdfs:domain           nc:RemedialActionDependency ;
+        rdfs:label            "DependingRemedialActionGroup"@en ;
+        rdfs:range            nc:RemedialActionGroup ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialActionGroup.RemedialAction ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionDependency.RemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Remedial action which has dependent remedial actions." ;
+        rdfs:domain           nc:RemedialActionDependency ;
+        rdfs:label            "RemedialAction"@en ;
+        rdfs:range            nc:RemedialAction ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialAction.DependentRemedialAction ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionDependency.kind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Type of dependency between two remedial actions." ;
+        rdfs:domain        nc:RemedialActionDependency ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:RemedialActionDependencyKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionDependency.mRID
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        nc:RemedialActionDependency ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionDependency.normalEnabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "If true, the remedial action dependency with contingency shall be considered under normal operating conditions." ;
+        rdfs:domain        nc:RemedialActionDependency ;
+        rdfs:label         "normalEnabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionDependencyKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of dependency between remedial actions." ;
+        rdfs:label              "RemedialActionDependencyKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:RemedialActionDependencyKind.balanced
+        rdf:type         nc:RemedialActionDependencyKind ;
+        rdfs:comment     "This applies only to a set of power remedial actions and means that the remedial action needs to be balanced between the area (directly or indirectly to the bidding zone) that it is applied to." ;
+        rdfs:label       "balanced"@en ;
+        cims:stereotype  "enum" .
+
+nc:RemedialActionDependencyKind.exclusive
+        rdf:type         nc:RemedialActionDependencyKind ;
+        rdfs:comment     "Remedial actions are exclusive depending on each other. e.g. Only one of the remedial actions can be selected at the same time." ;
+        rdfs:label       "exclusive"@en ;
+        cims:stereotype  "enum" .
+
+nc:RemedialActionDependencyKind.inclusive
+        rdf:type         nc:RemedialActionDependencyKind ;
+        rdfs:comment     "Remedial actions are inclusive depending on each other. e.g. Both remedial action need to be picked if one of them is needed." ;
+        rdfs:label       "inclusive"@en ;
+        cims:stereotype  "enum" .
+
+nc:RemedialActionDependencyKind.none
+        rdf:type         nc:RemedialActionDependencyKind ;
+        rdfs:comment     "Remedial actions are not depending on each other. However, the two remedial actions should be evaluated together." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+nc:RemedialActionDependencyKind.restrictive
+        rdf:type         nc:RemedialActionDependencyKind ;
+        rdfs:comment     "Remedial actions are restrictive depending on each other. The need to include or to exclude might depend on the model. e.g. In the case of simplified DC model and detailed DC model. In the case where the simplified remedial action is used but not the remedial action for the detail model and opposite for the DC model." ;
+        rdfs:label       "restrictive"@en ;
+        cims:stereotype  "enum" .
+
+nc:RemedialActionGroup
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Grouping of remedial actions that can be operated together." ;
+        rdfs:label              "RemedialActionGroup"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RemedialActionGroup.RemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Remedial action dependecy on a remedial action group." ;
+        rdfs:domain           nc:RemedialActionGroup ;
+        rdfs:label            "RemedialAction"@en ;
+        rdfs:range            nc:RemedialActionDependency ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialActionDependency.DependingRemedialActionGroup ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "The different kinds for a remedial action." ;
+        rdfs:label              "RemedialActionKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:RemedialActionKind.curative
+        rdf:type         nc:RemedialActionKind ;
+        rdfs:comment     "Curative remedial action means a remedial action that is the result of an operational planning process and is activated straight subsequent to the occurrence of the respective contingency for compliance with the (N-1) criterion, taking into account transitory admissible overloads and their accepted duration." ;
+        rdfs:label       "curative"@en ;
+        cims:stereotype  "enum" .
+
+nc:RemedialActionKind.preventive
+        rdf:type         nc:RemedialActionKind ;
+        rdfs:comment     "Preventive remedial action means a remedial action that is the result of an operational planning process and needs to be activated prior to the investigated timeframe for compliance with the (N-1) criterion." ;
+        rdfs:label       "preventive"@en ;
+        cims:stereotype  "enum" .
+
+nc:RemedialActionScheme
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Remedial Action Scheme (RAS), Special Protection Schemes (SPS), System Protection Schemes (SPS) or System Integrity Protection Schemes (SIPS).\nA Remedial Action Scheme consists of one or more stages that can trigger and execute a protection action." ;
+        rdfs:label              "RemedialActionScheme"@en ;
+        rdfs:subClassOf         cim:PowerSystemResource ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RemedialActionScheme.ArmedRemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Remedial action scheme schedule that has this armed remedial action." ;
+        rdfs:domain           nc:RemedialActionScheme ;
+        rdfs:label            "ArmedRemedialAction"@en ;
+        rdfs:range            nc:SchemeRemedialAction ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:SchemeRemedialAction.RemedialActionScheme ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionScheme.GateArmed
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Gate that through a gate logic and input pin defines arming of a Remedial Action Scheme." ;
+        rdfs:domain           nc:RemedialActionScheme ;
+        rdfs:label            "GateArmed"@en ;
+        rdfs:range            nc:Gate ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Gate.RemedialActionScheme ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionScheme.PTCActivePowerSupport
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The active power support of the PowerTransferCorridor related to this RemedialActionScheme." ;
+        rdfs:domain           nc:RemedialActionScheme ;
+        rdfs:label            "PTCActivePowerSupport"@en ;
+        rdfs:range            nc:PTCActivePowerSupport ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PTCActivePowerSupport.RemedialActionScheme ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionScheme.Stage
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The stage for this remedial action scheme." ;
+        rdfs:domain           nc:RemedialActionScheme ;
+        rdfs:label            "Stage"@en ;
+        rdfs:range            nc:Stage ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:Stage.RemedialActionScheme ;
+        cims:multiplicity     cims:M:1..n ;
+        cims:stereotype       "NC" ;
+        cims:stereotype       <http://iec.ch/TC57/NonStandard/UML#ofAggregate> .
+
+nc:RemedialActionScheme.TriggerCondition
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The triggering condition of this Remedial Action Scheme." ;
+        rdfs:domain           nc:RemedialActionScheme ;
+        rdfs:label            "TriggerCondition"@en ;
+        rdfs:range            nc:TriggerCondition ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:TriggerCondition.RemedialActionScheme ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionScheme.kind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Kind of Remedial Action Scheme." ;
+        rdfs:domain        nc:RemedialActionScheme ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:RemedialActionSchemeKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionScheme.normalArmed
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Defines the normal arming status of the remedial action scheme. " ;
+        rdfs:domain        nc:RemedialActionScheme ;
+        rdfs:label         "normalArmed"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionSchemeKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Classification of Remedial Action Scheme." ;
+        rdfs:label              "RemedialActionSchemeKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:RemedialActionSchemeKind.rasp
+        rdf:type         nc:RemedialActionSchemeKind ;
+        rdfs:comment     "Remedial Action Schema Plan (RASP). The triggering conditions are met through calculation or manual intervention." ;
+        rdfs:label       "rasp"@en ;
+        cims:stereotype  "enum" .
+
+nc:RemedialActionSchemeKind.sips
+        rdf:type         nc:RemedialActionSchemeKind ;
+        rdfs:comment     "System Integrity Protection Scheme (SIPS). The triggering conditions are met through field measurements." ;
+        rdfs:label       "sips"@en ;
+        cims:stereotype  "enum" .
+
+nc:RotatingMachine.RotatingMachineAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action applied to a rotating machine." ;
+        rdfs:domain           cim:RotatingMachine ;
+        rdfs:label            "RotatingMachineAction"@en ;
+        rdfs:range            nc:RotatingMachineAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RotatingMachineAction.RotatingMachine ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RotatingMachineAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Rotating machine action." ;
+        rdfs:label              "RotatingMachineAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RotatingMachineAction.RotatingMachine
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The rotating machine that has an action." ;
+        rdfs:domain           nc:RotatingMachineAction ;
+        rdfs:label            "RotatingMachine"@en ;
+        rdfs:range            cim:RotatingMachine ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RotatingMachine.RotatingMachineAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:SchemeRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Scheme remedial action is remedial action that involves a scheme that can include conditional logic and stages of grid alteration. The primary remedial action is the arming of these schemes, that will then perform curative remedial action when the condition is met. System Integrity Protection Scheme (SIPS) and Special Protection Scheme (SPS) are example of this. " ;
+        rdfs:label              "SchemeRemedialAction"@en ;
+        rdfs:subClassOf         nc:RemedialAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:SchemeRemedialAction.RemedialActionScheme
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Armed remedial action for a remedial action scheme." ;
+        rdfs:domain           nc:SchemeRemedialAction ;
+        rdfs:label            "RemedialActionScheme"@en ;
+        rdfs:range            nc:RemedialActionScheme ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialActionScheme.ArmedRemedialAction ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:SetPointAction  rdf:type     rdfs:Class ;
+        rdfs:comment            "Setpoint action." ;
+        rdfs:label              "SetPointAction"@en ;
+        rdfs:subClassOf         nc:GridStateAlteration ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:ShuntCompensator.ShuntCompensatorAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action that is applied to a ShuntCompensator." ;
+        rdfs:domain           cim:ShuntCompensator ;
+        rdfs:label            "ShuntCompensatorAction"@en ;
+        rdfs:range            nc:ShuntCompensatorModification ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:ShuntCompensatorModification.ShuntCompensator ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:ShuntCompensatorModification
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Shunt compensator action." ;
+        rdfs:label              "ShuntCompensatorModification"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ShuntCompensatorModification.ShuntCompensator
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The ShuntCompensator that is associated with an action." ;
+        rdfs:domain           nc:ShuntCompensatorModification ;
+        rdfs:label            "ShuntCompensator"@en ;
+        rdfs:range            cim:ShuntCompensator ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:ShuntCompensator.ShuntCompensatorAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:Stage  rdf:type              rdfs:Class ;
+        rdfs:comment            "Stage of a remedial action scheme." ;
+        rdfs:label              "Stage"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:Stage.GridStateAlterationCollection
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The GridStateAlterationCollection which belongs to the Stage." ;
+        rdfs:domain           nc:Stage ;
+        rdfs:label            "GridStateAlterationCollection"@en ;
+        rdfs:range            nc:GridStateAlterationCollection ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:GridStateAlterationCollection.StageAction ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:Stage.RemedialActionScheme
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action scheme that has a stage." ;
+        rdfs:domain           nc:Stage ;
+        rdfs:label            "RemedialActionScheme"@en ;
+        rdfs:range            nc:RemedialActionScheme ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialActionScheme.Stage ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:Stage.StageTrigger
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The state trigger that is part of this stage." ;
+        rdfs:domain           nc:Stage ;
+        rdfs:label            "StageTrigger"@en ;
+        rdfs:range            nc:StageTrigger ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:StageTrigger.Stage ;
+        cims:multiplicity     cims:M:1..n ;
+        cims:stereotype       "NC" .
+
+nc:Stage.priority  rdf:type  rdf:Property ;
+        rdfs:comment       "The priority of the stage.   0 = do not care (default) 1 = highest priority. 2 is less than 1 and so on. A stage with higher priority needs be activated before a lower stage can be activated." ;
+        rdfs:domain        nc:Stage ;
+        rdfs:label         "priority"@en ;
+        cims:dataType      cim:Integer ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:StageTrigger  rdf:type       rdfs:Class ;
+        rdfs:comment            "Stage that is triggered either by TriggerCondition or by gate condition within a stage." ;
+        rdfs:label              "StageTrigger"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:StageTrigger.GateArmed
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The gate that is the input pin which defines arming of the StageTrigger." ;
+        rdfs:domain           nc:StageTrigger ;
+        rdfs:label            "GateArmed"@en ;
+        rdfs:range            nc:Gate ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Gate.StageTriggerArmed ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:StageTrigger.GateComCondition
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The gate that is the input pin which defines a communication condition." ;
+        rdfs:domain           nc:StageTrigger ;
+        rdfs:label            "GateComCondition"@en ;
+        rdfs:range            nc:Gate ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Gate.StageTriggerCom ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:StageTrigger.GateTrigger
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The gate that is the input pin which triggers the protective reactions." ;
+        rdfs:domain           nc:StageTrigger ;
+        rdfs:label            "GateTrigger"@en ;
+        rdfs:range            nc:Gate ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Gate.StageTrigger ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:StageTrigger.Stage
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The stage that has this stage trigger." ;
+        rdfs:domain           nc:StageTrigger ;
+        rdfs:label            "Stage"@en ;
+        rdfs:range            nc:Stage ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Stage.StageTrigger ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:StageTrigger.normalArmed
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The default/normal value used when other active signal/values are missing." ;
+        rdfs:domain        nc:StageTrigger ;
+        rdfs:label         "normalArmed"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:StageTrigger.priority
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Priority of trigger. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on. A trigger with the highest priority will trigger first." ;
+        rdfs:domain        nc:StageTrigger ;
+        rdfs:label         "priority"@en ;
+        cims:dataType      cim:Integer ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:StaticPropertyRange
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Defines the static range, which means that this is the minimum and/or maximum of an attribute value. The value provided by the schedule replaces the value of the attribute to which the schedule refers to.\nIn case that the PropertyReference refers to Boolean type attributes, RangeConstraint.direction shall be none or upAndDown and the RangeConstraint.valueKind shall be absolute. If the direction is none then optimization of the attribute referenced by the PropertyReference is not possible if the current status is already as the value in the range. Otherwise if the direction is upAndDown, the optimization can change from true to false or vice versa independently of the initial value in the operational scenario.\nFor instance for a tap changer related grid state alteration for a particular point in time, if the range of TapChanger.step is to be restricted, the value of the schedule will represent that new TapChanger.step range." ;
+        rdfs:label              "StaticPropertyRange"@en ;
+        rdfs:subClassOf         nc:RangeConstraint ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:StaticPropertyRange.PropertyReference
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Property reference for this static property range." ;
+        rdfs:domain           nc:StaticPropertyRange ;
+        rdfs:label            "PropertyReference"@en ;
+        rdfs:range            nc:PropertyReference ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:PropertyReference.StaticPropertyRange ;
+        cims:multiplicity     cims:M:1 .
+
+nc:StaticVarCompensator.StaticVarCompensatorAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action which is applied to a StaticVarCompensator." ;
+        rdfs:domain           cim:StaticVarCompensator ;
+        rdfs:label            "StaticVarCompensatorAction"@en ;
+        rdfs:range            nc:StaticVarCompensatorAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:StaticVarCompensatorAction.StaticVarCompensator ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:StaticVarCompensatorAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Static Var compensator action." ;
+        rdfs:label              "StaticVarCompensatorAction"@en ;
+        rdfs:subClassOf         nc:SetPointAction ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:StaticVarCompensatorAction.StaticVarCompensator
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The StaticVarCompensator which is associated with an action." ;
+        rdfs:domain           nc:StaticVarCompensatorAction ;
+        rdfs:label            "StaticVarCompensator"@en ;
+        rdfs:range            cim:StaticVarCompensator ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:StaticVarCompensator.StaticVarCompensatorAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:Switch.TopologyAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action assigned to a switch." ;
+        rdfs:domain           cim:Switch ;
+        rdfs:label            "TopologyAction"@en ;
+        rdfs:range            nc:TopologyAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:TopologyAction.Switch ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:SystemOperator  rdf:type     rdfs:Class ;
+        rdfs:comment            "System operator." ;
+        rdfs:label              "SystemOperator"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" .
+
+nc:SystemOperator.RemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Remedial action defined by this system operator." ;
+        rdfs:domain           nc:SystemOperator ;
+        rdfs:label            "RemedialAction"@en ;
+        rdfs:range            nc:RemedialAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialAction.RemedialActionSystemOperator ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:TapChanger.TapPositionAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The action that is applied to a tap changer." ;
+        rdfs:domain           cim:TapChanger ;
+        rdfs:label            "TapPositionAction"@en ;
+        rdfs:range            nc:TapPositionAction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:TapPositionAction.TapChanger ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:TapPositionAction  rdf:type  rdfs:Class ;
+        rdfs:comment            "Tap position action represents a change of a tap changer position in the grid model compared to the base case." ;
+        rdfs:label              "TapPositionAction"@en ;
+        rdfs:subClassOf         nc:GridStateAlteration ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:TapPositionAction.TapChanger
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The tap changer that has a tap position action associated." ;
+        rdfs:domain           nc:TapPositionAction ;
+        rdfs:label            "TapChanger"@en ;
+        rdfs:range            cim:TapChanger ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:TapChanger.TapPositionAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:Terminal.PinTerminal
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The pin that uses this input." ;
+        rdfs:domain           cim:Terminal ;
+        rdfs:label            "PinTerminal"@en ;
+        rdfs:range            nc:PinTerminal ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PinTerminal.Terminal ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Terminal.PowerTransferCorridor
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The power transfer corridor which is identified by  terminal." ;
+        rdfs:domain           cim:Terminal ;
+        rdfs:label            "PowerTransferCorridor"@en ;
+        rdfs:range            nc:PowerTransferCorridor ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PowerTransferCorridor.ObservingTerminal ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:TopologyAction  rdf:type     rdfs:Class ;
+        rdfs:comment            "Topology action means the connection or disconnection of a switch in the grid model compared to the base case." ;
+        rdfs:label              "TopologyAction"@en ;
+        rdfs:subClassOf         nc:GridStateAlteration ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:TopologyAction.Switch
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The switch that has a topology action associated." ;
+        rdfs:domain           nc:TopologyAction ;
+        rdfs:label            "Switch"@en ;
+        rdfs:range            cim:Switch ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Switch.TopologyAction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:TriggerCondition  rdf:type   rdfs:Class ;
+        rdfs:comment            "The condition that triggers a remedial action scheme." ;
+        rdfs:label              "TriggerCondition"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:TriggerCondition.GateTrigger
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The gate that is the condition for the trigger." ;
+        rdfs:domain           nc:TriggerCondition ;
+        rdfs:label            "GateTrigger"@en ;
+        rdfs:range            nc:Gate ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Gate.TriggerCondition ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:TriggerCondition.RemedialActionScheme
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action scheme that has the trigger condition." ;
+        rdfs:domain           nc:TriggerCondition ;
+        rdfs:label            "RemedialActionScheme"@en ;
+        rdfs:range            nc:RemedialActionScheme ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialActionScheme.TriggerCondition ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:ValueOffsetKind  rdf:type    rdfs:Class ;
+        rdfs:comment            "The kind of the value offset." ;
+        rdfs:label              "ValueOffsetKind"@en ;
+        cims:belongsToCategory  ra:Package_RemedialActionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:ValueOffsetKind.absolute
+        rdf:type         nc:ValueOffsetKind ;
+        rdfs:comment     "Value of the range constraint is replacing the attribute value referenced by the PropertyReference in a determined operational scenario." ;
+        rdfs:label       "absolute"@en ;
+        cims:stereotype  "enum" .
+
+nc:ValueOffsetKind.incremental
+        rdf:type         nc:ValueOffsetKind ;
+        rdfs:comment     "Value of the range constraint is incrementing the attribute value referenced by the PropertyReference in a determined operational scenario." ;
+        rdfs:label       "incremental"@en ;
+        cims:stereotype  "enum" .
+
+nc:ValueOffsetKind.incrementalPercentage
+        rdf:type         nc:ValueOffsetKind ;
+        rdfs:comment     "Value of the range constraint is incrementing in percentage the attribute value referenced by the PropertyReference in a determined operational scenario. " ;
+        rdfs:label       "incrementalPercentage"@en ;
+        cims:stereotype  "enum" .
+
+profcim:IRI  rdf:type           rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as rdf:resource in RDFXML.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "IRI"@en ;
+        cims:belongsToCategory  ra:Package_DocRemedialActionProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringFixedLanguage
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.\nThe primitive is serialized as literal without language support." ;
+        rdfs:label              "StringFixedLanguage"@en ;
+        cims:belongsToCategory  ra:Package_DocRemedialActionProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringIRI  rdf:type     rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as literal without language support.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "StringIRI"@en ;
+        cims:belongsToCategory  ra:Package_DocRemedialActionProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:URL  rdf:type           rdfs:Class ;
+        rdfs:comment            "A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably.URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications." ;
+        rdfs:label              "URL"@en ;
+        cims:belongsToCategory  ra:Package_DocRemedialActionProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+ra:Ontology  rdf:type         owl:Ontology ;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-301:ed-7:amd1" , "urn:iso:std:iec:61970-401:draft:ed-1" , "file://CIM100_CGMES31v01_501-20v02_NC23v62_MM10v01.eap" , "urn:iso:std:iec:61970-600-2:ed-1" , "file://iec61970cim17v40_iec61968cim13v13a_iec62325cim03v17a.eap" ;
+        dcterms:creator       "ENTSO-E CIM WG NC project "@en ;
+        dcterms:description   "This vocabulary is describing the remedial action profile."@en ;
+        dcterms:identifier    "urn:uuid:57fcfe0e-258c-45f2-b2ed-ff5b6a9859bc" ;
+        dcterms:language      "en-GB" ;
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en ;
+        dcterms:modified      "2024-04-08"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:publisher     "ENTSO-E"@en ;
+        dcterms:rightsHolder  "ENTSO-E"@en ;
+        dcterms:title         "Remedial action Vocabulary"@en ;
+        owl:priorVersion      <http://entsoe.eu/ns/CIM/RemedialAction-EU/2.2> ;
+        owl:versionIRI        <https://ap.cim4.eu/RemedialAction/2.3> ;
+        owl:versionInfo       "2.3.0"@en ;
+        dcat:keyword          "RA" ;
+        dcat:theme            "vocabulary"@en .
+
+ra:Package_DocRemedialActionProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains datatypes used only in the RDFS header." ;
+        rdfs:label    "DocRemedialActionProfile"@en .
+
+ra:Package_RemedialActionProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains remedial action profile." ;
+        rdfs:label    "RemedialActionProfile"@en .
+

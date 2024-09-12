@@ -1,0 +1,397 @@
+@prefix cim:     <https://cim.ucaiug.io/ns#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix ma:      <https://ap.cim4.eu/MonitoringArea#> .
+@prefix nc:      <https://cim4.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix profcim: <https://cim.ucaiug.io/ns/prof-cim#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+
+cim:Date  rdf:type              rdfs:Class ;
+        rdfs:comment            "Date as \"yyyy-mm-dd\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddZ\". A local timezone relative UTC is specified as \"yyyy-mm-dd(+/-)hh:mm\"." ;
+        rdfs:label              "Date"@en ;
+        cims:belongsToCategory  ma:Package_DocMonitoringAreaProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:DateTime  rdf:type          rdfs:Class ;
+        rdfs:comment            "Date and time as \"yyyy-mm-ddThh:mm:ss.sss\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddThh:mm:ss.sssZ\". A local timezone relative UTC is specified as \"yyyy-mm-ddThh:mm:ss.sss-hh:mm\". The second component (shown here as \"ss.sss\") could have any number of digits in its fractional part to allow any kind of precision beyond seconds." ;
+        rdfs:label              "DateTime"@en ;
+        cims:belongsToCategory  ma:Package_DocMonitoringAreaProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Float  rdf:type             rdfs:Class ;
+        rdfs:comment            "A floating point number. The range is unspecified and not limited." ;
+        rdfs:label              "Float"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:IdentifiedObject  rdf:type  rdfs:Class ;
+        rdfs:comment            "This is a root class to provide common identification for all classes needing identification and naming attributes." ;
+        rdfs:label              "IdentifiedObject"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile .
+
+cim:IdentifiedObject.description
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "description"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:IdentifiedObject.mRID
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:IdentifiedObject.name
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The name is any free human readable and possibly non unique text naming the object." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "name"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent  rdf:type           rdfs:Class ;
+        rdfs:comment            "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base." ;
+        rdfs:label              "PerCent"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:PerCent.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent.value  rdf:type  rdf:Property ;
+        rdfs:comment       "Normally 0 to 100 on a defined base." ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PowerSystemResource
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated." ;
+        rdfs:label              "PowerSystemResource"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile .
+
+cim:String  rdf:type            rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited." ;
+        rdfs:label              "String"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Terminal  rdf:type          rdfs:Class ;
+        rdfs:comment            "An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes." ;
+        rdfs:label              "Terminal"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile .
+
+cim:UnitMultiplier  rdf:type    rdfs:Class ;
+        rdfs:comment            "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type. \n\nFor example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol \"Þ\" represents the derived unit \"m2Pers\", then applying the multiplier \"k\" can be conceptualized simply as \"kÞ\".\n\nFor example, the SI unit for mass is \"kg\" and not \"g\".  If the unit symbol is defined as \"kg\", then the multiplier is applied to \"kg\" as a whole and does not replace the \"k\" in front of the \"g\". In this case, the multiplier of \"m\" would be used with the unit symbol of \"kg\" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the \"kg\" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the \"kg\" were replaced by a symbol \"Þ\", then it is easier to conceptualize the multiplier \"m\" as creating the proper unit \"mÞ\", and not the forbidden unit \"mkg\"." ;
+        rdfs:label              "UnitMultiplier"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitMultiplier.none
+        rdf:type         cim:UnitMultiplier ;
+        rdfs:comment     "No multiplier or equivalently multiply by 1." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol  rdf:type        rdfs:Class ;
+        rdfs:comment            "The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as \"F\" instead of \"CPerV\". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as \"kgPerm3\". With the exception of the \"kg\", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole. \nEvery unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.\nTo allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol \"/\" is replaced by the letters \"Per\". Exponents are written in plain text after the unit as \"m3\" instead of being formatted as \"m\" with a superscript of 3  or introducing a symbol as in \"m^3\". The degree symbol \"°\" is replaced with the letters \"deg\". Any clarification of the meaning for a substitution is included in the description for the unit symbol.\nNon-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units. \nThe integer values are used for harmonization with IEC 61850." ;
+        rdfs:label              "UnitSymbol"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitSymbol.none  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Dimension less quantity, e.g. count, per unit, etc." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+ma:Ontology  rdf:type         owl:Ontology ;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-301:ed-7:amd1" , "file://iec61970cim17v40_iec61968cim13v13a_iec62325cim03v17a.eap" , "urn:iso:std:iec:61970-401:draft:ed-1" , "file://CIM100_CGMES31v01_501-20v02_NC23v62_MM10v01.eap" , "urn:iso:std:iec:61970-600-2:ed-1" ;
+        dcterms:creator       "ENTSO-E CIM WG NC project"@en ;
+        dcterms:description   "This vocabulary is describing the monitoring area profile."@en ;
+        dcterms:identifier    "urn:uuid:41075091-91f0-4b14-a5b8-93945aa528ed" ;
+        dcterms:language      "en-GB" ;
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en ;
+        dcterms:modified      "2024-03-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:publisher     "ENTSO-E"@en ;
+        dcterms:rightsHolder  "ENTSO-E"@en ;
+        dcterms:title         "Monitoring area Vocabulary"@en ;
+        owl:versionIRI        <https://ap.cim4.eu/MonitoringArea/2.3> ;
+        owl:versionInfo       "2.3.0"@en ;
+        dcat:keyword          "MA" ;
+        dcat:theme            "vocabulary"@en .
+
+ma:Package_DocMonitoringAreaProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains datatypes used only in the RDFS header." ;
+        rdfs:label    "DocMonitoringAreaProfile"@en .
+
+ma:Package_MonitoringAreaProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains monitoring area profile." ;
+        rdfs:label    "MonitoringAreaProfile"@en .
+
+nc:AreaBorderTerminal
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Area border terminal defines the terminals that are defining a monitoring area." ;
+        rdfs:label              "AreaBorderTerminal"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AreaBorderTerminal.MonitoringArea
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The MonitoringArea defined by this AreaBorderTerminal." ;
+        rdfs:domain           nc:AreaBorderTerminal ;
+        rdfs:label            "MonitoringArea"@en ;
+        rdfs:range            nc:MonitoringArea ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:MonitoringArea.AreaBorderTerminal ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:AreaBorderTerminal.Terminal
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The Terminal that is part of an AreaBorderTerminal." ;
+        rdfs:domain           nc:AreaBorderTerminal ;
+        rdfs:label            "Terminal"@en ;
+        rdfs:range            cim:Terminal ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Terminal.AreaBorderTerminal ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:AreaBorderTerminal.mRID
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        nc:AreaBorderTerminal ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ContingencyArea  rdf:type    rdfs:Class ;
+        rdfs:comment            "A monitoring area that defines the required contingency elements. This includes elements that are part of the external contingency list." ;
+        rdfs:label              "ContingencyArea"@en ;
+        rdfs:subClassOf         nc:InfluenceArea ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:InfluenceArea  rdf:type      rdfs:Class ;
+        rdfs:comment            "Influence area is a monitoring area that is defined by calculating the equipment that is affected by the influence factors." ;
+        rdfs:label              "InfluenceArea"@en ;
+        rdfs:subClassOf         nc:MonitoringArea ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "NC" .
+
+nc:InfluenceArea.filteringInfluenceFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Power flow filtering influence factor of a network element not normalised.  This is referred as power flow influence threshold in CSA methodology.\n\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:InfluenceArea ;
+        rdfs:label         "filteringInfluenceFactor"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:InfluenceArea.identificationInfluenceFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Power flow identification influence factor of a network element that is normalised in order to take into account potential impacts induced by differences in Permanently Admissible Transmission Loading (PATL) values. This is referred as identification influence threshold in CSA methodology.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:InfluenceArea ;
+        rdfs:label         "identificationInfluenceFactor"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:InfluenceArea.voltageInfluenceFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Voltage influence factor of a network element as defined in the CSA methodology.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:InfluenceArea ;
+        rdfs:label         "voltageInfluenceFactor"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+nc:MonitoringArea  rdf:type     rdfs:Class ;
+        rdfs:comment            "A coherent part of the interconnected electrical power system, that includes the system operators' responsibility area and the surrounding parts of other system operators' responsibility area, that need to be monitored for security assessment." ;
+        rdfs:label              "MonitoringArea"@en ;
+        rdfs:subClassOf         cim:PowerSystemResource ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:MonitoringArea.AreaBorderTerminal
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The AreaBorderTerminal which defines the MonitoringArea." ;
+        rdfs:domain           nc:MonitoringArea ;
+        rdfs:label            "AreaBorderTerminal"@en ;
+        rdfs:range            nc:AreaBorderTerminal ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AreaBorderTerminal.MonitoringArea ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:MonitoringArea.Region
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Region that has monitoring areas." ;
+        rdfs:domain           nc:MonitoringArea ;
+        rdfs:label            "Region"@en ;
+        rdfs:range            nc:Region ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Region.MonitoringArea ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:MonitoringArea.SynchronousArea
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The synchronous area that has this monitoring area." ;
+        rdfs:domain           nc:MonitoringArea ;
+        rdfs:label            "SynchronousArea"@en ;
+        rdfs:range            nc:SynchronousArea ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:SynchronousArea.MonitoringArea ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:MonitoringArea.SystemOperator
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The system operator that operates this monitoring area." ;
+        rdfs:domain           nc:MonitoringArea ;
+        rdfs:label            "SystemOperator"@en ;
+        rdfs:range            nc:SystemOperator ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:SystemOperator.MonitoringArea ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:ObservabilityArea  rdf:type  rdfs:Class ;
+        rdfs:comment            "A monitoring area that is given by a real time measurement." ;
+        rdfs:label              "ObservabilityArea"@en ;
+        rdfs:subClassOf         nc:MonitoringArea ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:Region  rdf:type             rdfs:Class ;
+        rdfs:comment            "A region where the system operator belongs to." ;
+        rdfs:label              "Region"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "NC" .
+
+nc:Region.MonitoringArea
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Monitoring area which belongs to a region." ;
+        rdfs:domain           nc:Region ;
+        rdfs:label            "MonitoringArea"@en ;
+        rdfs:range            nc:MonitoringArea ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:MonitoringArea.Region ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:SensitivityArea  rdf:type    rdfs:Class ;
+        rdfs:comment            "A monitoring area that defines the required observability area given by the sensitivity factors." ;
+        rdfs:label              "SensitivityArea"@en ;
+        rdfs:subClassOf         nc:InfluenceArea ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:SynchronousArea  rdf:type    rdfs:Class ;
+        rdfs:comment            "A synchronous area is an electrical area covered by interconnect with a common system frequency in a steady-state. " ;
+        rdfs:label              "SynchronousArea"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "NC" .
+
+nc:SynchronousArea.MonitoringArea
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The monitoring area that is part of this synchronous area." ;
+        rdfs:domain           nc:SynchronousArea ;
+        rdfs:label            "MonitoringArea"@en ;
+        rdfs:range            nc:MonitoringArea ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:MonitoringArea.SynchronousArea ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:SystemOperator  rdf:type     rdfs:Class ;
+        rdfs:comment            "System operator." ;
+        rdfs:label              "SystemOperator"@en ;
+        cims:belongsToCategory  ma:Package_MonitoringAreaProfile ;
+        cims:stereotype         "NC" .
+
+nc:SystemOperator.MonitoringArea
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The monitoring area that is operated by this system operator." ;
+        rdfs:domain           nc:SystemOperator ;
+        rdfs:label            "MonitoringArea"@en ;
+        rdfs:range            nc:MonitoringArea ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:MonitoringArea.SystemOperator ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:Terminal.AreaBorderTerminal
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The AreaBorderTerminal that has this Terminal." ;
+        rdfs:domain           cim:Terminal ;
+        rdfs:label            "AreaBorderTerminal"@en ;
+        rdfs:range            nc:AreaBorderTerminal ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AreaBorderTerminal.Terminal ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+profcim:IRI  rdf:type           rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as rdf:resource in RDFXML.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "IRI"@en ;
+        cims:belongsToCategory  ma:Package_DocMonitoringAreaProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringFixedLanguage
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.\nThe primitive is serialized as literal without language support." ;
+        rdfs:label              "StringFixedLanguage"@en ;
+        cims:belongsToCategory  ma:Package_DocMonitoringAreaProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringIRI  rdf:type     rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as literal without language support.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "StringIRI"@en ;
+        cims:belongsToCategory  ma:Package_DocMonitoringAreaProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:URL  rdf:type           rdfs:Class ;
+        rdfs:comment            "A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably.URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications." ;
+        rdfs:label              "URL"@en ;
+        cims:belongsToCategory  ma:Package_DocMonitoringAreaProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+

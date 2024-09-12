@@ -1,0 +1,937 @@
+@prefix as:      <https://ap.cim4.eu/AvailabilitySchedule#> .
+@prefix cim:     <https://cim.ucaiug.io/ns#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix nc:      <https://cim4.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix profcim: <https://cim.ucaiug.io/ns/prof-cim#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+
+as:Ontology  rdf:type         owl:Ontology ;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-501:draft:ed-2" , "file://CIM100_CGMES31v01_501-20v02_NC23v62_MM10v01.eap" , "urn:iso:std:iec:61970-600-2:ed-1" , "urn:iso:std:iec:61970-301:ed-7:amd1" , "file://iec61970cim17v40_iec61968cim13v13a_iec62325cim03v17a.eap" , "urn:iso:std:iec:61970-401:draft:ed-1" ;
+        dcterms:creator       "ENTSO-E CIM WG NC project"@en ;
+        dcterms:description   "This vocabulary is describing the availability schedule profile."@en ;
+        dcterms:identifier    "urn:uuid:8d128e35-86c7-4d67-b2dd-93229bf1005a" ;
+        dcterms:language      "en-GB" ;
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en ;
+        dcterms:modified      "2024-03-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:publisher     "ENTSO-E"@en ;
+        dcterms:rightsHolder  "ENTSO-E"@en ;
+        dcterms:title         "Availability schedule vocabulary"@en ;
+        owl:priorVersion      <http://entsoe.eu/ns/CIM/AvailabilitySchedule-EU/2.2> ;
+        owl:versionIRI        <https://ap.cim4.eu/AvailabilitySchedule/2.3> ;
+        owl:versionInfo       "2.3.0"@en ;
+        dcat:keyword          "AS" ;
+        dcat:theme            "vocabulary"@en .
+
+as:Package_AvailabilityScheduleProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains the availability schedule profile." ;
+        rdfs:label    "AvailabilityScheduleProfile"@en .
+as:Package_DocAvailabilityScheduleProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains datatypes used only in the RDFS header." ;
+        rdfs:label    "DocAvailabilityScheduleProfile"@en .
+
+cim:Boolean  rdf:type           rdfs:Class ;
+        rdfs:comment            "A type with the value space \"true\" and \"false\"." ;
+        rdfs:label              "Boolean"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Date  rdf:type              rdfs:Class ;
+        rdfs:comment            "Date as \"yyyy-mm-dd\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddZ\". A local timezone relative UTC is specified as \"yyyy-mm-dd(+/-)hh:mm\"." ;
+        rdfs:label              "Date"@en ;
+        cims:belongsToCategory  as:Package_DocAvailabilityScheduleProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:DateTime  rdf:type          rdfs:Class ;
+        rdfs:comment            "Date and time as \"yyyy-mm-ddThh:mm:ss.sss\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddThh:mm:ss.sssZ\". A local timezone relative UTC is specified as \"yyyy-mm-ddThh:mm:ss.sss-hh:mm\". The second component (shown here as \"ss.sss\") could have any number of digits in its fractional part to allow any kind of precision beyond seconds." ;
+        rdfs:label              "DateTime"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Duration  rdf:type          rdfs:Class ;
+        rdfs:comment            "Duration as \"PnYnMnDTnHnMnS\" which conforms to ISO 8601, where nY expresses a number of years, nM a number of months, nD a number of days. The letter T separates the date expression from the time expression and, after it, nH identifies a number of hours, nM a number of minutes and nS a number of seconds. The number of seconds could be expressed as a decimal number, but all other numbers are integers." ;
+        rdfs:label              "Duration"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Equipment  rdf:type         rdfs:Class ;
+        rdfs:comment            "The parts of a power system that are physical devices, electronic or mechanical." ;
+        rdfs:label              "Equipment"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile .
+
+cim:EquipmentContainer
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A modelling construct to provide a root class for containing equipment. " ;
+        rdfs:label              "EquipmentContainer"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile .
+
+cim:Float  rdf:type             rdfs:Class ;
+        rdfs:comment            "A floating point number. The range is unspecified and not limited." ;
+        rdfs:label              "Float"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:IdentifiedObject  rdf:type  rdfs:Class ;
+        rdfs:comment            "This is a root class to provide common identification for all classes needing identification and naming attributes." ;
+        rdfs:label              "IdentifiedObject"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile .
+
+cim:IdentifiedObject.description
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "description"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:IdentifiedObject.mRID
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:IdentifiedObject.name
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The name is any free human readable and possibly non unique text naming the object." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "name"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Integer  rdf:type           rdfs:Class ;
+        rdfs:comment            "An integer number. The range is unspecified and not limited." ;
+        rdfs:label              "Integer"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:OperationalLimit  rdf:type  rdfs:Class ;
+        rdfs:comment            "A value and normal value associated with a specific kind of limit. \nThe sub class value and normalValue attributes vary inversely to the associated OperationalLimitType.acceptableDuration (acceptableDuration for short).  \nIf a particular piece of equipment has multiple operational limits of the same kind (apparent power, current, etc.), the limit with the greatest acceptableDuration shall have the smallest limit value and the limit with the smallest acceptableDuration shall have the largest limit value.  Note: A large current can only be allowed to flow through a piece of equipment for a short duration without causing damage, but a lesser current can be allowed to flow for a longer duration. " ;
+        rdfs:label              "OperationalLimit"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile .
+
+cim:Seconds  rdf:type           rdfs:Class ;
+        rdfs:comment            "Time, in seconds." ;
+        rdfs:label              "Seconds"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:Seconds.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:Seconds ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Seconds.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Seconds ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "s" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Seconds.value  rdf:type  rdf:Property ;
+        rdfs:comment       "Time, in seconds" ;
+        rdfs:domain        cim:Seconds ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:String  rdf:type            rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited." ;
+        rdfs:label              "String"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:UnitMultiplier  rdf:type    rdfs:Class ;
+        rdfs:comment            "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type. \n\nFor example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol \"Þ\" represents the derived unit \"m2Pers\", then applying the multiplier \"k\" can be conceptualized simply as \"kÞ\".\n\nFor example, the SI unit for mass is \"kg\" and not \"g\".  If the unit symbol is defined as \"kg\", then the multiplier is applied to \"kg\" as a whole and does not replace the \"k\" in front of the \"g\". In this case, the multiplier of \"m\" would be used with the unit symbol of \"kg\" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the \"kg\" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the \"kg\" were replaced by a symbol \"Þ\", then it is easier to conceptualize the multiplier \"m\" as creating the proper unit \"mÞ\", and not the forbidden unit \"mkg\"." ;
+        rdfs:label              "UnitMultiplier"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitMultiplier.none
+        rdf:type         cim:UnitMultiplier ;
+        rdfs:comment     "No multiplier or equivalently multiply by 1." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol  rdf:type        rdfs:Class ;
+        rdfs:comment            "The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as \"F\" instead of \"CPerV\". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as \"kgPerm3\". With the exception of the \"kg\", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole. \nEvery unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.\nTo allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol \"/\" is replaced by the letters \"Per\". Exponents are written in plain text after the unit as \"m3\" instead of being formatted as \"m\" with a superscript of 3  or introducing a symbol as in \"m^3\". The degree symbol \"°\" is replaced with the letters \"deg\". Any clarification of the meaning for a substitution is included in the description for the unit symbol.\nNon-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units. \nThe integer values are used for harmonization with IEC 61850." ;
+        rdfs:label              "UnitSymbol"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitSymbol.s  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Time in seconds." ;
+        rdfs:label       "s"@en ;
+        cims:stereotype  "enum" .
+
+nc:AssessedElement  rdf:type    rdfs:Class ;
+        rdfs:comment            "Assessed element is a network element for which the electrical state is evaluated in the regional or cross-regional process and which value is expected to fulfil regional rules function of the operational security limits.\nThe measurements and limits are as defined in the steady state hypothesis." ;
+        rdfs:label              "AssessedElement"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" .
+
+nc:AssessedElement.AvailabilityEnabled
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability enabled describes the enabling or disabling of this assessed element." ;
+        rdfs:domain           nc:AssessedElement ;
+        rdfs:label            "AvailabilityEnabled"@en ;
+        rdfs:range            nc:AvailabilityEnabled ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilityEnabled.AssessedElement ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityContainer
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Availability container serves for associating an equipment container with an availability schedule. For instance, putting in or out of service all the equipment inside a Line or a Bay in combination with other availability functions with the same availability schedule." ;
+        rdfs:label              "AvailabilityContainer"@en ;
+        rdfs:subClassOf         nc:AvailabilityPowerSystemFunction ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AvailabilityContainer.EquipmentContainer
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Equipment container that is affected by the availability given by this availability container." ;
+        rdfs:domain           nc:AvailabilityContainer ;
+        rdfs:label            "EquipmentContainer"@en ;
+        rdfs:range            cim:EquipmentContainer ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:EquipmentContainer.AvailabilityContainer ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityEnabled
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Availability enabled is enabling or disabling grid state alteration (e.g. tap position action) or assessed element that is related to the availability schedule. For instance, the cancellation of availability schedule can lead to changes in the  assessed element. This is done by enabling one assessment and disabling another." ;
+        rdfs:label              "AvailabilityEnabled"@en ;
+        rdfs:subClassOf         nc:AvailabilityPowerSystemFunction ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AvailabilityEnabled.AssessedElement
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Assessed element that is affected by the availability given by this availability enabling." ;
+        rdfs:domain           nc:AvailabilityEnabled ;
+        rdfs:label            "AssessedElement"@en ;
+        rdfs:range            nc:AssessedElement ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:AssessedElement.AvailabilityEnabled ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityEnabled.GridStateAlteration
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Grid state alteration that is affected by the availability given by this availability enabling." ;
+        rdfs:domain           nc:AvailabilityEnabled ;
+        rdfs:label            "GridStateAlteration"@en ;
+        rdfs:range            nc:GridStateAlteration ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:GridStateAlteration.AvailabilityEnabled ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityEnabled.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Instruction to enable or disable alteration and assessment." ;
+        rdfs:domain        nc:AvailabilityEnabled ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilityEquipment
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Availability equipment serves for associating an equipment with an availability schedule. For instance, putting in or out of service an ACLineSegment in combination with other availability functions with the same availability schedule." ;
+        rdfs:label              "AvailabilityEquipment"@en ;
+        rdfs:subClassOf         nc:AvailabilityPowerSystemFunction ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AvailabilityEquipment.Equipment
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Equipment that is affected by the availability given by this availability equipment." ;
+        rdfs:domain           nc:AvailabilityEquipment ;
+        rdfs:label            "Equipment"@en ;
+        rdfs:range            cim:Equipment ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Equipment.AvailabilityEquipment ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityExceptionalLimit
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Availability exceptional limit serves for associating an operational limit restriction with an availability schedule. For instance, enabling or disabling the current limit on ACLineSegment terminal in combination with other availability functions with the same availability schedule or de-rating due to fault." ;
+        rdfs:label              "AvailabilityExceptionalLimit"@en ;
+        rdfs:subClassOf         nc:AvailabilityPowerSystemFunction ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AvailabilityExceptionalLimit.OperationalLimit
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Operational limit that is constrained by this availability exceptional limit." ;
+        rdfs:domain           nc:AvailabilityExceptionalLimit ;
+        rdfs:label            "OperationalLimit"@en ;
+        rdfs:range            cim:OperationalLimit ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:OperationalLimit.AvailabilityExceptionalLimit ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityExceptionalLimit.value
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Value for the referred operational limit." ;
+        rdfs:domain        nc:AvailabilityExceptionalLimit ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilityFunctionKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of availability that is affecting the function." ;
+        rdfs:label              "AvailabilityFunctionKind"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:AvailabilityFunctionKind.inService
+        rdf:type         nc:AvailabilityFunctionKind ;
+        rdfs:comment     "Function is in service." ;
+        rdfs:label       "inService"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityFunctionKind.outOfService
+        rdf:type         nc:AvailabilityFunctionKind ;
+        rdfs:comment     "Function is out-of-service." ;
+        rdfs:label       "outOfService"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityFunctionKind.underTesting
+        rdf:type         nc:AvailabilityFunctionKind ;
+        rdfs:comment     "Function is under testing and need to expect unscheduled availability." ;
+        rdfs:label       "underTesting"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityGroup  rdf:type  rdfs:Class ;
+        rdfs:comment            "Container to link relevant equipment that is affected by (un)availability schedule across availability coordinator (e.g. TSO-TSO, TSO-DSO or DSO-DSO)." ;
+        rdfs:label              "AvailabilityGroup"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AvailabilityGroup.AvailabilityPowerSystemFunction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "All availability power system functions linked through mutual dependency with other availability power system functions controlled by other system operators." ;
+        rdfs:domain           nc:AvailabilityGroup ;
+        rdfs:label            "AvailabilityPowerSystemFunction"@en ;
+        rdfs:range            nc:AvailabilityPowerSystemFunction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilityPowerSystemFunction.AvailabilityGroup ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityPowerSystemFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Availability power system function describes the power system function that has a non-normal availability in the associated availability schedule. The availability of the function is needed as part of a power flow solution. This function is the cause and not the effect of the availability, if the effect can be calculated through power flow. For instance if only the step-up transformer for a generator is not available, the power flow will calculate that the generator is de-energized (outage). If both are tagged as not available it will not be possible to investigate remedial action for connecting the generator. It is expected that the power flow function is able to perform simple topology changes affected by a function taken out of service, e.g. open switches on both end of a ACLineSegment when the ACLineSegment is taken out of service. More complex changes, like change regulation set point, must be described in the linked GridStateAlterationCollection." ;
+        rdfs:label              "AvailabilityPowerSystemFunction"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" .
+
+nc:AvailabilityPowerSystemFunction.AvailabilityGroup
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Grouping for all availability power system functions (controlled by all relevant system operators) that have the same availability schedule." ;
+        rdfs:domain           nc:AvailabilityPowerSystemFunction ;
+        rdfs:label            "AvailabilityGroup"@en ;
+        rdfs:range            nc:AvailabilityGroup ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:AvailabilityGroup.AvailabilityPowerSystemFunction ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityPowerSystemFunction.AvailabilitySchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability schedule for this availability power system function." ;
+        rdfs:domain           nc:AvailabilityPowerSystemFunction ;
+        rdfs:label            "AvailabilitySchedule"@en ;
+        rdfs:range            nc:AvailabilitySchedule ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:AvailabilitySchedule.AvailabilityPowerSystemFunction ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityPowerSystemFunction.kind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Kind of availability that affect the power system function." ;
+        rdfs:domain        nc:AvailabilityPowerSystemFunction ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:AvailabilityFunctionKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilityRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Availability remedial action is a remedial action that cancels or reschedules an availability schedule." ;
+        rdfs:label              "AvailabilityRemedialAction"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" .
+
+nc:AvailabilityRemedialAction.AvailabilitySchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability schedule that is part of the remedial action." ;
+        rdfs:domain           nc:AvailabilityRemedialAction ;
+        rdfs:label            "AvailabilitySchedule"@en ;
+        rdfs:range            nc:AvailabilitySchedule ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilitySchedule.RemedialAction ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilityRemedialActionScheme
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Availability remedial action scheme serves for associating a remedial action scheme with an availability schedule. For instance, taking in or out of service a SIPS / SPS due to communication issue, in combination with other availability functions with the same availability schedule." ;
+        rdfs:label              "AvailabilityRemedialActionScheme"@en ;
+        rdfs:subClassOf         nc:AvailabilityPowerSystemFunction ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AvailabilityRemedialActionScheme.RemedialActionScheme
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Remedial action scheme that is affected by the availability given by this availability remedial action scheme." ;
+        rdfs:domain           nc:AvailabilityRemedialActionScheme ;
+        rdfs:label            "RemedialActionScheme"@en ;
+        rdfs:range            nc:RemedialActionScheme ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialActionScheme.AvailabilityRemedialActionScheme ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A given (un)availability schedule with a given status and cause that include multiple equipment that need to follow the same scheduling periods." ;
+        rdfs:label              "AvailabilitySchedule"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AvailabilitySchedule.ActualSchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Actual schedule that relates to this availability schedule; used for ex-post reporting and analysis (e.g., to compare planned vs. actual)." ;
+        rdfs:domain           nc:AvailabilitySchedule ;
+        rdfs:label            "ActualSchedule"@en ;
+        rdfs:range            nc:EventSchedule ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:EventSchedule.ActualAvailabilitySchedule ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule.AlternativeSchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Alternative schedule. The priority in regards to multiple alternatives is given by the priority attribute. This schedule is only relevant if all the alternatives with higher priority are cancelled." ;
+        rdfs:domain           nc:AvailabilitySchedule ;
+        rdfs:label            "AlternativeSchedule"@en ;
+        rdfs:range            nc:AvailabilitySchedule ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilitySchedule.PrioritySchedule ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule.AvailabilityPowerSystemFunction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "All the couplings that associate one concrete function (e.g., equipment or container, SIPS/SPSs, grid state alteration, exceptional operational limits) with the same availability schedule." ;
+        rdfs:domain           nc:AvailabilitySchedule ;
+        rdfs:label            "AvailabilityPowerSystemFunction"@en ;
+        rdfs:range            nc:AvailabilityPowerSystemFunction ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilityPowerSystemFunction.AvailabilitySchedule ;
+        cims:multiplicity     cims:M:1..n ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule.AvailabilitySchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability schedule that has a dependent availability schedule." ;
+        rdfs:domain           nc:AvailabilitySchedule ;
+        rdfs:label            "AvailabilitySchedule"@en ;
+        rdfs:range            nc:AvailabilitySchedule ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilitySchedule.DependentOnSchedule ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule.DependentOnSchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "(Un)availability schedule requested by one operator may require another operator to request their (un)availability schedule. This association is linking the schedules so that the dependency is clear.  " ;
+        rdfs:domain           nc:AvailabilitySchedule ;
+        rdfs:label            "DependentOnSchedule"@en ;
+        rdfs:range            nc:AvailabilitySchedule ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:AvailabilitySchedule.AvailabilitySchedule ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule.GridStateAlterationCollection
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The grid state alteration collection that has this availability schedule." ;
+        rdfs:domain           nc:AvailabilitySchedule ;
+        rdfs:label            "GridStateAlterationCollection"@en ;
+        rdfs:range            nc:GridStateAlterationCollection ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:GridStateAlterationCollection.AvailabilitySchedule ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule.PlannedSchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Planned schedule that relates to this availability schedule used for planning availability (e.g., to compare planned vs. actual)." ;
+        rdfs:domain           nc:AvailabilitySchedule ;
+        rdfs:label            "PlannedSchedule"@en ;
+        rdfs:range            nc:EventSchedule ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:EventSchedule.PlannedAvailabilitySchedule ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule.PrioritySchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Priority schedule. This is the schedule that has the highest priority and the only valid if not cancelled." ;
+        rdfs:domain           nc:AvailabilitySchedule ;
+        rdfs:label            "PrioritySchedule"@en ;
+        rdfs:range            nc:AvailabilitySchedule ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:AvailabilitySchedule.AlternativeSchedule ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule.RemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Remedial action that is cancelling this availability schedule." ;
+        rdfs:domain           nc:AvailabilitySchedule ;
+        rdfs:label            "RemedialAction"@en ;
+        rdfs:range            nc:AvailabilityRemedialAction ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:AvailabilityRemedialAction.AvailabilitySchedule ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:AvailabilitySchedule.cancelledDateTime
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The date and time the (un)availability schedule were cancelled . " ;
+        rdfs:domain        nc:AvailabilitySchedule ;
+        rdfs:label         "cancelledDateTime"@en ;
+        cims:dataType      cim:DateTime ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilitySchedule.causeDescription
+        rdf:type           rdf:Property ;
+        rdfs:comment       "A cause description for a cause kind. In case of CauseKind equals other, description or a reference of the cause of the (un)availability schedule." ;
+        rdfs:domain        nc:AvailabilitySchedule ;
+        rdfs:label         "causeDescription"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilitySchedule.causeKind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Kind of cause for the availability schedule." ;
+        rdfs:domain        nc:AvailabilitySchedule ;
+        rdfs:label         "causeKind"@en ;
+        rdfs:range         nc:AvailabilityScheduleCauseKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilitySchedule.daytimeRestitutionDuration
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The time required to take the out-of-service equipment back into service during daytime. This includes the start-up time for generating units." ;
+        rdfs:domain        nc:AvailabilitySchedule ;
+        rdfs:label         "daytimeRestitutionDuration"@en ;
+        cims:dataType      cim:Duration ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilitySchedule.eveningRestitutionDuration
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The time required to take the out-of-service equipment back into service after office hours. This includes the start-up time for generating units." ;
+        rdfs:domain        nc:AvailabilitySchedule ;
+        rdfs:label         "eveningRestitutionDuration"@en ;
+        cims:dataType      cim:Duration ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilitySchedule.maxRestitutionDuration
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The maximum time required to take the out-of-service equipment back into service. This includes the start-up time for generating units." ;
+        rdfs:domain        nc:AvailabilitySchedule ;
+        rdfs:label         "maxRestitutionDuration"@en ;
+        cims:dataType      cim:Duration ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilitySchedule.priority
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Value 0 means ignore priority. 1 means the highest priority, 2 is the second highest priority." ;
+        rdfs:domain        nc:AvailabilitySchedule ;
+        rdfs:label         "priority"@en ;
+        cims:dataType      cim:Integer ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilitySchedule.weekendRestitutionDuration
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The time required to take the out-of-service equipment back into service in the weekend or during bank holidays. This includes the start-up time for generating units." ;
+        rdfs:domain        nc:AvailabilitySchedule ;
+        rdfs:label         "weekendRestitutionDuration"@en ;
+        cims:dataType      cim:Duration ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilityScheduleCauseKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "The kinds of cause of the (un)availability schedule." ;
+        rdfs:label              "AvailabilityScheduleCauseKind"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:AvailabilityScheduleCauseKind.commissioning
+        rdf:type         nc:AvailabilityScheduleCauseKind ;
+        rdfs:comment     "The cause is due to a commissioning." ;
+        rdfs:label       "commissioning"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityScheduleCauseKind.decommissioning
+        rdf:type         nc:AvailabilityScheduleCauseKind ;
+        rdfs:comment     "The cause is due to a decommissioning." ;
+        rdfs:label       "decommissioning"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityScheduleCauseKind.environmentalCondition
+        rdf:type         nc:AvailabilityScheduleCauseKind ;
+        rdfs:comment     "The cause is due to an environmental condition. This can lead to exceptional margin and limits." ;
+        rdfs:label       "environmentalCondition"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityScheduleCauseKind.functionalControl
+        rdf:type         nc:AvailabilityScheduleCauseKind ;
+        rdfs:comment     "The cause is due to a functional control (in &amp; out)." ;
+        rdfs:label       "functionalControl"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityScheduleCauseKind.maintenance
+        rdf:type         nc:AvailabilityScheduleCauseKind ;
+        rdfs:comment     "The cause is due to a maintenance." ;
+        rdfs:label       "maintenance"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityScheduleCauseKind.other
+        rdf:type         nc:AvailabilityScheduleCauseKind ;
+        rdfs:comment     "The cause is of other kind." ;
+        rdfs:label       "other"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityScheduleCauseKind.refurbishment
+        rdf:type         nc:AvailabilityScheduleCauseKind ;
+        rdfs:comment     "The cause is due to a refurbishment, either upgrade or downgrade." ;
+        rdfs:label       "refurbishment"@en ;
+        cims:stereotype  "enum" .
+
+nc:AvailabilityScheduleCauseKind.worksInProximity
+        rdf:type         nc:AvailabilityScheduleCauseKind ;
+        rdfs:comment     "The cause is due to a works in proximity." ;
+        rdfs:label       "worksInProximity"@en ;
+        cims:stereotype  "enum" .
+
+nc:BaseIrregularTimeSeries
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Time series that has irregular points in time." ;
+        rdfs:label              "BaseIrregularTimeSeries"@en ;
+        rdfs:subClassOf         nc:BaseTimeSeries ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" .
+
+nc:BaseTimeSeries  rdf:type     rdfs:Class ;
+        rdfs:comment            "Time series of values at points in time." ;
+        rdfs:label              "BaseTimeSeries"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" .
+
+nc:BaseTimeSeries.interpolationKind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Kind of interpolation done between time point." ;
+        rdfs:domain        nc:BaseTimeSeries ;
+        rdfs:label         "interpolationKind"@en ;
+        rdfs:range         nc:TimeSeriesInterpolationKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:BaseTimeSeries.kind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Kind of base time series." ;
+        rdfs:domain        nc:BaseTimeSeries ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:BaseTimeSeriesKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:BaseTimeSeriesKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of time series. " ;
+        rdfs:label              "BaseTimeSeriesKind"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:BaseTimeSeriesKind.actual
+        rdf:type         nc:BaseTimeSeriesKind ;
+        rdfs:comment     "Time series is actual data. The values represent measured or calculated values that represent the actual behaviour. " ;
+        rdfs:label       "actual"@en ;
+        cims:stereotype  "enum" .
+
+nc:BaseTimeSeriesKind.schedule
+        rdf:type         nc:BaseTimeSeriesKind ;
+        rdfs:comment     "Time series is schedule data. The values represent the result of a committed and plan forecast data that has been through a quality control and could incur penalty when not followed." ;
+        rdfs:label       "schedule"@en ;
+        cims:stereotype  "enum" .
+
+nc:Equipment.AvailabilityEquipment
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability equipment describe the availabilty that affect this equipment." ;
+        rdfs:domain           cim:Equipment ;
+        rdfs:label            "AvailabilityEquipment"@en ;
+        rdfs:range            nc:AvailabilityEquipment ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilityEquipment.Equipment ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:EquipmentContainer.AvailabilityContainer
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability container describe the availabiltiy that affect this equipment container." ;
+        rdfs:domain           cim:EquipmentContainer ;
+        rdfs:label            "AvailabilityContainer"@en ;
+        rdfs:range            nc:AvailabilityContainer ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilityContainer.EquipmentContainer ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:EventSchedule  rdf:type      rdfs:Class ;
+        rdfs:comment            "Time series represent irregular event described by event points in time." ;
+        rdfs:label              "EventSchedule"@en ;
+        rdfs:subClassOf         nc:BaseIrregularTimeSeries ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:EventSchedule.ActualAvailabilitySchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Actual availability schedule that has this irregular interval schedule." ;
+        rdfs:domain           nc:EventSchedule ;
+        rdfs:label            "ActualAvailabilitySchedule"@en ;
+        rdfs:range            nc:AvailabilitySchedule ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilitySchedule.ActualSchedule ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:EventSchedule.EventTimePoint
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Value for the point in time." ;
+        rdfs:domain           nc:EventSchedule ;
+        rdfs:label            "EventTimePoint"@en ;
+        rdfs:range            nc:EventTimePoint ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:EventTimePoint.EventSchedule ;
+        cims:multiplicity     cims:M:1..n ;
+        cims:stereotype       "NC" ;
+        cims:stereotype       <http://iec.ch/TC57/NonStandard/UML#ofAggregate> .
+
+nc:EventSchedule.PlannedAvailabilitySchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Planned availability schedule that has this irregular interval schedule." ;
+        rdfs:domain           nc:EventSchedule ;
+        rdfs:label            "PlannedAvailabilitySchedule"@en ;
+        rdfs:range            nc:AvailabilitySchedule ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilitySchedule.PlannedSchedule ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:EventTimePoint  rdf:type     rdfs:Class ;
+        rdfs:comment            "Event valid for a given point in time." ;
+        rdfs:label              "EventTimePoint"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:EventTimePoint.EventSchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Time series the time point values belongs to." ;
+        rdfs:domain           nc:EventTimePoint ;
+        rdfs:label            "EventSchedule"@en ;
+        rdfs:range            nc:EventSchedule ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:EventSchedule.EventTimePoint ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:EventTimePoint.atTime
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The time the data is valid for." ;
+        rdfs:domain        nc:EventTimePoint ;
+        rdfs:label         "atTime"@en ;
+        cims:dataType      cim:DateTime ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:EventTimePoint.isActive
+        rdf:type           rdf:Property ;
+        rdfs:comment       "True, if the event is occurring (Active) at this time point. Otherwise false." ;
+        rdfs:domain        nc:EventTimePoint ;
+        rdfs:label         "isActive"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GridStateAlteration
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Grid state alteration is a change of values describing state (operating point) of one element in the grid model compared to the base case." ;
+        rdfs:label              "GridStateAlteration"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" .
+
+nc:GridStateAlteration.AvailabilityEnabled
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability enabled describes the enabling or disabling of this grid state alteration." ;
+        rdfs:domain           nc:GridStateAlteration ;
+        rdfs:label            "AvailabilityEnabled"@en ;
+        rdfs:range            nc:AvailabilityEnabled ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilityEnabled.GridStateAlteration ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:GridStateAlterationCollection
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A collection of grid state alterations." ;
+        rdfs:label              "GridStateAlterationCollection"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" .
+
+nc:GridStateAlterationCollection.AvailabilitySchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability schedule that require the a collection of grid state alteration to provide a valid power flow solution. For instance, a set of switching plans." ;
+        rdfs:domain           nc:GridStateAlterationCollection ;
+        rdfs:label            "AvailabilitySchedule"@en ;
+        rdfs:range            nc:AvailabilitySchedule ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilitySchedule.GridStateAlterationCollection ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:OperationalLimit.AvailabilityExceptionalLimit
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability exceptional limit that constrain this operational limit." ;
+        rdfs:domain           cim:OperationalLimit ;
+        rdfs:label            "AvailabilityExceptionalLimit"@en ;
+        rdfs:range            nc:AvailabilityExceptionalLimit ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilityExceptionalLimit.OperationalLimit ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionScheme
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Remedial Action Scheme (RAS), Special Protection Schemes (SPS), System Protection Schemes (SPS) or System Integrity Protection Schemes (SIPS).\nA Remedial Action Scheme consists of one or more stages that can trigger and execute a protection action." ;
+        rdfs:label              "RemedialActionScheme"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" .
+
+nc:RemedialActionScheme.AvailabilityRemedialActionScheme
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Availability remedial action scheme describe the availabiltiy that affect this remedial action scheme." ;
+        rdfs:domain           nc:RemedialActionScheme ;
+        rdfs:label            "AvailabilityRemedialActionScheme"@en ;
+        rdfs:range            nc:AvailabilityRemedialActionScheme ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:AvailabilityRemedialActionScheme.RemedialActionScheme ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:TimeSeriesInterpolationKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kinds of interpolation of values between two time point. " ;
+        rdfs:label              "TimeSeriesInterpolationKind"@en ;
+        cims:belongsToCategory  as:Package_AvailabilityScheduleProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:TimeSeriesInterpolationKind.previous
+        rdf:type         nc:TimeSeriesInterpolationKind ;
+        rdfs:comment     "The value between two time points is set to previous value." ;
+        rdfs:label       "previous"@en ;
+        cims:stereotype  "enum" .
+
+profcim:IRI  rdf:type           rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as rdf:resource in RDFXML.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "IRI"@en ;
+        cims:belongsToCategory  as:Package_DocAvailabilityScheduleProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringFixedLanguage
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.\nThe primitive is serialized as literal without language support." ;
+        rdfs:label              "StringFixedLanguage"@en ;
+        cims:belongsToCategory  as:Package_DocAvailabilityScheduleProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringIRI  rdf:type     rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as literal without language support.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "StringIRI"@en ;
+        cims:belongsToCategory  as:Package_DocAvailabilityScheduleProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:URL  rdf:type           rdfs:Class ;
+        rdfs:comment            "A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably.URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications." ;
+        rdfs:label              "URL"@en ;
+        cims:belongsToCategory  as:Package_DocAvailabilityScheduleProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+

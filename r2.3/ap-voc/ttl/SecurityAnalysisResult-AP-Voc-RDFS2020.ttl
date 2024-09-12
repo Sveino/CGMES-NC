@@ -1,0 +1,605 @@
+@prefix cim:     <https://cim.ucaiug.io/ns#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix nc:      <https://cim4.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix profcim: <https://cim.ucaiug.io/ns/prof-cim#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sar:     <https://ap.cim4.eu/SecurityAnalysisResult#> .
+
+cim:ACDCTerminal  rdf:type      rdfs:Class ;
+        rdfs:comment            "An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes." ;
+        rdfs:label              "ACDCTerminal"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile .
+
+cim:ActivePower  rdf:type       rdfs:Class ;
+        rdfs:comment            "Product of RMS value of the voltage and the RMS value of the in-phase component of the current." ;
+        rdfs:label              "ActivePower"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:ActivePower.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ActivePower ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "M" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ActivePower.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:ActivePower ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "W" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ActivePower.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ActivePower ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:AngleDegrees  rdf:type      rdfs:Class ;
+        rdfs:comment            "Measurement of angle in degrees." ;
+        rdfs:label              "AngleDegrees"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:AngleDegrees.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:AngleDegrees ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:AngleDegrees.unit
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:AngleDegrees ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "deg" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:AngleDegrees.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:AngleDegrees ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ApparentPower  rdf:type     rdfs:Class ;
+        rdfs:comment            "Product of the RMS value of the voltage and the RMS value of the current." ;
+        rdfs:label              "ApparentPower"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:ApparentPower.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ApparentPower ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "M" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ApparentPower.unit
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ApparentPower ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "VA" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ApparentPower.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ApparentPower ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Boolean  rdf:type           rdfs:Class ;
+        rdfs:comment            "A type with the value space \"true\" and \"false\"." ;
+        rdfs:label              "Boolean"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Contingency  rdf:type       rdfs:Class ;
+        rdfs:comment            "An event threatening system reliability, consisting of one or more contingency elements." ;
+        rdfs:label              "Contingency"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile .
+
+cim:CurrentFlow  rdf:type       rdfs:Class ;
+        rdfs:comment            "Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC." ;
+        rdfs:label              "CurrentFlow"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:CurrentFlow.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:CurrentFlow ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:CurrentFlow.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:CurrentFlow ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "A" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:CurrentFlow.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:CurrentFlow ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Date  rdf:type              rdfs:Class ;
+        rdfs:comment            "Date as \"yyyy-mm-dd\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddZ\". A local timezone relative UTC is specified as \"yyyy-mm-dd(+/-)hh:mm\"." ;
+        rdfs:label              "Date"@en ;
+        cims:belongsToCategory  sar:Package_DocSecurityAnalysisResultProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:DateTime  rdf:type          rdfs:Class ;
+        rdfs:comment            "Date and time as \"yyyy-mm-ddThh:mm:ss.sss\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddThh:mm:ss.sssZ\". A local timezone relative UTC is specified as \"yyyy-mm-ddThh:mm:ss.sss-hh:mm\". The second component (shown here as \"ss.sss\") could have any number of digits in its fractional part to allow any kind of precision beyond seconds." ;
+        rdfs:label              "DateTime"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Float  rdf:type             rdfs:Class ;
+        rdfs:comment            "A floating point number. The range is unspecified and not limited." ;
+        rdfs:label              "Float"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:OperationalLimit  rdf:type  rdfs:Class ;
+        rdfs:comment            "A value and normal value associated with a specific kind of limit. \nThe sub class value and normalValue attributes vary inversely to the associated OperationalLimitType.acceptableDuration (acceptableDuration for short).  \nIf a particular piece of equipment has multiple operational limits of the same kind (apparent power, current, etc.), the limit with the greatest acceptableDuration shall have the smallest limit value and the limit with the smallest acceptableDuration shall have the largest limit value.  Note: A large current can only be allowed to flow through a piece of equipment for a short duration without causing damage, but a lesser current can be allowed to flow for a longer duration. " ;
+        rdfs:label              "OperationalLimit"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile .
+
+cim:PerCent  rdf:type           rdfs:Class ;
+        rdfs:comment            "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base." ;
+        rdfs:label              "PerCent"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:PerCent.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent.value  rdf:type  rdf:Property ;
+        rdfs:comment       "Normally 0 to 100 on a defined base." ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ReactivePower  rdf:type     rdfs:Class ;
+        rdfs:comment            "Product of RMS value of the voltage and the RMS value of the quadrature component of the current." ;
+        rdfs:label              "ReactivePower"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:ReactivePower.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ReactivePower ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "M" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ReactivePower.unit
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ReactivePower ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "VAr" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ReactivePower.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ReactivePower ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:String  rdf:type            rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited." ;
+        rdfs:label              "String"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:UnitMultiplier  rdf:type    rdfs:Class ;
+        rdfs:comment            "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type. \n\nFor example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol \"Þ\" represents the derived unit \"m2Pers\", then applying the multiplier \"k\" can be conceptualized simply as \"kÞ\".\n\nFor example, the SI unit for mass is \"kg\" and not \"g\".  If the unit symbol is defined as \"kg\", then the multiplier is applied to \"kg\" as a whole and does not replace the \"k\" in front of the \"g\". In this case, the multiplier of \"m\" would be used with the unit symbol of \"kg\" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the \"kg\" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the \"kg\" were replaced by a symbol \"Þ\", then it is easier to conceptualize the multiplier \"m\" as creating the proper unit \"mÞ\", and not the forbidden unit \"mkg\"." ;
+        rdfs:label              "UnitMultiplier"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitMultiplier.M  rdf:type  cim:UnitMultiplier ;
+        rdfs:comment     "Mega 10**6." ;
+        rdfs:label       "M"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitMultiplier.k  rdf:type  cim:UnitMultiplier ;
+        rdfs:comment     "Kilo 10**3." ;
+        rdfs:label       "k"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitMultiplier.none
+        rdf:type         cim:UnitMultiplier ;
+        rdfs:comment     "No multiplier or equivalently multiply by 1." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol  rdf:type        rdfs:Class ;
+        rdfs:comment            "The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as \"F\" instead of \"CPerV\". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as \"kgPerm3\". With the exception of the \"kg\", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole. \nEvery unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.\nTo allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol \"/\" is replaced by the letters \"Per\". Exponents are written in plain text after the unit as \"m3\" instead of being formatted as \"m\" with a superscript of 3  or introducing a symbol as in \"m^3\". The degree symbol \"°\" is replaced with the letters \"deg\". Any clarification of the meaning for a substitution is included in the description for the unit symbol.\nNon-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units. \nThe integer values are used for harmonization with IEC 61850." ;
+        rdfs:label              "UnitSymbol"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitSymbol.A  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Current in amperes." ;
+        rdfs:label       "A"@en ;
+        cims:stereotype  "enum" .
+cim:UnitSymbol.V  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Electric potential in volts (W/A)." ;
+        rdfs:label       "V"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.VA  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Apparent power in volt amperes. See also real power and reactive power." ;
+        rdfs:label       "VA"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.VAr  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Reactive power in volt amperes reactive. The “reactive” or “imaginary” component of electrical power (VIsin(phi)). (See also real power and apparent power).\nNote: Different meter designs use different methods to arrive at their results. Some meters may compute reactive power as an arithmetic value, while others compute the value vectorially. The data consumer should determine the method in use and the suitability of the measurement for the intended purpose." ;
+        rdfs:label       "VAr"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.W  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power." ;
+        rdfs:label       "W"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.deg  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Plane angle in degrees." ;
+        rdfs:label       "deg"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.none  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Dimension less quantity, e.g. count, per unit, etc." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+cim:Voltage  rdf:type           rdfs:Class ;
+        rdfs:comment            "Electrical voltage, can be both AC and DC." ;
+        rdfs:label              "Voltage"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:Voltage.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:Voltage ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "k" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Voltage.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Voltage ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "V" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Voltage.value  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Voltage ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ACDCTerminal.PowerFlowResult
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Power result associated with the ACDC terminal." ;
+        rdfs:domain           cim:ACDCTerminal ;
+        rdfs:label            "PowerFlowResult"@en ;
+        rdfs:range            nc:PowerFlowResult ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PowerFlowResult.ACDCTerminal ;
+        cims:multiplicity     cims:M:0..n .
+
+nc:BaseCasePowerFlowResult
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Base case power flow result for a given terminal." ;
+        rdfs:label              "BaseCasePowerFlowResult"@en ;
+        rdfs:subClassOf         nc:PowerFlowResult ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:Contingency.ContingencyPowerFlowResult
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The power flow result that is associated with a contingency." ;
+        rdfs:domain           cim:Contingency ;
+        rdfs:label            "ContingencyPowerFlowResult"@en ;
+        rdfs:range            nc:ContingencyPowerFlowResult ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:ContingencyPowerFlowResult.Contingency ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:ContingencyPowerFlowResult
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Contingency power flow result on a given terminal for a given contingency." ;
+        rdfs:label              "ContingencyPowerFlowResult"@en ;
+        rdfs:subClassOf         nc:PowerFlowResult ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ContingencyPowerFlowResult.Contingency
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The contingency that has this power flow result." ;
+        rdfs:domain           nc:ContingencyPowerFlowResult ;
+        rdfs:label            "Contingency"@en ;
+        rdfs:range            cim:Contingency ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Contingency.ContingencyPowerFlowResult ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:OperationalLimit.PowerFlowResult
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The limit violation associated with an operational limit." ;
+        rdfs:domain           cim:OperationalLimit ;
+        rdfs:label            "PowerFlowResult"@en ;
+        rdfs:range            nc:PowerFlowResult ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PowerFlowResult.OperationalLimit ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:PowerFlowResult  rdf:type    rdfs:Class ;
+        rdfs:comment            "Power flow result including any operational limit violation." ;
+        rdfs:label              "PowerFlowResult"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "NC" .
+
+nc:PowerFlowResult.ACDCTerminal
+        rdf:type              rdf:Property ;
+        rdfs:comment          "ACDC terminal where the powerflow result is located." ;
+        rdfs:domain           nc:PowerFlowResult ;
+        rdfs:label            "ACDCTerminal"@en ;
+        rdfs:range            cim:ACDCTerminal ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:ACDCTerminal.PowerFlowResult ;
+        cims:multiplicity     cims:M:1 .
+
+nc:PowerFlowResult.OperationalLimit
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The operational limit that has this limit violation." ;
+        rdfs:domain           nc:PowerFlowResult ;
+        rdfs:label            "OperationalLimit"@en ;
+        rdfs:range            cim:OperationalLimit ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:OperationalLimit.PowerFlowResult ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:PowerFlowResult.ReportedByRegion
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The region which reports this limit violation." ;
+        rdfs:domain           nc:PowerFlowResult ;
+        rdfs:label            "ReportedByRegion"@en ;
+        rdfs:range            nc:Region ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:Region.LimitViolation ;
+        cims:multiplicity     cims:M:0..1 ;
+        cims:stereotype       "NC" .
+
+nc:PowerFlowResult.absoluteValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Absolute value from a power flow calculation on a given terminal related to a given operational limit. For instance, if the operational limit is 1000 A and the current flow is 1100 A the absoluteValue is reported as 1100 A." ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "absoluteValue"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFlowResult.atTime
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The date and time of the scenario time that was studied and at which the limit violation occurred." ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "atTime"@en ;
+        cims:dataType      cim:DateTime ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFlowResult.isViolation
+        rdf:type           rdf:Property ;
+        rdfs:comment       "True if the power flow result is violating the associated operational limit. False if it is not violating the associated operational limits." ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "isViolation"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFlowResult.value
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The value of the limit violation in percent related to the value of the operational limit that is violated. For instance, if the operational limit is 1000 A and the current flow is 1100 A the value is reported as 110 %.  " ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFlowResult.valueA
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Current from a power flow calculation on a given terminal.\nLoad sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment." ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "valueA"@en ;
+        cims:dataType      cim:CurrentFlow ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFlowResult.valueAngle
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Voltage angle value from a power flow calculation on a given terminal." ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "valueAngle"@en ;
+        cims:dataType      cim:AngleDegrees ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFlowResult.valueV
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Voltage value from a power flow calculation on a given terminal. The attribute shall be a positive value." ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "valueV"@en ;
+        cims:dataType      cim:Voltage ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFlowResult.valueVA
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Apparent power value from a power flow calculation on a given terminal." ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "valueVA"@en ;
+        cims:dataType      cim:ApparentPower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFlowResult.valueVAR
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Reactive power value from a power flow calculation on a given terminal.\nLoad sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment." ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "valueVAR"@en ;
+        cims:dataType      cim:ReactivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFlowResult.valueW
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Active power value from a power flow calculation on a given terminal. \nLoad sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment." ;
+        rdfs:domain        nc:PowerFlowResult ;
+        rdfs:label         "valueW"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:Region  rdf:type             rdfs:Class ;
+        rdfs:comment            "A region where the system operator belongs to." ;
+        rdfs:label              "Region"@en ;
+        cims:belongsToCategory  sar:Package_SecurityAnalysisResultProfile ;
+        cims:stereotype         "NC" .
+
+nc:Region.LimitViolation
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The limit violation reported by a region." ;
+        rdfs:domain           nc:Region ;
+        rdfs:label            "LimitViolation"@en ;
+        rdfs:range            nc:PowerFlowResult ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:PowerFlowResult.ReportedByRegion ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+profcim:IRI  rdf:type           rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as rdf:resource in RDFXML.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "IRI"@en ;
+        cims:belongsToCategory  sar:Package_DocSecurityAnalysisResultProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringFixedLanguage
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.\nThe primitive is serialized as literal without language support." ;
+        rdfs:label              "StringFixedLanguage"@en ;
+        cims:belongsToCategory  sar:Package_DocSecurityAnalysisResultProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringIRI  rdf:type     rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as literal without language support.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "StringIRI"@en ;
+        cims:belongsToCategory  sar:Package_DocSecurityAnalysisResultProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:URL  rdf:type           rdfs:Class ;
+        rdfs:comment            "A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably.URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications." ;
+        rdfs:label              "URL"@en ;
+        cims:belongsToCategory  sar:Package_DocSecurityAnalysisResultProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+sar:Ontology  rdf:type        owl:Ontology ;
+        dcterms:conformsTo    "file://iec61970cim17v40_iec61968cim13v13a_iec62325cim03v17a.eap" , "urn:iso:std:iec:61970-401:draft:ed-1" , "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-301:ed-7:amd1" , "urn:iso:std:iec:61970-600-2:ed-1" , "file://CIM100_CGMES31v01_501-20v02_NC23v62_MM10v01.eap" ;
+        dcterms:creator       "ENTSO-E CIM WG NC project"@en ;
+        dcterms:description   "This vocabulary is describing the security analysis result profile."@en ;
+        dcterms:identifier    "urn:uuid:7d53a1b2-0dcc-4556-b868-6ed099bd9ac9" ;
+        dcterms:language      "en-GB" ;
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en ;
+        dcterms:modified      "2024-03-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:publisher     "ENTSO-E"@en ;
+        dcterms:rightsHolder  "ENTSO-E"@en ;
+        dcterms:title         "Security Analysis Result Vocabulary"@en ;
+        owl:priorVersion      <http://entsoe.eu/ns/CIM/SecurityAnalysisResult-EU/2.2> ;
+        owl:versionIRI        <https://ap.cim4.eu/SecurityAnalysisResult/2.3> ;
+        owl:versionInfo       "2.3.0"@en ;
+        dcat:keyword          "SAR" ;
+        dcat:theme            "vocabulary"@en .
+
+sar:Package_DocSecurityAnalysisResultProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains datatypes used only in the RDFS header." ;
+        rdfs:label    "DocSecurityAnalysisResultProfile"@en .
+
+sar:Package_SecurityAnalysisResultProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains the security analysis result profile.\nThis profile is not intended to replace the Topology (TP) and State Variables (SV) profiles. Its intention is to exchange power flow result that is relevant for security optimization, either through violation or through a loading threshold. Systems should not use this profile for dumping a full database. The modeling is optimized to have the minimum size in addition to a well defined value definition (e.g. active power, apparent power,etc.).\nRecommendation: If the terminals are connected with zero impedance, it is recommended to export only one terminal with a voltage (e.g. the terminal of a BusbarSection).\nThe connection between Contingency and Remedial Action is given by the Remedial Action Profile. The connection between AssessedElement and PowerFlowResult is given by the OperationalLimit." ;
+        rdfs:label    "SecurityAnalysisResultProfile"@en .
+

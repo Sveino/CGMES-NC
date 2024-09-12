@@ -1,0 +1,3317 @@
+@prefix cim:     <https://cim.ucaiug.io/ns#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix nc:      <https://cim4.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix profcim: <https://cim.ucaiug.io/ns/prof-cim#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssi:     <https://ap.cim4.eu/SteadyStateInstruction#> .
+
+cim:ActivePower  rdf:type       rdfs:Class ;
+        rdfs:comment            "Product of RMS value of the voltage and the RMS value of the in-phase component of the current." ;
+        rdfs:label              "ActivePower"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:ActivePower.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ActivePower ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "M" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ActivePower.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:ActivePower ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "W" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ActivePower.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ActivePower ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:AngleDegrees  rdf:type      rdfs:Class ;
+        rdfs:comment            "Measurement of angle in degrees." ;
+        rdfs:label              "AngleDegrees"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:AngleDegrees.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:AngleDegrees ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:AngleDegrees.unit
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:AngleDegrees ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "deg" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:AngleDegrees.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:AngleDegrees ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Boolean  rdf:type           rdfs:Class ;
+        rdfs:comment            "A type with the value space \"true\" and \"false\"." ;
+        rdfs:label              "Boolean"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Contingency  rdf:type       rdfs:Class ;
+        rdfs:comment            "An event threatening system reliability, consisting of one or more contingency elements." ;
+        rdfs:label              "Contingency"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" .
+
+cim:Contingency.mustStudy
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Set true if must study this contingency." ;
+        rdfs:domain        cim:Contingency ;
+        rdfs:label         "mustStudy"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Currency  rdf:type          rdfs:Class ;
+        rdfs:comment            "Monetary currencies.  ISO 4217 standard including 3-character currency code." ;
+        rdfs:label              "Currency"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:Currency.AED  rdf:type  cim:Currency ;
+        rdfs:comment     "United Arab Emirates dirham." ;
+        rdfs:label       "AED"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AFN  rdf:type  cim:Currency ;
+        rdfs:comment     "Afghan afghani." ;
+        rdfs:label       "AFN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ALL  rdf:type  cim:Currency ;
+        rdfs:comment     "Albanian lek." ;
+        rdfs:label       "ALL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AMD  rdf:type  cim:Currency ;
+        rdfs:comment     "Armenian dram." ;
+        rdfs:label       "AMD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ANG  rdf:type  cim:Currency ;
+        rdfs:comment     "Netherlands Antillean guilder." ;
+        rdfs:label       "ANG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AOA  rdf:type  cim:Currency ;
+        rdfs:comment     "Angolan kwanza." ;
+        rdfs:label       "AOA"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ARS  rdf:type  cim:Currency ;
+        rdfs:comment     "Argentine peso." ;
+        rdfs:label       "ARS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AUD  rdf:type  cim:Currency ;
+        rdfs:comment     "Australian dollar." ;
+        rdfs:label       "AUD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AWG  rdf:type  cim:Currency ;
+        rdfs:comment     "Aruban florin." ;
+        rdfs:label       "AWG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.AZN  rdf:type  cim:Currency ;
+        rdfs:comment     "Azerbaijani manat." ;
+        rdfs:label       "AZN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BAM  rdf:type  cim:Currency ;
+        rdfs:comment     "Bosnia and Herzegovina convertible mark." ;
+        rdfs:label       "BAM"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BBD  rdf:type  cim:Currency ;
+        rdfs:comment     "Barbados dollar." ;
+        rdfs:label       "BBD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BDT  rdf:type  cim:Currency ;
+        rdfs:comment     "Bangladeshi taka." ;
+        rdfs:label       "BDT"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BGN  rdf:type  cim:Currency ;
+        rdfs:comment     "Bulgarian lev." ;
+        rdfs:label       "BGN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BHD  rdf:type  cim:Currency ;
+        rdfs:comment     "Bahraini dinar." ;
+        rdfs:label       "BHD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BIF  rdf:type  cim:Currency ;
+        rdfs:comment     "Burundian franc." ;
+        rdfs:label       "BIF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BMD  rdf:type  cim:Currency ;
+        rdfs:comment     "Bermudian dollar (customarily known as Bermuda dollar)." ;
+        rdfs:label       "BMD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BND  rdf:type  cim:Currency ;
+        rdfs:comment     "Brunei dollar." ;
+        rdfs:label       "BND"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BOB  rdf:type  cim:Currency ;
+        rdfs:comment     "Boliviano." ;
+        rdfs:label       "BOB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BOV  rdf:type  cim:Currency ;
+        rdfs:comment     "Bolivian Mvdol (funds code)." ;
+        rdfs:label       "BOV"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BRL  rdf:type  cim:Currency ;
+        rdfs:comment     "Brazilian real." ;
+        rdfs:label       "BRL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BSD  rdf:type  cim:Currency ;
+        rdfs:comment     "Bahamian dollar." ;
+        rdfs:label       "BSD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BTN  rdf:type  cim:Currency ;
+        rdfs:comment     "Bhutanese ngultrum." ;
+        rdfs:label       "BTN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BWP  rdf:type  cim:Currency ;
+        rdfs:comment     "Botswana pula." ;
+        rdfs:label       "BWP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BYR  rdf:type  cim:Currency ;
+        rdfs:comment     "Belarusian ruble." ;
+        rdfs:label       "BYR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.BZD  rdf:type  cim:Currency ;
+        rdfs:comment     "Belize dollar." ;
+        rdfs:label       "BZD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CAD  rdf:type  cim:Currency ;
+        rdfs:comment     "Canadian dollar." ;
+        rdfs:label       "CAD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CDF  rdf:type  cim:Currency ;
+        rdfs:comment     "Congolese franc." ;
+        rdfs:label       "CDF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CHF  rdf:type  cim:Currency ;
+        rdfs:comment     "Swiss franc." ;
+        rdfs:label       "CHF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CLF  rdf:type  cim:Currency ;
+        rdfs:comment     "Unidad de Fomento (funds code), Chile." ;
+        rdfs:label       "CLF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CLP  rdf:type  cim:Currency ;
+        rdfs:comment     "Chilean peso." ;
+        rdfs:label       "CLP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CNY  rdf:type  cim:Currency ;
+        rdfs:comment     "Chinese yuan." ;
+        rdfs:label       "CNY"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.COP  rdf:type  cim:Currency ;
+        rdfs:comment     "Colombian peso." ;
+        rdfs:label       "COP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.COU  rdf:type  cim:Currency ;
+        rdfs:comment     "Unidad de Valor Real." ;
+        rdfs:label       "COU"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CRC  rdf:type  cim:Currency ;
+        rdfs:comment     "Costa Rican colon." ;
+        rdfs:label       "CRC"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CUC  rdf:type  cim:Currency ;
+        rdfs:comment     "Cuban convertible peso." ;
+        rdfs:label       "CUC"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CUP  rdf:type  cim:Currency ;
+        rdfs:comment     "Cuban peso." ;
+        rdfs:label       "CUP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CVE  rdf:type  cim:Currency ;
+        rdfs:comment     "Cape Verde escudo." ;
+        rdfs:label       "CVE"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.CZK  rdf:type  cim:Currency ;
+        rdfs:comment     "Czech koruna." ;
+        rdfs:label       "CZK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.DJF  rdf:type  cim:Currency ;
+        rdfs:comment     "Djiboutian franc." ;
+        rdfs:label       "DJF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.DKK  rdf:type  cim:Currency ;
+        rdfs:comment     "Danish krone." ;
+        rdfs:label       "DKK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.DOP  rdf:type  cim:Currency ;
+        rdfs:comment     "Dominican peso." ;
+        rdfs:label       "DOP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.DZD  rdf:type  cim:Currency ;
+        rdfs:comment     "Algerian dinar." ;
+        rdfs:label       "DZD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.EEK  rdf:type  cim:Currency ;
+        rdfs:comment     "Estonian kroon." ;
+        rdfs:label       "EEK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.EGP  rdf:type  cim:Currency ;
+        rdfs:comment     "Egyptian pound." ;
+        rdfs:label       "EGP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ERN  rdf:type  cim:Currency ;
+        rdfs:comment     "Eritrean nakfa." ;
+        rdfs:label       "ERN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ETB  rdf:type  cim:Currency ;
+        rdfs:comment     "Ethiopian birr." ;
+        rdfs:label       "ETB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.EUR  rdf:type  cim:Currency ;
+        rdfs:comment     "Euro." ;
+        rdfs:label       "EUR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.FJD  rdf:type  cim:Currency ;
+        rdfs:comment     "Fiji dollar." ;
+        rdfs:label       "FJD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.FKP  rdf:type  cim:Currency ;
+        rdfs:comment     "Falkland Islands pound." ;
+        rdfs:label       "FKP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GBP  rdf:type  cim:Currency ;
+        rdfs:comment     "Pound sterling." ;
+        rdfs:label       "GBP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GEL  rdf:type  cim:Currency ;
+        rdfs:comment     "Georgian lari." ;
+        rdfs:label       "GEL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GHS  rdf:type  cim:Currency ;
+        rdfs:comment     "Ghanaian cedi." ;
+        rdfs:label       "GHS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GIP  rdf:type  cim:Currency ;
+        rdfs:comment     "Gibraltar pound." ;
+        rdfs:label       "GIP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GMD  rdf:type  cim:Currency ;
+        rdfs:comment     "Gambian dalasi." ;
+        rdfs:label       "GMD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GNF  rdf:type  cim:Currency ;
+        rdfs:comment     "Guinean franc." ;
+        rdfs:label       "GNF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GTQ  rdf:type  cim:Currency ;
+        rdfs:comment     "Guatemalan quetzal." ;
+        rdfs:label       "GTQ"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.GYD  rdf:type  cim:Currency ;
+        rdfs:comment     "Guyanese dollar." ;
+        rdfs:label       "GYD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HKD  rdf:type  cim:Currency ;
+        rdfs:comment     "Hong Kong dollar." ;
+        rdfs:label       "HKD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HNL  rdf:type  cim:Currency ;
+        rdfs:comment     "Honduran lempira." ;
+        rdfs:label       "HNL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HRK  rdf:type  cim:Currency ;
+        rdfs:comment     "Croatian kuna." ;
+        rdfs:label       "HRK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HTG  rdf:type  cim:Currency ;
+        rdfs:comment     "Haitian gourde." ;
+        rdfs:label       "HTG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.HUF  rdf:type  cim:Currency ;
+        rdfs:comment     "Hungarian forint." ;
+        rdfs:label       "HUF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.IDR  rdf:type  cim:Currency ;
+        rdfs:comment     "Indonesian rupiah." ;
+        rdfs:label       "IDR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ILS  rdf:type  cim:Currency ;
+        rdfs:comment     "Israeli new sheqel." ;
+        rdfs:label       "ILS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.INR  rdf:type  cim:Currency ;
+        rdfs:comment     "Indian rupee." ;
+        rdfs:label       "INR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.IQD  rdf:type  cim:Currency ;
+        rdfs:comment     "Iraqi dinar." ;
+        rdfs:label       "IQD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.IRR  rdf:type  cim:Currency ;
+        rdfs:comment     "Iranian rial." ;
+        rdfs:label       "IRR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ISK  rdf:type  cim:Currency ;
+        rdfs:comment     "Icelandic króna." ;
+        rdfs:label       "ISK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.JMD  rdf:type  cim:Currency ;
+        rdfs:comment     "Jamaican dollar." ;
+        rdfs:label       "JMD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.JOD  rdf:type  cim:Currency ;
+        rdfs:comment     "Jordanian dinar." ;
+        rdfs:label       "JOD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.JPY  rdf:type  cim:Currency ;
+        rdfs:comment     "Japanese yen." ;
+        rdfs:label       "JPY"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KES  rdf:type  cim:Currency ;
+        rdfs:comment     "Kenyan shilling." ;
+        rdfs:label       "KES"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KGS  rdf:type  cim:Currency ;
+        rdfs:comment     "Kyrgyzstani som." ;
+        rdfs:label       "KGS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KHR  rdf:type  cim:Currency ;
+        rdfs:comment     "Cambodian riel." ;
+        rdfs:label       "KHR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KMF  rdf:type  cim:Currency ;
+        rdfs:comment     "Comoro franc." ;
+        rdfs:label       "KMF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KPW  rdf:type  cim:Currency ;
+        rdfs:comment     "North Korean won." ;
+        rdfs:label       "KPW"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KRW  rdf:type  cim:Currency ;
+        rdfs:comment     "South Korean won." ;
+        rdfs:label       "KRW"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KWD  rdf:type  cim:Currency ;
+        rdfs:comment     "Kuwaiti dinar." ;
+        rdfs:label       "KWD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KYD  rdf:type  cim:Currency ;
+        rdfs:comment     "Cayman Islands dollar." ;
+        rdfs:label       "KYD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.KZT  rdf:type  cim:Currency ;
+        rdfs:comment     "Kazakhstani tenge." ;
+        rdfs:label       "KZT"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LAK  rdf:type  cim:Currency ;
+        rdfs:comment     "Lao kip." ;
+        rdfs:label       "LAK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LBP  rdf:type  cim:Currency ;
+        rdfs:comment     "Lebanese pound." ;
+        rdfs:label       "LBP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LKR  rdf:type  cim:Currency ;
+        rdfs:comment     "Sri Lanka rupee." ;
+        rdfs:label       "LKR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LRD  rdf:type  cim:Currency ;
+        rdfs:comment     "Liberian dollar." ;
+        rdfs:label       "LRD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LSL  rdf:type  cim:Currency ;
+        rdfs:comment     "Lesotho loti." ;
+        rdfs:label       "LSL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LTL  rdf:type  cim:Currency ;
+        rdfs:comment     "Lithuanian litas." ;
+        rdfs:label       "LTL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LVL  rdf:type  cim:Currency ;
+        rdfs:comment     "Latvian lats." ;
+        rdfs:label       "LVL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.LYD  rdf:type  cim:Currency ;
+        rdfs:comment     "Libyan dinar." ;
+        rdfs:label       "LYD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MAD  rdf:type  cim:Currency ;
+        rdfs:comment     "Moroccan dirham." ;
+        rdfs:label       "MAD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MDL  rdf:type  cim:Currency ;
+        rdfs:comment     "Moldovan leu." ;
+        rdfs:label       "MDL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MGA  rdf:type  cim:Currency ;
+        rdfs:comment     "Malagasy ariary." ;
+        rdfs:label       "MGA"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MKD  rdf:type  cim:Currency ;
+        rdfs:comment     "Macedonian denar." ;
+        rdfs:label       "MKD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MMK  rdf:type  cim:Currency ;
+        rdfs:comment     "Myanma kyat." ;
+        rdfs:label       "MMK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MNT  rdf:type  cim:Currency ;
+        rdfs:comment     "Mongolian tugrik." ;
+        rdfs:label       "MNT"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MOP  rdf:type  cim:Currency ;
+        rdfs:comment     "Macanese pataca." ;
+        rdfs:label       "MOP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MRO  rdf:type  cim:Currency ;
+        rdfs:comment     "Mauritanian ouguiya." ;
+        rdfs:label       "MRO"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MUR  rdf:type  cim:Currency ;
+        rdfs:comment     "Mauritian rupee." ;
+        rdfs:label       "MUR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MVR  rdf:type  cim:Currency ;
+        rdfs:comment     "Maldivian rufiyaa." ;
+        rdfs:label       "MVR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MWK  rdf:type  cim:Currency ;
+        rdfs:comment     "Malawian kwacha." ;
+        rdfs:label       "MWK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MXN  rdf:type  cim:Currency ;
+        rdfs:comment     "Mexican peso." ;
+        rdfs:label       "MXN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MYR  rdf:type  cim:Currency ;
+        rdfs:comment     "Malaysian ringgit." ;
+        rdfs:label       "MYR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.MZN  rdf:type  cim:Currency ;
+        rdfs:comment     "Mozambican metical." ;
+        rdfs:label       "MZN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NAD  rdf:type  cim:Currency ;
+        rdfs:comment     "Namibian dollar." ;
+        rdfs:label       "NAD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NGN  rdf:type  cim:Currency ;
+        rdfs:comment     "Nigerian naira." ;
+        rdfs:label       "NGN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NIO  rdf:type  cim:Currency ;
+        rdfs:comment     "Cordoba oro." ;
+        rdfs:label       "NIO"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NOK  rdf:type  cim:Currency ;
+        rdfs:comment     "Norwegian krone." ;
+        rdfs:label       "NOK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NPR  rdf:type  cim:Currency ;
+        rdfs:comment     "Nepalese rupee." ;
+        rdfs:label       "NPR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.NZD  rdf:type  cim:Currency ;
+        rdfs:comment     "New Zealand dollar." ;
+        rdfs:label       "NZD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.OMR  rdf:type  cim:Currency ;
+        rdfs:comment     "Omani rial." ;
+        rdfs:label       "OMR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PAB  rdf:type  cim:Currency ;
+        rdfs:comment     "Panamanian balboa." ;
+        rdfs:label       "PAB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PEN  rdf:type  cim:Currency ;
+        rdfs:comment     "Peruvian nuevo sol." ;
+        rdfs:label       "PEN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PGK  rdf:type  cim:Currency ;
+        rdfs:comment     "Papua New Guinean kina." ;
+        rdfs:label       "PGK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PHP  rdf:type  cim:Currency ;
+        rdfs:comment     "Philippine peso." ;
+        rdfs:label       "PHP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PKR  rdf:type  cim:Currency ;
+        rdfs:comment     "Pakistani rupee." ;
+        rdfs:label       "PKR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PLN  rdf:type  cim:Currency ;
+        rdfs:comment     "Polish zloty." ;
+        rdfs:label       "PLN"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.PYG  rdf:type  cim:Currency ;
+        rdfs:comment     "Paraguayan guaraní." ;
+        rdfs:label       "PYG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.QAR  rdf:type  cim:Currency ;
+        rdfs:comment     "Qatari rial." ;
+        rdfs:label       "QAR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.RON  rdf:type  cim:Currency ;
+        rdfs:comment     "Romanian new leu." ;
+        rdfs:label       "RON"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.RSD  rdf:type  cim:Currency ;
+        rdfs:comment     "Serbian dinar." ;
+        rdfs:label       "RSD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.RUB  rdf:type  cim:Currency ;
+        rdfs:comment     "Russian rouble." ;
+        rdfs:label       "RUB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.RWF  rdf:type  cim:Currency ;
+        rdfs:comment     "Rwandan franc." ;
+        rdfs:label       "RWF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SAR  rdf:type  cim:Currency ;
+        rdfs:comment     "Saudi riyal." ;
+        rdfs:label       "SAR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SBD  rdf:type  cim:Currency ;
+        rdfs:comment     "Solomon Islands dollar." ;
+        rdfs:label       "SBD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SCR  rdf:type  cim:Currency ;
+        rdfs:comment     "Seychelles rupee." ;
+        rdfs:label       "SCR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SDG  rdf:type  cim:Currency ;
+        rdfs:comment     "Sudanese pound." ;
+        rdfs:label       "SDG"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SEK  rdf:type  cim:Currency ;
+        rdfs:comment     "Swedish krona/kronor." ;
+        rdfs:label       "SEK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SGD  rdf:type  cim:Currency ;
+        rdfs:comment     "Singapore dollar." ;
+        rdfs:label       "SGD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SHP  rdf:type  cim:Currency ;
+        rdfs:comment     "Saint Helena pound." ;
+        rdfs:label       "SHP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SLL  rdf:type  cim:Currency ;
+        rdfs:comment     "Sierra Leonean leone." ;
+        rdfs:label       "SLL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SOS  rdf:type  cim:Currency ;
+        rdfs:comment     "Somali shilling." ;
+        rdfs:label       "SOS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SRD  rdf:type  cim:Currency ;
+        rdfs:comment     "Surinamese dollar." ;
+        rdfs:label       "SRD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.STD  rdf:type  cim:Currency ;
+        rdfs:comment     "São Tomé and Príncipe dobra." ;
+        rdfs:label       "STD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SYP  rdf:type  cim:Currency ;
+        rdfs:comment     "Syrian pound." ;
+        rdfs:label       "SYP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.SZL  rdf:type  cim:Currency ;
+        rdfs:comment     "Lilangeni." ;
+        rdfs:label       "SZL"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.THB  rdf:type  cim:Currency ;
+        rdfs:comment     "Thai baht." ;
+        rdfs:label       "THB"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TJS  rdf:type  cim:Currency ;
+        rdfs:comment     "Tajikistani somoni." ;
+        rdfs:label       "TJS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TMT  rdf:type  cim:Currency ;
+        rdfs:comment     "Turkmenistani manat." ;
+        rdfs:label       "TMT"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TND  rdf:type  cim:Currency ;
+        rdfs:comment     "Tunisian dinar." ;
+        rdfs:label       "TND"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TOP  rdf:type  cim:Currency ;
+        rdfs:comment     "Tongan pa'anga." ;
+        rdfs:label       "TOP"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TRY  rdf:type  cim:Currency ;
+        rdfs:comment     "Turkish lira." ;
+        rdfs:label       "TRY"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TTD  rdf:type  cim:Currency ;
+        rdfs:comment     "Trinidad and Tobago dollar." ;
+        rdfs:label       "TTD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TWD  rdf:type  cim:Currency ;
+        rdfs:comment     "New Taiwan dollar." ;
+        rdfs:label       "TWD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.TZS  rdf:type  cim:Currency ;
+        rdfs:comment     "Tanzanian shilling." ;
+        rdfs:label       "TZS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.UAH  rdf:type  cim:Currency ;
+        rdfs:comment     "Ukrainian hryvnia." ;
+        rdfs:label       "UAH"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.UGX  rdf:type  cim:Currency ;
+        rdfs:comment     "Ugandan shilling." ;
+        rdfs:label       "UGX"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.USD  rdf:type  cim:Currency ;
+        rdfs:comment     "United States dollar." ;
+        rdfs:label       "USD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.UYU  rdf:type  cim:Currency ;
+        rdfs:comment     "Uruguayan peso." ;
+        rdfs:label       "UYU"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.UZS  rdf:type  cim:Currency ;
+        rdfs:comment     "Uzbekistan som." ;
+        rdfs:label       "UZS"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.VEF  rdf:type  cim:Currency ;
+        rdfs:comment     "Venezuelan bolívar fuerte." ;
+        rdfs:label       "VEF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.VND  rdf:type  cim:Currency ;
+        rdfs:comment     "Vietnamese Dong." ;
+        rdfs:label       "VND"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.VUV  rdf:type  cim:Currency ;
+        rdfs:comment     "Vanuatu vatu." ;
+        rdfs:label       "VUV"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.WST  rdf:type  cim:Currency ;
+        rdfs:comment     "Samoan tala." ;
+        rdfs:label       "WST"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.XAF  rdf:type  cim:Currency ;
+        rdfs:comment     "CFA franc BEAC." ;
+        rdfs:label       "XAF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.XCD  rdf:type  cim:Currency ;
+        rdfs:comment     "East Caribbean dollar." ;
+        rdfs:label       "XCD"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.XOF  rdf:type  cim:Currency ;
+        rdfs:comment     "CFA Franc BCEAO." ;
+        rdfs:label       "XOF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.XPF  rdf:type  cim:Currency ;
+        rdfs:comment     "CFP franc." ;
+        rdfs:label       "XPF"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.YER  rdf:type  cim:Currency ;
+        rdfs:comment     "Yemeni rial." ;
+        rdfs:label       "YER"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ZAR  rdf:type  cim:Currency ;
+        rdfs:comment     "South African rand." ;
+        rdfs:label       "ZAR"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ZMK  rdf:type  cim:Currency ;
+        rdfs:comment     "Zambian kwacha." ;
+        rdfs:label       "ZMK"@en ;
+        cims:stereotype  "enum" .
+
+cim:Currency.ZWL  rdf:type  cim:Currency ;
+        rdfs:comment     "Zimbabwe dollar." ;
+        rdfs:label       "ZWL"@en ;
+        cims:stereotype  "enum" .
+
+cim:CurrentFlow  rdf:type       rdfs:Class ;
+        rdfs:comment            "Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC." ;
+        rdfs:label              "CurrentFlow"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:CurrentFlow.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:CurrentFlow ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:CurrentFlow.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:CurrentFlow ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "A" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:CurrentFlow.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:CurrentFlow ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Date  rdf:type              rdfs:Class ;
+        rdfs:comment            "Date as \"yyyy-mm-dd\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddZ\". A local timezone relative UTC is specified as \"yyyy-mm-dd(+/-)hh:mm\"." ;
+        rdfs:label              "Date"@en ;
+        cims:belongsToCategory  ssi:Package_DocSteadyStateInstructionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:DateTime  rdf:type          rdfs:Class ;
+        rdfs:comment            "Date and time as \"yyyy-mm-ddThh:mm:ss.sss\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddThh:mm:ss.sssZ\". A local timezone relative UTC is specified as \"yyyy-mm-ddThh:mm:ss.sss-hh:mm\". The second component (shown here as \"ss.sss\") could have any number of digits in its fractional part to allow any kind of precision beyond seconds." ;
+        rdfs:label              "DateTime"@en ;
+        cims:belongsToCategory  ssi:Package_DocSteadyStateInstructionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Decimal  rdf:type           rdfs:Class ;
+        rdfs:comment            "Decimal is the base-10 notational system for representing real numbers." ;
+        rdfs:label              "Decimal"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Duration  rdf:type          rdfs:Class ;
+        rdfs:comment            "Duration as \"PnYnMnDTnHnMnS\" which conforms to ISO 8601, where nY expresses a number of years, nM a number of months, nD a number of days. The letter T separates the date expression from the time expression and, after it, nH identifies a number of hours, nM a number of minutes and nS a number of seconds. The number of seconds could be expressed as a decimal number, but all other numbers are integers." ;
+        rdfs:label              "Duration"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:EnergyConsumer  rdf:type    rdfs:Class ;
+        rdfs:comment            "Generic user of energy - a  point of consumption on the power system model.\nEnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only if there is no LoadResponseCharacteristic associated with EnergyConsumer or if LoadResponseCharacteristic.exponentModel is set to False." ;
+        rdfs:label              "EnergyConsumer"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+cim:Equipment  rdf:type         rdfs:Class ;
+        rdfs:comment            "The parts of a power system that are physical devices, electronic or mechanical." ;
+        rdfs:label              "Equipment"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" .
+
+cim:Equipment.inService
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Specifies the availability of the equipment. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model." ;
+        rdfs:domain        cim:Equipment ;
+        rdfs:label         "inService"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Equipment.networkAnalysisEnabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The equipment is enabled to participate in network analysis.  If unspecified, the value is assumed to be true." ;
+        rdfs:domain        cim:Equipment ;
+        rdfs:label         "networkAnalysisEnabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Float  rdf:type             rdfs:Class ;
+        rdfs:comment            "A floating point number. The range is unspecified and not limited." ;
+        rdfs:label              "Float"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Frequency  rdf:type         rdfs:Class ;
+        rdfs:comment            "Cycles per second." ;
+        rdfs:label              "Frequency"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:Frequency.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:Frequency ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Frequency.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Frequency ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "Hz" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Frequency.value  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Frequency ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:GeneratingUnit  rdf:type    rdfs:Class ;
+        rdfs:comment            "A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set." ;
+        rdfs:label              "GeneratingUnit"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+cim:GeneratingUnit.startupCost
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The initial startup cost incurred for each start of the GeneratingUnit." ;
+        rdfs:domain        cim:GeneratingUnit ;
+        rdfs:label         "startupCost"@en ;
+        cims:dataType      cim:Money ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:HydroPump  rdf:type         rdfs:Class ;
+        rdfs:comment            "A synchronous motor-driven pump, typically associated with a pumped storage plant." ;
+        rdfs:label              "HydroPump"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+cim:Impedance  rdf:type         rdfs:Class ;
+        rdfs:comment            "Ratio of voltage to current." ;
+        rdfs:label              "Impedance"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:Impedance.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:Impedance ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Impedance.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Impedance ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "ohm" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Impedance.value  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Impedance ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Integer  rdf:type           rdfs:Class ;
+        rdfs:comment            "An integer number. The range is unspecified and not limited." ;
+        rdfs:label              "Integer"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Money  rdf:type             rdfs:Class ;
+        rdfs:comment            "Amount of money." ;
+        rdfs:label              "Money"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:Money.multiplier  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Money ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Money.unit  rdf:type   rdf:Property ;
+        rdfs:domain        cim:Money ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:Currency ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Money.value  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Money ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Decimal ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent  rdf:type           rdfs:Class ;
+        rdfs:comment            "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base." ;
+        rdfs:label              "PerCent"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:PerCent.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PerCent.value  rdf:type  rdf:Property ;
+        rdfs:comment       "Normally 0 to 100 on a defined base." ;
+        rdfs:domain        cim:PerCent ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:PowerElectronicsUnit
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A generating unit or battery or aggregation that connects to the AC network using power electronics rather than rotating machines." ;
+        rdfs:label              "PowerElectronicsUnit"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+cim:ReactivePower  rdf:type     rdfs:Class ;
+        rdfs:comment            "Product of RMS value of the voltage and the RMS value of the quadrature component of the current." ;
+        rdfs:label              "ReactivePower"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:ReactivePower.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ReactivePower ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "M" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ReactivePower.unit
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ReactivePower ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "VAr" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:ReactivePower.value
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:ReactivePower ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:RealEnergy  rdf:type        rdfs:Class ;
+        rdfs:comment            "Real electrical energy." ;
+        rdfs:label              "RealEnergy"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:RealEnergy.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:RealEnergy ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "M" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:RealEnergy.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:RealEnergy ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "Wh" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:RealEnergy.value  rdf:type  rdf:Property ;
+        rdfs:domain        cim:RealEnergy ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:RegulatingCondEq  rdf:type  rdfs:Class ;
+        rdfs:comment            "A type of conducting equipment that can regulate a quantity (i.e. voltage or flow) at a specific point in the network. " ;
+        rdfs:label              "RegulatingCondEq"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile .
+
+cim:RegulatingCondEq.controlEnabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Specifies the regulation status of the equipment.  True is regulating, false is not regulating." ;
+        rdfs:domain        cim:RegulatingCondEq ;
+        rdfs:label         "controlEnabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Reservoir  rdf:type         rdfs:Class ;
+        rdfs:comment            "A water storage facility within a hydro system, including: ponds, lakes, lagoons, and rivers. The storage is usually behind some type of dam." ;
+        rdfs:label              "Reservoir"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+cim:Seconds  rdf:type           rdfs:Class ;
+        rdfs:comment            "Time, in seconds." ;
+        rdfs:label              "Seconds"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:Seconds.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:Seconds ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "none" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Seconds.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Seconds ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "s" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Seconds.value  rdf:type  rdf:Property ;
+        rdfs:comment       "Time, in seconds" ;
+        rdfs:domain        cim:Seconds ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:String  rdf:type            rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited." ;
+        rdfs:label              "String"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:UnitMultiplier  rdf:type    rdfs:Class ;
+        rdfs:comment            "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type. \n\nFor example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol \"Þ\" represents the derived unit \"m2Pers\", then applying the multiplier \"k\" can be conceptualized simply as \"kÞ\".\n\nFor example, the SI unit for mass is \"kg\" and not \"g\".  If the unit symbol is defined as \"kg\", then the multiplier is applied to \"kg\" as a whole and does not replace the \"k\" in front of the \"g\". In this case, the multiplier of \"m\" would be used with the unit symbol of \"kg\" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the \"kg\" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the \"kg\" were replaced by a symbol \"Þ\", then it is easier to conceptualize the multiplier \"m\" as creating the proper unit \"mÞ\", and not the forbidden unit \"mkg\"." ;
+        rdfs:label              "UnitMultiplier"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitMultiplier.M  rdf:type  cim:UnitMultiplier ;
+        rdfs:comment     "Mega 10**6." ;
+        rdfs:label       "M"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitMultiplier.k  rdf:type  cim:UnitMultiplier ;
+        rdfs:comment     "Kilo 10**3." ;
+        rdfs:label       "k"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitMultiplier.none
+        rdf:type         cim:UnitMultiplier ;
+        rdfs:comment     "No multiplier or equivalently multiply by 1." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol  rdf:type        rdfs:Class ;
+        rdfs:comment            "The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as \"F\" instead of \"CPerV\". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as \"kgPerm3\". With the exception of the \"kg\", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole. \nEvery unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.\nTo allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol \"/\" is replaced by the letters \"Per\". Exponents are written in plain text after the unit as \"m3\" instead of being formatted as \"m\" with a superscript of 3  or introducing a symbol as in \"m^3\". The degree symbol \"°\" is replaced with the letters \"deg\". Any clarification of the meaning for a substitution is included in the description for the unit symbol.\nNon-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units. \nThe integer values are used for harmonization with IEC 61850." ;
+        rdfs:label              "UnitSymbol"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+cim:UnitSymbol.A  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Current in amperes." ;
+        rdfs:label       "A"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.V  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Electric potential in volts (W/A)." ;
+        rdfs:label       "V"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.VAr  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Reactive power in volt amperes reactive. The “reactive” or “imaginary” component of electrical power (VIsin(phi)). (See also real power and apparent power).\nNote: Different meter designs use different methods to arrive at their results. Some meters may compute reactive power as an arithmetic value, while others compute the value vectorially. The data consumer should determine the method in use and the suitability of the measurement for the intended purpose." ;
+        rdfs:label       "VAr"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.W  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power." ;
+        rdfs:label       "W"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.Wh  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Real energy in watt hours." ;
+        rdfs:label       "Wh"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.deg  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Plane angle in degrees." ;
+        rdfs:label       "deg"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.none  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Dimension less quantity, e.g. count, per unit, etc." ;
+        rdfs:label       "none"@en ;
+        cims:stereotype  "enum" .
+
+cim:UnitSymbol.ohm  rdf:type  cim:UnitSymbol ;
+        rdfs:comment     "Electric resistance in ohms (V/A)." ;
+        rdfs:label       "ohm"@en ;
+        cims:stereotype  "enum" .
+
+cim:Voltage  rdf:type           rdfs:Class ;
+        rdfs:comment            "Electrical voltage, can be both AC and DC." ;
+        rdfs:label              "Voltage"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "CIMDatatype" .
+
+cim:Voltage.multiplier
+        rdf:type           rdf:Property ;
+        rdfs:domain        cim:Voltage ;
+        rdfs:label         "multiplier"@en ;
+        rdfs:range         cim:UnitMultiplier ;
+        cims:isFixed       "k" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Voltage.unit  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Voltage ;
+        rdfs:label         "unit"@en ;
+        rdfs:range         cim:UnitSymbol ;
+        cims:isFixed       "V" ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:Voltage.value  rdf:type  rdf:Property ;
+        rdfs:domain        cim:Voltage ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ACEmulationControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "The AC emulation control function is used when AC emulation model is activated for a DC system. It consists in computing the active power set point of the DC system as a function of the voltage angle difference between both points of common coupling with the AC network in order to mimic the behavior of an AC transmission line. This control mode enables the automatic adjustment of the active power reference following variations of the AC system operational point. \nThe setpoint of the DC system is calculated by Psetpoint=Pref+Kdc*(angle1-angle2), where\n- Pref is the existing active power setpoint; \n- Kdc is the control system gain and  \n- angle1 and angle2 are the phase angle measurement (measured at points of common coupling with the AC network) respectively at the side 1 and 2 of the DC system." ;
+        rdfs:label              "ACEmulationControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ACEmulationControlFunction.gain
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Control system gain in AC transmission emulation control measured in MW/deg. It plays the role of an admittance of the equivalent AC transmission line that the control is emulating the higher is the gain the higher is the active power transfer at steady state." ;
+        rdfs:domain        nc:ACEmulationControlFunction ;
+        rdfs:label         "gain"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ACEmulationControlFunction.referenceP
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Existing active power setpoint used to calculate the active power setpoint of the AC emulation control." ;
+        rdfs:domain        nc:ACEmulationControlFunction ;
+        rdfs:label         "referenceP"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ACEmulationControlFunction.timeConstant
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Control system time constant in AC transmission emulation control. It affects the time needed to \nreach a new steady state equilibrium point after a network perturbation extremely important to guarantee N-1 relief related to an interconnection. The higher is time constant the slower is the DC system dynamic." ;
+        rdfs:domain        nc:ACEmulationControlFunction ;
+        rdfs:label         "timeConstant"@en ;
+        cims:dataType      cim:Seconds ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ActivePowerControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Active power control function is a function block that calculates operating point of the controlled equipment to achieve the target active power." ;
+        rdfs:label              "ActivePowerControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ActivePowerControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the active power that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:ActivePowerControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AreaDispatchableUnit
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Allocates a given producing or consuming unit, including direct current corridor and collection of units, to a given control area (through the scheduling area) for supporting the control of the given area through dispatch instruction. " ;
+        rdfs:label              "AreaDispatchableUnit"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AreaDispatchableUnit.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Identifies if the unit is enabled to accept a dispatch instruction. If true, the unit is enabled to accept a dispatch instruction. If false, the unit has the capability, but it is not enabled to receive a dispatch instruction." ;
+        rdfs:domain        nc:AreaDispatchableUnit ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AreaDispatchableUnit.p
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node." ;
+        rdfs:domain        nc:AreaDispatchableUnit ;
+        rdfs:label         "p"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement  rdf:type    rdfs:Class ;
+        rdfs:comment            "Assessed element is a network element for which the electrical state is evaluated in the regional or cross-regional process and which value is expected to fulfil regional rules function of the operational security limits.\nThe measurements and limits are as defined in the steady state hypothesis." ;
+        rdfs:label              "AssessedElement"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AssessedElement.appointedMargin
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The percentage (appointed to a region) of the remaining margin obtained in the grid model to reach its current limit under normal operating conditions. The maximum percentage shall by default be 10% of the remaining margin.\nIt is only used when an assessed element is considered conservative for a region.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "appointedMargin"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.coordinatedValidationAdjustment
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Positive value calculated and provided by the Coordinated Capacity Calculator (CCC) for the reduction of Remaining Available Margin (RAM) in order to ensure grid security." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "coordinatedValidationAdjustment"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.coordinatedValidationAdjustmentJustification
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Free text description provided by the coordinated capacity calculator (CCC) for justifying the reduction of Remaining Available Margin (RAM) by means of Coordinated Validation Adjustment (CVA). This justification is not intended for any application processing purpose, it should only be used for reporting." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "coordinatedValidationAdjustmentJustification"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.criticalElementContingencyJustification
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Free text describing the justification  of critical element contingency categorization (e.g. the use of the kind). This justification is not intended for any application processing purpose, it should only be used for reporting." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "criticalElementContingencyJustification"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "If true, the assessed element is enabled, otherwise it is disabled." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.individualValidationAdjustment
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Positive value calculated and provided by System Operators from their individual validation process for the reduction of Remaining Available Margin (RAM) in order to ensure grid security." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "individualValidationAdjustment"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.individualValidationAdjustmentJustification
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Free text description provided by System Operators for justifying the reduction of Remaining Available Margin (RAM) by means of Individual Validation Adjustment (IVA). This justification is not intended for any application processing purpose, it should only be used for reporting." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "individualValidationAdjustmentJustification"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.individualValidationAdjustmentShare
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Positive value expressed calculated by the Coordinated Capacity Calculator (CCC) based on the provided Individual Validation Adjustment (IVA) by System Operators in order to show the actual reduction of Remaining Available Margin (RAM). Individual Validation Adjustment Share is a positive non-zero value. It is equal or less than the Individual Validation Adjustment value. " ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "individualValidationAdjustmentShare"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.maxFlow
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum flow on a conducting equipment or a collection of conducting equipment forming a power transfer corridor. For assessed element that becomes critical due to contingency, this value represents the maximum flow with remedial action taken into consideration." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "maxFlow"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.maxMarginAdjustment
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum adjustment, relative to maximum flow allowed for exceeding the maximum flow of this assessed element.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "maxMarginAdjustment"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.positiveVirtualMargin
+        rdf:type           rdf:Property ;
+        rdfs:comment       "A positive margin that defines the overload allowed in a solution for the assessed element for the current situation. The margin represents influences that can be solved by the System Operators using available remedial action which is not cross-border relevant remedial action.\nAll relevant operational limits (e.g. PATL, TATL, etc) are modified by this margin value. The attribute represents the increase.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "positiveVirtualMargin"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.scannedThresholdMargin
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Threshold percentage that a scanned element can be overloaded, on a given element, on top of any overload prior to optimisation (default= 5%). e.g. Initial loading of the element is 110%, with a 5% scanned threshold margin, the new maximum is 115% of the limit (e.g. PATL, TATL, etc).\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "scannedThresholdMargin"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElement.targetRemainingAvailableMarginJustification
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Free text describing the justification for the target Remaining Available Margin (RAM). This justification is not intended for any application processing purpose, it should only be used for reporting." ;
+        rdfs:domain        nc:AssessedElement ;
+        rdfs:label         "targetRemainingAvailableMarginJustification"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElementWithContingency
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Combination of an assessed element and a contingency." ;
+        rdfs:label              "AssessedElementWithContingency"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AssessedElementWithContingency.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "If true, the assessed element with contingency is enabled, otherwise it is disabled." ;
+        rdfs:domain        nc:AssessedElementWithContingency ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AssessedElementWithRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Combination of an assessed element and a remedial action" ;
+        rdfs:label              "AssessedElementWithRemedialAction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:AssessedElementWithRemedialAction.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "If true, the assessed element with remedial action is enabled, otherwise it is disabled." ;
+        rdfs:domain        nc:AssessedElementWithRemedialAction ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AutomationFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Automation function is a collection of functional block or other automation function that can be executed as a work cycle program as part of an automated system." ;
+        rdfs:label              "AutomationFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" .
+
+nc:AutomationFunction.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "True, if the automation function is enabled (active). Otherwise false." ;
+        rdfs:domain        nc:AutomationFunction ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:AvailabilityRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Availability remedial action is a remedial action that cancels or reschedules an availability schedule." ;
+        rdfs:label              "AvailabilityRemedialAction"@en ;
+        rdfs:subClassOf         nc:RemedialAction ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:BiddingZone  rdf:type        rdfs:Class ;
+        rdfs:comment            "A bidding zone is a market-based method for handling power transmission congestion. It consists of scheduling areas that include the relevant production (supply) and consumption (demand) to form an electrical area with the same market price without capacity allocation." ;
+        rdfs:label              "BiddingZone"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:BiddingZone.netPosition
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Net position is the netted sum of electricity exports and imports for each market time unit for a bidding zone." ;
+        rdfs:domain        nc:BiddingZone ;
+        rdfs:label         "netPosition"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:BiddingZoneBorder  rdf:type  rdfs:Class ;
+        rdfs:comment            "Defines the aggregated connection capacity between two Bidding Zones." ;
+        rdfs:label              "BiddingZoneBorder"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:BiddingZoneBorder.alreadyAllocatedCapacity
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Already Allocated Capacity (AAC) means the total amount of allocated transmission rights i.e. transmission capacity reserved by virtue of historical long-term contracts and the previously held transmission capacity reservation auctions." ;
+        rdfs:domain        nc:BiddingZoneBorder ;
+        rdfs:label         "alreadyAllocatedCapacity"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:BiddingZoneBorder.alreadyAllocatedFlow
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The maximum allowed flow on the collection of interconnection between two bidding zones." ;
+        rdfs:domain        nc:BiddingZoneBorder ;
+        rdfs:label         "alreadyAllocatedFlow"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:BiddingZoneBorder.availableTransferCapacity
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Available Transfer Capacity (ATC) means the transmission capacity that remains available, after allocation procedure, to be used under the physical conditions of the transmission system. ATC value is defined as: ATC = NTC - AAC." ;
+        rdfs:domain        nc:BiddingZoneBorder ;
+        rdfs:label         "availableTransferCapacity"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:BiddingZoneBorder.netTransferCapacity
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Net Transfer Capacity (NTC) is defined as NTC = TTC – TRM and corresponds to the maximum exchange between two areas compatible with operational security limits applicable in both areas and taking into account the technical uncertainties on future network conditions." ;
+        rdfs:domain        nc:BiddingZoneBorder ;
+        rdfs:label         "netTransferCapacity"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:BiddingZoneBorder.totalTransferCapacity
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Total Transfer Capacity (TTC) is the maximum exchange program between two areas compatible with operational security standards applicable at each system if future network conditions, generation and load patterns were perfectly known in advance." ;
+        rdfs:domain        nc:BiddingZoneBorder ;
+        rdfs:label         "totalTransferCapacity"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:BiddingZoneBorder.transmissionReliabilityMargin
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Transmission Reliability Margin (TRM) is the minimum reserve that system operators must have available at their connections so that they can help other countries to which their system is directly or indirectly connected, if necessary." ;
+        rdfs:domain        nc:BiddingZoneBorder ;
+        rdfs:label         "transmissionReliabilityMargin"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:CircuitShare  rdf:type       rdfs:Class ;
+        rdfs:comment            "Defines the share of the circuit which is part of an associated power transfer corridor." ;
+        rdfs:label              "CircuitShare"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:CircuitShare.contributionFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Contribution factor for the circuit which is part of a power transfer corridor.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        nc:CircuitShare ;
+        rdfs:label         "contributionFactor"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:CompensatorControlModeKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of compensator controller mode." ;
+        rdfs:label              "CompensatorControlModeKind"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:CompensatorControlModeKind.reactivePower
+        rdf:type         nc:CompensatorControlModeKind ;
+        rdfs:comment     "Reactive power control." ;
+        rdfs:label       "reactivePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:CompensatorControlModeKind.voltage
+        rdf:type         nc:CompensatorControlModeKind ;
+        rdfs:comment     "Voltage control." ;
+        rdfs:label       "voltage"@en ;
+        cims:stereotype  "enum" .
+
+nc:CompensatorController
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Compensator controller is controlling the equipment to optimize the use of the compensators. " ;
+        rdfs:label              "CompensatorController"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:CompensatorController.mode
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Mode of the compensator controller." ;
+        rdfs:domain        nc:CompensatorController ;
+        rdfs:label         "mode"@en ;
+        rdfs:range         nc:CompensatorControlModeKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:Contingency.probability
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The forecasted probability of the occurrence of the contingency based on the given operational condition, status of the equipment and the forecasted environment condition.\nThe allowed value range is [0,100]." ;
+        rdfs:domain        cim:Contingency ;
+        rdfs:label         "probability"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ContingencyWithRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Combination of a contingency and a remedial action. ContingencyWithRemedialAction shall not be instantiated for preventive RemedialAction (RemedialAction.kind equals RemedialActionKind.preventive)." ;
+        rdfs:label              "ContingencyWithRemedialAction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ContingencyWithRemedialAction.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "If true, the contingency with remedial action is enabled, otherwise it is disabled." ;
+        rdfs:domain        nc:ContingencyWithRemedialAction ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:CountertradeRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Countertrade is a remedial action to relieve physical congestions where the location of activated resources within the bidding zone is not known." ;
+        rdfs:label              "CountertradeRemedialAction"@en ;
+        rdfs:subClassOf         nc:PowerRemedialAction ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:CurrentControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Current control function is a function block that calculates the operating point of the controlled equipment  to achieve the target current." ;
+        rdfs:label              "CurrentControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:CurrentControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the current that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:CurrentControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:CurrentFlow ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:CurrentDroopControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Current droop control function is a function block that calculates the operating point of the controlled equipment to achieve the target current." ;
+        rdfs:label              "CurrentDroopControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:CurrentDroopControlFunction.targetValueCapacitive
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Setpoint when control is active in capacitive region." ;
+        rdfs:domain        nc:CurrentDroopControlFunction ;
+        rdfs:label         "targetValueCapacitive"@en ;
+        cims:dataType      cim:CurrentFlow ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:CurrentDroopControlFunction.targetValueInductive
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Setpoint when control is active in inductive region." ;
+        rdfs:domain        nc:CurrentDroopControlFunction ;
+        rdfs:label         "targetValueInductive"@en ;
+        cims:dataType      cim:CurrentFlow ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:CurrentDroopOverride
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Current droop override uses the following logic:\n- When the current exceeds a threshold the device executes the following transitions: 1) When injecting an inductive voltage or in monitoring mode the device tends to inject a voltage proportional to the difference between the line current and the aforementioned threshold. 2) When injecting a capacitive voltage the device transitions to monitoring mode. \n- If the aforementioned proportional voltage is lower than the initial one, the voltage injection remains unchanged. \nCurrent droop override is not applied when the device operates in currentDroop mode." ;
+        rdfs:label              "CurrentDroopOverride"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:CurrentDroopOverride.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "True, if the current droop override is enabled (active). Otherwise false." ;
+        rdfs:domain        nc:CurrentDroopOverride ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:CurrentDroopOverride.targetValueCapacitiveI
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Setpoint when control is active in capacitive region." ;
+        rdfs:domain        nc:CurrentDroopOverride ;
+        rdfs:label         "targetValueCapacitiveI"@en ;
+        cims:dataType      cim:CurrentFlow ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:CurrentDroopOverride.targetValueInductiveI
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Setpoint when control is active in inductive region." ;
+        rdfs:domain        nc:CurrentDroopOverride ;
+        rdfs:label         "targetValueInductiveI"@en ;
+        cims:dataType      cim:CurrentFlow ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCControlModeKind  rdf:type  rdfs:Class ;
+        rdfs:comment            "Kind of DC control mode." ;
+        rdfs:label              "DCControlModeKind"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:DCControlModeKind.acEmulation
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "An AC emulation control aims to reproduce the behaviour of an AC line by means of a function of the difference between angles in both converter stations in DC links embedded within a single synchronous AC grid. For changes in the phase angle on either station, the response of this control is to ‘emulate the behaviour of an AC line’ in both steady and transient states. \nThe AC emulation control needs measurement signals for the angles at both ends of the DC system (at the AC points of common coupling of the DC system). In practice, the angle difference is measured by built-in devices in the converters and the synchronization of angle measurements on both stations is done by means of GPS.\nACEmulationControlFunction is used by this control. The control can only be applied by a controller that have access to the two AC points of common coupling of the DC system. Therefore it cannot be applied for a ACDCConverterController." ;
+        rdfs:label       "acEmulation"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.acVoltage
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "AC voltage control mode (IEC 60633) is a control of the AC voltage of the AC network connected to a DC substation." ;
+        rdfs:label       "acVoltage"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.activePower
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Control is active power control at AC side, at point of common coupling. According to IEC 60633 the active power control mode is control of the active power flow exchanged between a DC substation and the connected AC network." ;
+        rdfs:label       "activePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.damping
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Damping control mode (IEC 60633) is supplementary control mode providing the damping of power oscillations in one or more connected AC networks." ;
+        rdfs:label       "damping"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.dcCurrent
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Control is DC current in a DC system (IEC 60633)." ;
+        rdfs:label       "dcCurrent"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.dcVoltage
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Control is DC voltage in a DC substation (IEC 60633)." ;
+        rdfs:label       "dcVoltage"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.frequency
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Frequency control mode (IEC 60633) is a control of the frequency of the connected AC network by varying the active power exchanged between a DC substation and the connected AC network." ;
+        rdfs:label       "frequency"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.islanded
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Islanded network operation mode (IEC 60633) is a control mode in which the DC substation is connected to an islanded AC network." ;
+        rdfs:label       "islanded"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.pPccAndUdcDroop
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Control is active power at point of common coupling and local DC voltage, with the droop." ;
+        rdfs:label       "pPccAndUdcDroop"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.pPccAndUdcDroopPilot
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Control is active power at point of common coupling and the pilot DC voltage, with the droop. The mode is used for Multi Terminal High Voltage DC (MTDC) systems where multiple DC Substations are connected to the DC transmission lines. The pilot voltage is then used to coordinate the control the DC voltage across the DC substations." ;
+        rdfs:label       "pPccAndUdcDroopPilot"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.pPccAndUdcDroopWithCompensation
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Control is active power at point of common coupling and compensated DC voltage, with the droop. Compensation factor is the resistance, as an approximation of the DC voltage of a common (real or virtual) node in the DC network." ;
+        rdfs:label       "pPccAndUdcDroopWithCompensation"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.phasePcc
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Control is phase at point of common coupling." ;
+        rdfs:label       "phasePcc"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.powerFactorPcc
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Control is power factor at point of common coupling." ;
+        rdfs:label       "powerFactorPcc"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.pulseWidthModulation
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "No explicit control. Pulse-modulation factor is directly set in magnitude and phase." ;
+        rdfs:label       "pulseWidthModulation"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.reactivePower
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Control is reactive power control at AC side, at point of common coupling. According to IEC 60633 reactive power control mode is a control of the reactive power exchanged between a converter unit, or DC substation and the connected AC network." ;
+        rdfs:label       "reactivePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCControlModeKind.sstiDamping
+        rdf:type         nc:DCControlModeKind ;
+        rdfs:comment     "Sub-synchronous torsional interaction (SSTI) damping control mode (IEC 60633) is a supplementary control mode providing the damping of critical frequencies of an (electrical) nearby generator." ;
+        rdfs:label       "sstiDamping"@en ;
+        cims:stereotype  "enum" .
+
+nc:DCCurrentControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "DC current control function is a function block that calculates the operating point of the controlled equipment  to achieve the target current." ;
+        rdfs:label              "DCCurrentControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:DCCurrentControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the current that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:DCCurrentControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:CurrentFlow ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCPole  rdf:type             rdfs:Class ;
+        rdfs:comment            "The direct current (DC) system pole (IEC 60633) is part of a DC system consisting of all the equipment in the DC substations and the interconnecting transmission lines, if any, which during normal operation exhibit a common direct voltage polarity with respect to earth." ;
+        rdfs:label              "DCPole"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:DCPole.maxEconomicP
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum high economic active power limit, that should not exceed the maximum operating active power limit." ;
+        rdfs:domain        nc:DCPole ;
+        rdfs:label         "maxEconomicP"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCPole.minEconomicP
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Low economic active power limit that shall be greater than or equal to the minimum operating active power limit." ;
+        rdfs:domain        nc:DCPole ;
+        rdfs:label         "minEconomicP"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCPole.p  rdf:type      rdf:Property ;
+        rdfs:comment       "Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node." ;
+        rdfs:domain        nc:DCPole ;
+        rdfs:label         "p"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCPole.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value.\nIn the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF). \nIn the case of priority strategy, the item with the lowest number gets allocated energy first." ;
+        rdfs:domain        nc:DCPole ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCSwitch  rdf:type           rdfs:Class ;
+        rdfs:comment            "A switch within the DC system." ;
+        rdfs:label              "DCSwitch"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:DCSwitch.locked  rdf:type  rdf:Property ;
+        rdfs:comment       "If true, the switch is locked. The resulting switch state is a combination of locked and DCSwitch.open attributes as follows:\n<ul>\n\t<li>locked=true and DCSwitch.open=true. The resulting state is open and locked;</li>\n\t<li>locked=false and DCSwitch.open=true. The resulting state is open;</li>\n\t<li>locked=false and DCSwitch.open=false. The resulting state is closed.</li>\n</ul>" ;
+        rdfs:domain        nc:DCSwitch ;
+        rdfs:label         "locked"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCSwitch.open  rdf:type  rdf:Property ;
+        rdfs:comment       "The attribute tells if the switch is considered open when used as input to topology processing." ;
+        rdfs:domain        nc:DCSwitch ;
+        rdfs:label         "open"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCTieCorridor  rdf:type      rdfs:Class ;
+        rdfs:comment            "A collection of one or more direct current poles that connect two different control areas." ;
+        rdfs:label              "DCTieCorridor"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:DCTieCorridor.p  rdf:type  rdf:Property ;
+        rdfs:comment       "Active power at the point of common coupling. Load sign convention is used, i.e. positive sign means flow out from a node.\nStarting value for a steady state solution in the case a simplified power flow model is used." ;
+        rdfs:domain        nc:DCTieCorridor ;
+        rdfs:label         "p"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCTieCorridor.q  rdf:type  rdf:Property ;
+        rdfs:comment       "Reactive power at the point of common coupling. Load sign convention is used, i.e. positive sign means flow out from a node.\nStarting value for a steady state solution in the case a simplified power flow model is used." ;
+        rdfs:domain        nc:DCTieCorridor ;
+        rdfs:label         "q"@en ;
+        cims:dataType      cim:ReactivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DCVoltageControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "DC voltage control function is a function block that calculate the operating point of the controlled equipment to achieve the target voltage." ;
+        rdfs:label              "DCVoltageControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:DCVoltageControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the voltage that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:DCVoltageControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:Voltage ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:DirectCurrentEquipmentController
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Direct current equipment controller used to control different parts of the hierarchical structure of the DC control system defined by IEC 60633." ;
+        rdfs:label              "DirectCurrentEquipmentController"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:DirectCurrentEquipmentController.mode
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Mode of the dc controller." ;
+        rdfs:domain        nc:DirectCurrentEquipmentController ;
+        rdfs:label         "mode"@en ;
+        rdfs:range         nc:DCControlModeKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:EnergyBlockOrder  rdf:type   rdfs:Class ;
+        rdfs:comment            "The energy block order is a block (an amount) of energy that forms the sequence of orders that are going to be distributed to an energy block component." ;
+        rdfs:label              "EnergyBlockOrder"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:EnergyBlockOrder.p
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The maximum active power that can be applied as part of this block order." ;
+        rdfs:domain        nc:EnergyBlockOrder ;
+        rdfs:label         "p"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:EnergyBlockOrder.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor." ;
+        rdfs:domain        nc:EnergyBlockOrder ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:EnergyBlockOrder.sequence
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Sequence needs to be ordered by the scheduling area. It has to be unique by the scheduling area." ;
+        rdfs:domain        nc:EnergyBlockOrder ;
+        rdfs:label         "sequence"@en ;
+        cims:dataType      cim:Integer ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:EnergyConsumer.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value.\nIn the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF). \nIn the case of priority strategy, the item with the lowest number gets allocated energy first." ;
+        rdfs:domain        cim:EnergyConsumer ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:EnergyGroup  rdf:type        rdfs:Class ;
+        rdfs:comment            "An energy group is an aggregation of energy components which have the same energy characteristic, e.g. fuel type and technology. It can be used to allocate energy. " ;
+        rdfs:label              "EnergyGroup"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:EnergyGroup.p  rdf:type  rdf:Property ;
+        rdfs:comment       "Active power for the energy group representing a particular energy type. e.g. WInd Power" ;
+        rdfs:domain        nc:EnergyGroup ;
+        rdfs:label         "p"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:EnergyGroup.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor for the power group in relation to scheduling area. Must be a positive value." ;
+        rdfs:domain        nc:EnergyGroup ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:FACTSEquipment  rdf:type     rdfs:Class ;
+        rdfs:comment            "Flexible Alternating Current Transmission System regulating equipment." ;
+        rdfs:label              "FACTSEquipment"@en ;
+        rdfs:subClassOf         cim:RegulatingCondEq ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" .
+
+nc:FACTSEquipment.q  rdf:type  rdf:Property ;
+        rdfs:comment       "Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\nStarting value for a steady state solution." ;
+        rdfs:domain        nc:FACTSEquipment ;
+        rdfs:label         "q"@en ;
+        cims:dataType      cim:ReactivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:FrequencyControlFuntion
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Frequency control function is a function block that calculate the operating point of the controlled equipment to achieve the target frequency." ;
+        rdfs:label              "FrequencyControlFuntion"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:FrequencyControlFuntion.frequencyBias
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the active power that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:FrequencyControlFuntion ;
+        rdfs:label         "frequencyBias"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:FrequencyControlFuntion.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the frequency that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:FrequencyControlFuntion ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:Frequency ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:FuelStorage  rdf:type        rdfs:Class ;
+        rdfs:comment            "Fuel storage. e.g. pile of coal that can be shared between multiple thermal generating units." ;
+        rdfs:label              "FuelStorage"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:FuelStorage.energyStorage
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Amount of energy available in the storage." ;
+        rdfs:domain        nc:FuelStorage ;
+        rdfs:label         "energyStorage"@en ;
+        cims:dataType      cim:RealEnergy ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:FunctionBlock  rdf:type      rdfs:Class ;
+        rdfs:comment            "Function block is a function described as a set of elementary blocks. The blocks describe the function between input variables and output variables." ;
+        rdfs:label              "FunctionBlock"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" .
+
+nc:FunctionBlock.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "True, if the function block is enabled (active). Otherwise false." ;
+        rdfs:domain        nc:FunctionBlock ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GeneratingUnit.mustRun
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Identifies if the generating unit is a must-run unit. This means that it cannot be instructed to shutdown due to other obligation. e.g. Providing heat. If true, the generating unit is must-run. If false, it is not." ;
+        rdfs:domain        cim:GeneratingUnit ;
+        rdfs:label         "mustRun"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GeneratingUnit.mustRunP
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Minimum active power injection that is needed to meet must-run requirement. This value can be higher or equal to minimum operational limit. Load sign convention is used, i.e. positive sign means flow out from a node." ;
+        rdfs:domain        cim:GeneratingUnit ;
+        rdfs:label         "mustRunP"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GeneratingUnit.mustRunQ
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Minimum reactive power injection that is needed to meet must-run requirement. This value can be higher or equal to minimum operational limit. Load sign convention is used, i.e. positive sign means flow out from a node." ;
+        rdfs:domain        cim:GeneratingUnit ;
+        rdfs:label         "mustRunQ"@en ;
+        cims:dataType      cim:ReactivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GeneratingUnit.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value.\nIn the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF). \nIn the case of priority strategy, the item with the lowest number gets allocated energy first." ;
+        rdfs:domain        cim:GeneratingUnit ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GeneratingUnit.warmStartupCost
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The warm startup cost incurred for each start of the GeneratingUnit." ;
+        rdfs:domain        cim:GeneratingUnit ;
+        rdfs:label         "warmStartupCost"@en ;
+        cims:dataType      cim:Money ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GridStateAlteration
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Grid state alteration is a change of values describing state (operating point) of one element in the grid model compared to the base case." ;
+        rdfs:label              "GridStateAlteration"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" .
+
+nc:GridStateAlteration.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The status of the GridStateAlteration set by an operation or by a signal resulting from a control action." ;
+        rdfs:domain        nc:GridStateAlteration ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GridStateAlteration.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value.\nIn the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF). \nIn the case of priority strategy, the item with the lowest number gets allocated energy first.\ne.g. If 0 this grid alteration does not participate. The sum of all participation factors for all grid state alterations associated with same remedial action shall be equal to 100%." ;
+        rdfs:domain        nc:GridStateAlteration ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:PerCent ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:GridStateAlterationRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Grid state alteration remedial action describes one or many grid state alterations applied to a grid model state or a particular scenario in order to resolve one or more identified constraints. " ;
+        rdfs:label              "GridStateAlterationRemedialAction"@en ;
+        rdfs:subClassOf         nc:RemedialAction ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:HydroPump.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value.\nIn the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF). \nIn the case of priority strategy, the item with the lowest number gets allocated energy first." ;
+        rdfs:domain        cim:HydroPump ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ImpedanceControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Impedance control function is a function block that calculates the operating point of the controlled equipment to achieve the target impedance." ;
+        rdfs:label              "ImpedanceControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ImpedanceControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the impedance that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:ImpedanceControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:Impedance ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:InfeedLimit  rdf:type        rdfs:Class ;
+        rdfs:comment            "Infeed limit set constraints fed in to the network by two or more terminals." ;
+        rdfs:label              "InfeedLimit"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:InfeedLimit.valueA
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Value of current limit. The attribute shall be a positive value or zero." ;
+        rdfs:domain        nc:InfeedLimit ;
+        rdfs:label         "valueA"@en ;
+        cims:dataType      cim:CurrentFlow ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:InfeedLimit.valueW
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Value of active power limit. The attribute shall be a positive value or zero." ;
+        rdfs:domain        nc:InfeedLimit ;
+        rdfs:label         "valueW"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:InjectionControlModeKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of injection controller mode." ;
+        rdfs:label              "InjectionControlModeKind"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:InjectionControlModeKind.activePower
+        rdf:type         nc:InjectionControlModeKind ;
+        rdfs:comment     "Active power is specified." ;
+        rdfs:label       "activePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:InjectionControlModeKind.powerFactor
+        rdf:type         nc:InjectionControlModeKind ;
+        rdfs:comment     "Power factor is specified." ;
+        rdfs:label       "powerFactor"@en ;
+        cims:stereotype  "enum" .
+
+nc:InjectionControlModeKind.reactivePower
+        rdf:type         nc:InjectionControlModeKind ;
+        rdfs:comment     "Reactive power control." ;
+        rdfs:label       "reactivePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:InjectionControlModeKind.voltage
+        rdf:type         nc:InjectionControlModeKind ;
+        rdfs:comment     "Voltage control." ;
+        rdfs:label       "voltage"@en ;
+        cims:stereotype  "enum" .
+
+nc:InjectionController
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Injection controller is controlling the equipment which represents an injection or an external network." ;
+        rdfs:label              "InjectionController"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:InjectionController.mode
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Mode of the injection controller." ;
+        rdfs:domain        nc:InjectionController ;
+        rdfs:label         "mode"@en ;
+        rdfs:range         nc:InjectionControlModeKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ModularStaticSynchronousSeriesCompensator
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Modular static synchronous series compensator (MSSSC) is a type of flexible AC transmission system regulating equipment which consists of solid-state voltage source inverter connected in series with a transmission line. This is similar to static synchronous series compensator (SSSC), but without injection transformer. This enables the MSSSC to be truly modular with the ability to simply install a number of equipment in series to provide a desired maximum level of impedance. MSSSC can be dispersed into multiple location in a circuit working collectively under the same controller scheme." ;
+        rdfs:label              "ModularStaticSynchronousSeriesCompensator"@en ;
+        rdfs:subClassOf         nc:FACTSEquipment ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PTCActivePowerSupport
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Defines the active power capability (support) of the scheme in relation to a PowerTransferCorridor." ;
+        rdfs:label              "PTCActivePowerSupport"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PTCActivePowerSupport.value
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The support that a System Integrity Protection Scheme (SIPS) gives to a Power Transfer Corridor (PTC)." ;
+        rdfs:domain        nc:PTCActivePowerSupport ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PhaseControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Phase control function is a function block that calculate the operating point of the controlled equipment to achieve the target voltage." ;
+        rdfs:label              "PhaseControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PhaseControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the phase that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:PhaseControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:AngleDegrees ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerCapacity  rdf:type      rdfs:Class ;
+        rdfs:comment            "Power capacity defines the capacity in regard to generation, consumption and transmission (import and export) for a relevant power system resource, e.g. bidding zone, including maximum and minimum electrical power capacity and any capacity allocation." ;
+        rdfs:label              "PowerCapacity"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PowerCapacity.maxInterchange
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum total active power (AC and DC)  that the net position for the bidding zone can have to maintain operational security. Positive sign means flow into the bidding zone." ;
+        rdfs:domain        nc:PowerCapacity ;
+        rdfs:label         "maxInterchange"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerCapacity.minImportP
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Minimum imported active power requirement." ;
+        rdfs:domain        nc:PowerCapacity ;
+        rdfs:label         "minImportP"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerCapacity.minInterchange
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Minimum total active power (AC and DC)  that the net position for the bidding zone can have to maintain operational security. Negative sign means flow out of the bidding zone." ;
+        rdfs:domain        nc:PowerCapacity ;
+        rdfs:label         "minInterchange"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerCapacity.netACInterchange
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The netted aggregation of all AC external schedules of an area. Positive sign means flow into the area (Import)." ;
+        rdfs:domain        nc:PowerCapacity ;
+        rdfs:label         "netACInterchange"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerCapacity.netACInterchangeTolerance
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The area AC Net Position tolerance." ;
+        rdfs:domain        nc:PowerCapacity ;
+        rdfs:label         "netACInterchangeTolerance"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerCapacity.netDCInterchange
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The netted aggregation of all DC external schedules of an area. Positive sign means flow into the area." ;
+        rdfs:domain        nc:PowerCapacity ;
+        rdfs:label         "netDCInterchange"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerCapacity.regulatingDownAllocation
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The balancing capacity allocated for regulating down, by decreasing the production, increasing the direct current export, decreasing direct current import or increasing the consumption of energy in the bidding zone. This must be a positive number." ;
+        rdfs:domain        nc:PowerCapacity ;
+        rdfs:label         "regulatingDownAllocation"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerCapacity.regulatingUpAllocation
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The balancing capacity allocated for regulating up, by increasing the production, decreasing the direct current export, increasing direct current import or reducing the consumption of energy in the bidding zone. This must be a positive number." ;
+        rdfs:domain        nc:PowerCapacity ;
+        rdfs:label         "regulatingUpAllocation"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerElectronicsUnit.p
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\nStarting value for a steady state solution." ;
+        rdfs:domain        cim:PowerElectronicsUnit ;
+        rdfs:label         "p"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerElectronicsUnit.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value.\nIn the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF). \nIn the case of priority strategy, the item with the lowest number gets allocated energy first." ;
+        rdfs:domain        cim:PowerElectronicsUnit ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerFactorControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Power factor control function is a function block that calculates the operating point of the controlled equipment to achieve the target power factor." ;
+        rdfs:label              "PowerFactorControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PowerFactorControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the power factor that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:PowerFactorControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Energy remedial action describes actions to rearrange power schedules." ;
+        rdfs:label              "PowerRemedialAction"@en ;
+        rdfs:subClassOf         nc:RemedialAction ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" .
+
+nc:PowerRemedialAction.maxRegulatingDown
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum net amount of active power that the remedial action can regulate down." ;
+        rdfs:domain        nc:PowerRemedialAction ;
+        rdfs:label         "maxRegulatingDown"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerRemedialAction.maxRegulatingUp
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum net amount of active power that the remedial action can regulate up." ;
+        rdfs:domain        nc:PowerRemedialAction ;
+        rdfs:label         "maxRegulatingUp"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerShiftKeyStrategy
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Strategy of the power shift key." ;
+        rdfs:label              "PowerShiftKeyStrategy"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PowerShiftKeyStrategy.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "If true, the assessed element is enabled, otherwise it is disabled." ;
+        rdfs:domain        nc:PowerShiftKeyStrategy ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerShiftKeyStrategy.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor describing the entities part of the power shift strategy. Must be a positive value." ;
+        rdfs:domain        nc:PowerShiftKeyStrategy ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:PowerTransferCorridor
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A power transfer corridor is defined as a set of circuits (transmission lines or transformers) separating two portions of the power system, or a subset of circuits exposed to a substantial portion of the transmission exchange between two parts of the system." ;
+        rdfs:label              "PowerTransferCorridor"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:PowerTransferCorridor.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "It enables/disables the monitoring/assessment of a power transfer corridor. True means that the monitoring of the power transfer corridor is assessed. False means the power transfer corridor is not assessed. " ;
+        rdfs:domain        nc:PowerTransferCorridor ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RangeConstraint  rdf:type    rdfs:Class ;
+        rdfs:comment            "Defines the rage constraint." ;
+        rdfs:label              "RangeConstraint"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" .
+
+nc:RangeConstraint.value
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The value at the time. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false. \nIf the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).\nIf the valueKind is incrementalPercentage, then the value shall be in the range [0, 100]." ;
+        rdfs:domain        nc:RangeConstraint ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ReactivePowerControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Reactive power control function is a function block that calculate the operating point of the controlled equipment to achieve the target reactive power." ;
+        rdfs:label              "ReactivePowerControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ReactivePowerControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the reactive power that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:ReactivePowerControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:ReactivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RedispatchRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Redispatch remedial action is a remedial action that through rearranging power schedules is eliminating breaches of constraints." ;
+        rdfs:label              "RedispatchRemedialAction"@en ;
+        rdfs:subClassOf         nc:PowerRemedialAction ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RemedialAction  rdf:type     rdfs:Class ;
+        rdfs:comment            "Remedial action describes one or more actions that can be performed on a given power system model situation to eliminate one or more identified breaches of constraints. The remedial action can be costly, and have a cost characteristic, or non costly. " ;
+        rdfs:label              "RemedialAction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" .
+
+nc:RemedialAction.available
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Identifies if the remedial action is available to be proposed. True means available, False means unavailable." ;
+        rdfs:domain        nc:RemedialAction ;
+        rdfs:label         "available"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionDependency
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Remedial action dependency is making two remedial actions depending on each other. Multiple dependency is done by multiple instances of this class. The dependency can arrive by having one of the following examples.\n<ul>\n\t<li>The dependent remedial action is controlled by different system operator (Modeling Authority)  (e.g. SIPS that goes across control area).</li>\n\t<li>The dependent remedial action is representing  two or more remedial action that represent the same grid state alteration but with different modeling resolution (e.g. detail direct current model versus a simplified model).</li>\n\t<li>The remedial action can be combined with other remedial action without the need to create multiple remedial action with the same grid alteration for enabling dependency.</li>\n</ul>" ;
+        rdfs:label              "RemedialActionDependency"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RemedialActionDependency.enabled
+        rdf:type           rdf:Property ;
+        rdfs:comment       "If true, the remedial action dependency is enabled, otherwise it is disabled." ;
+        rdfs:domain        nc:RemedialActionDependency ;
+        rdfs:label         "enabled"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionGroup
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Grouping of remedial actions that can be operated together." ;
+        rdfs:label              "RemedialActionGroup"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RemedialActionGroup.maxRegulatingDown
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum net amount of active power that the group of remedial actions can regulate down." ;
+        rdfs:domain        nc:RemedialActionGroup ;
+        rdfs:label         "maxRegulatingDown"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionGroup.maxRegulatingUp
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Maximum net amount of active power that the group of remedial actions can regulate up." ;
+        rdfs:domain        nc:RemedialActionGroup ;
+        rdfs:label         "maxRegulatingUp"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionScheme
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Remedial Action Scheme (RAS), Special Protection Schemes (SPS), System Protection Schemes (SPS) or System Integrity Protection Schemes (SIPS).\nA Remedial Action Scheme consists of one or more stages that can trigger and execute a protection action." ;
+        rdfs:label              "RemedialActionScheme"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RemedialActionScheme.armed
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Defines the arming status of the remedial action scheme. It is set by operation or by signal." ;
+        rdfs:domain        nc:RemedialActionScheme ;
+        rdfs:label         "armed"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionScheme.inService
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Specifies the availability of the Remedial Action Scheme (RAS). If true, the RAS is available for contingency processing. If false, the RAS is treated by contingency processing as if it is not in the model." ;
+        rdfs:domain        nc:RemedialActionScheme ;
+        rdfs:label         "inService"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:Reservoir.energyStorage
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Amount of energy available in the storage." ;
+        rdfs:domain        cim:Reservoir ;
+        rdfs:label         "energyStorage"@en ;
+        cims:dataType      cim:RealEnergy ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RotatingMachineControlModeKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of rotating machine controller mode." ;
+        rdfs:label              "RotatingMachineControlModeKind"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+nc:RotatingMachineControlModeKind.activePower
+        rdf:type         nc:RotatingMachineControlModeKind ;
+        rdfs:comment     "Active power is specified." ;
+        rdfs:label       "activePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:RotatingMachineControlModeKind.powerFactor
+        rdf:type         nc:RotatingMachineControlModeKind ;
+        rdfs:comment     "Power factor is specified." ;
+        rdfs:label       "powerFactor"@en ;
+        cims:stereotype  "enum" .
+
+nc:RotatingMachineControlModeKind.reactivePower
+        rdf:type         nc:RotatingMachineControlModeKind ;
+        rdfs:comment     "Reactive power control." ;
+        rdfs:label       "reactivePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:RotatingMachineControlModeKind.voltage
+        rdf:type         nc:RotatingMachineControlModeKind ;
+        rdfs:comment     "Voltage control." ;
+        rdfs:label       "voltage"@en ;
+        cims:stereotype  "enum" .
+
+nc:RotatingMachineController
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Rotating machine controller is controlling the equipment which may be used as a generator or motor." ;
+        rdfs:label              "RotatingMachineController"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RotatingMachineController.mode
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Mode of the rotating machine controller." ;
+        rdfs:domain        nc:RotatingMachineController ;
+        rdfs:label         "mode"@en ;
+        rdfs:range         nc:RotatingMachineControlModeKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:SSSCControlModeKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Control modes of the Static Synchronous Series Compensator (SSSC)." ;
+        rdfs:label              "SSSCControlModeKind"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:SSSCControlModeKind.currentDroop
+        rdf:type         nc:SSSCControlModeKind ;
+        rdfs:comment     "<font color=\"#636671\">The device injects a voltage proportional to the difference between the line current and the target value of the CurrentDroopControlFunction. There are capacitive and inductive operational regions.</font>" ;
+        rdfs:label       "currentDroop"@en ;
+        cims:stereotype  "enum" .
+
+nc:SSSCControlModeKind.effectiveReactance
+        rdf:type         nc:SSSCControlModeKind ;
+        rdfs:comment     "<font color=\"#636671\">The device injects a voltage proportional to the line current to achieve the specified target value defined by the ImpedanceControlFunction. The voltage will vary according to the line current level.</font>" ;
+        rdfs:label       "effectiveReactance"@en ;
+        cims:stereotype  "enum" .
+
+nc:SSSCControlModeKind.monitoring
+        rdf:type         nc:SSSCControlModeKind ;
+        rdfs:comment     "<font color=\"#636671\">The device bypasses and a voltage injection is close to zero. In monitoring mode current is monitored.</font>" ;
+        rdfs:label       "monitoring"@en ;
+        cims:stereotype  "enum" .
+
+nc:SSSCControlModeKind.voltageInjection
+        rdf:type         nc:SSSCControlModeKind ;
+        rdfs:comment     "<font color=\"#636671\">The device injects a fixed voltage that is either inductive or capacitive according to the specified target value of the VoltageInjectionControlFunction. The effective reactance varies according to the flow of the line current.</font>" ;
+        rdfs:label       "voltageInjection"@en ;
+        cims:stereotype  "enum" .
+
+nc:SSSCController  rdf:type     rdfs:Class ;
+        rdfs:comment            "The controller of a Static synchronous series compensator (SSSC)." ;
+        rdfs:label              "SSSCController"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:SSSCController.mode
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Mode of the Static Synchronous Series compensator controller." ;
+        rdfs:domain        nc:SSSCController ;
+        rdfs:label         "mode"@en ;
+        rdfs:range         nc:SSSCControlModeKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ScheduleResource  rdf:type   rdfs:Class ;
+        rdfs:comment            "A schedule resource is a market-based method for handling participation of small units, particularly located on the lower voltage level that is controlled by a Distributed System Operator (DSO). It is a collection of units that can operate in the market by providing bids, offers and a resulting committed operational schedule for the collection." ;
+        rdfs:label              "ScheduleResource"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ScheduleResource.p
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node." ;
+        rdfs:domain        nc:ScheduleResource ;
+        rdfs:label         "p"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ScheduleResource.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value.\nIn the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF). \nIn the case of priority strategy, the item with the lowest number gets allocated energy first." ;
+        rdfs:domain        nc:ScheduleResource ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:SchedulingArea  rdf:type     rdfs:Class ;
+        rdfs:comment            "An area where production and/or consumption of energy can be forecasted, scheduled and measured. The area is operated by only one system operator, typically a Transmission System Operator (TSO). The area can consist of a sub area, which has the same definition as the main area, but it can be operated by another system operator (typically Distributed System Operator (DSO) or a Closed Distributed System Operator (CDSO)). This includes microgrid concept. A substation is the smallest grouping that can be included in the area. The area size should be considered in terms of the possibility of accumulated reading (settlement metering) and the capability of operating as an island." ;
+        rdfs:label              "SchedulingArea"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:SchedulingArea.p  rdf:type  rdf:Property ;
+        rdfs:comment       "Netted active power representing production, consumption and import/export for the scheduling area. " ;
+        rdfs:domain        nc:SchedulingArea ;
+        rdfs:label         "p"@en ;
+        cims:dataType      cim:ActivePower ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:SchedulingArea.participationFactor
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value.\nIn the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF). \nIn the case of priority strategy, the item with the lowest number gets allocated energy first." ;
+        rdfs:domain        nc:SchedulingArea ;
+        rdfs:label         "participationFactor"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:SchemeRemedialAction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Scheme remedial action is remedial action that involves a scheme that can include conditional logic and stages of grid alteration. The primary remedial action is the arming of these schemes, that will then perform curative remedial action when the condition is met. System Integrity Protection Scheme (SIPS) and Special Protection Scheme (SPS) are example of this. " ;
+        rdfs:label              "SchemeRemedialAction"@en ;
+        rdfs:subClassOf         nc:RemedialAction ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:StageTrigger  rdf:type       rdfs:Class ;
+        rdfs:comment            "Stage that is triggered either by TriggerCondition or by gate condition within a stage." ;
+        rdfs:label              "StageTrigger"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:StageTrigger.armed
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The status of the class set by operation or by signal. Optional field that will override other status fields." ;
+        rdfs:domain        nc:StageTrigger ;
+        rdfs:label         "armed"@en ;
+        cims:dataType      cim:Boolean ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:StaticSynchronousCompensator
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Static synchronous compensator (STATCOM), also known as a static synchronous condenser (STATCON), is a type of flexible AC transmission system regulating equipment used on alternating current electricity transmission networks. It is based on a power electronics voltage-source converter and can act as either a source or sink of reactive AC power to an electricity network. If connected to a source of power it can also provide active AC power." ;
+        rdfs:label              "StaticSynchronousCompensator"@en ;
+        rdfs:subClassOf         nc:FACTSEquipment ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:StaticSynchronousSeriesCompensator
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Static synchronous series compensator (SSSC) is a type of flexible AC transmission system which consists of a solid-state voltage source inverter coupled with a transformer that is connected in series with a transmission line. This device can inject an almost sinusoidal voltage in series with the line. This injected voltage could be considered as an inductive or capacitive reactance, which is connected in series with the transmission line. This feature can provide controllable voltage compensation. In addition, SSSC is able to reverse the power flow by injecting a sufficiently large series reactive compensating voltage. Moreover it can inject a voltage proportional to the difference between the line current and the pre-configured current threshold.<font color=\"#636671\"> </font>It shall have two Terminal-s associated with it. " ;
+        rdfs:label              "StaticSynchronousSeriesCompensator"@en ;
+        rdfs:subClassOf         nc:FACTSEquipment ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:StaticVarCompensator
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.\n\nThe SVC may operate in fixed MVar output mode or in voltage control mode. When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero." ;
+        rdfs:label              "StaticVarCompensator"@en ;
+        rdfs:subClassOf         nc:FACTSEquipment ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:SubstationController
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Substation controller is controlling the equipment to optimize the use of the controlling equipment within a substation. " ;
+        rdfs:label              "SubstationController"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:SubstationController.mode
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Mode of the substation controller." ;
+        rdfs:domain        nc:SubstationController ;
+        rdfs:label         "mode"@en ;
+        rdfs:range         nc:SubstationControllerModeKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:SubstationControllerModeKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of substation controller mode." ;
+        rdfs:label              "SubstationControllerModeKind"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:SubstationControllerModeKind.activePower
+        rdf:type         nc:SubstationControllerModeKind ;
+        rdfs:comment     "Active power control is the primary control of the substation.." ;
+        rdfs:label       "activePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:SubstationControllerModeKind.reactivePower
+        rdf:type         nc:SubstationControllerModeKind ;
+        rdfs:comment     "Reactive power control is the primary control of the substation." ;
+        rdfs:label       "reactivePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:SubstationControllerModeKind.voltage
+        rdf:type         nc:SubstationControllerModeKind ;
+        rdfs:comment     "Voltage control is the primary control of the substation." ;
+        rdfs:label       "voltage"@en ;
+        cims:stereotype  "enum" .
+
+nc:TCSCControlModeKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Kind of TCSC control mode." ;
+        rdfs:label              "TCSCControlModeKind"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:TCSCControlModeKind.activePower
+        rdf:type         nc:TCSCControlModeKind ;
+        rdfs:comment     "Control is active power." ;
+        rdfs:label       "activePower"@en ;
+        cims:stereotype  "enum" .
+
+nc:TCSCControlModeKind.current
+        rdf:type         nc:TCSCControlModeKind ;
+        rdfs:comment     "Control is current." ;
+        rdfs:label       "current"@en ;
+        cims:stereotype  "enum" .
+
+nc:TCSCControlModeKind.impedance
+        rdf:type         nc:TCSCControlModeKind ;
+        rdfs:comment     "Control is impedance." ;
+        rdfs:label       "impedance"@en ;
+        cims:stereotype  "enum" .
+
+nc:TCSCController  rdf:type     rdfs:Class ;
+        rdfs:comment            "TCSC controller is controlling the equipment to optimize the performance of the TCSC. " ;
+        rdfs:label              "TCSCController"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:TCSCController.mode
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Mode of the TCSC controller." ;
+        rdfs:domain        nc:TCSCController ;
+        rdfs:label         "mode"@en ;
+        rdfs:range         nc:TCSCControlModeKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ThyristorControlledSeriesCompensator
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Thyristor-controlled series capacitors (TCSC) is a type of flexible AC transmission system regulating equipment that is configured with controlled reactors in parallel with sections of a capacitor bank. This combination allows smooth control of the fundamental frequency capacitive reactance over a wide range. The thyristor valve contains a string of series connected high power thyristors. TCSC can control power flows in order to achieve eliminating of line overloads, reducing loop flows and minimising system losses." ;
+        rdfs:label              "ThyristorControlledSeriesCompensator"@en ;
+        rdfs:subClassOf         nc:FACTSEquipment ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ThyristorControlledSeriesCompensator.compensationZ
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The actual compensation impedance provided by the compensator. The attribute value shall be positive if compensation is in the capacitive range. The attribute value shall be negative if compensation is in the inductive rating." ;
+        rdfs:domain        nc:ThyristorControlledSeriesCompensator ;
+        rdfs:label         "compensationZ"@en ;
+        cims:dataType      cim:Impedance ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:ThyristorControlledSeriesCompensator.currentSection
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The current section on which the TCSC is operating." ;
+        rdfs:domain        nc:ThyristorControlledSeriesCompensator ;
+        rdfs:label         "currentSection"@en ;
+        cims:dataType      cim:Integer ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:VoltageAngleLimit  rdf:type  rdfs:Class ;
+        rdfs:comment            "Voltage angle limit between two terminals. The association end OperationalLimitSet.Terminal defines one end and the host of the limit. The association end VoltageAngleLimit.AngleReferenceTerminal defines the reference terminal." ;
+        rdfs:label              "VoltageAngleLimit"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:VoltageAngleLimit.value
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The difference in angle degrees between referenced by the association end OperationalLimitSet.Terminal and the Terminal referenced by the association end VoltageAngleLimit.AngleReferenceTerminal. The value shall be positive (greater than zero)." ;
+        rdfs:domain        nc:VoltageAngleLimit ;
+        rdfs:label         "value"@en ;
+        cims:dataType      cim:AngleDegrees ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:VoltageControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Voltage control function is a function block that calculate the operating point of the controlled equipment to achieve the target voltage." ;
+        rdfs:label              "VoltageControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:VoltageControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the voltage that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:VoltageControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:Voltage ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:VoltageInjectionControlFunction
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Voltage injection control function is a function block that calculates the operating point of the controlled equipment to achieve the target voltage injection. The controlled point is the Terminal with sequenceNumber =1." ;
+        rdfs:label              "VoltageInjectionControlFunction"@en ;
+        cims:belongsToCategory  ssi:Package_SteadyStateInstructionProfile ;
+        cims:stereotype         "Description" , "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:VoltageInjectionControlFunction.targetValue
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Target value for the voltage that the control function is calculating to achieve by adjusting the operational setting to the controlled equipment." ;
+        rdfs:domain        nc:VoltageInjectionControlFunction ;
+        rdfs:label         "targetValue"@en ;
+        cims:dataType      cim:Voltage ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+profcim:IRI  rdf:type           rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as rdf:resource in RDFXML.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "IRI"@en ;
+        cims:belongsToCategory  ssi:Package_DocSteadyStateInstructionProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringFixedLanguage
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.\nThe primitive is serialized as literal without language support." ;
+        rdfs:label              "StringFixedLanguage"@en ;
+        cims:belongsToCategory  ssi:Package_DocSteadyStateInstructionProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringIRI  rdf:type     rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as literal without language support.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "StringIRI"@en ;
+        cims:belongsToCategory  ssi:Package_DocSteadyStateInstructionProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:URL  rdf:type           rdfs:Class ;
+        rdfs:comment            "A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably.URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications." ;
+        rdfs:label              "URL"@en ;
+        cims:belongsToCategory  ssi:Package_DocSteadyStateInstructionProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+ssi:Ontology  rdf:type        owl:Ontology ;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-600-2:ed-1" , "file://iec61970cim17v40_iec61968cim13v13a_iec62325cim03v17a.eap" , "file://CIM100_CGMES31v01_501-20v02_NC23v62_MM10v01.eap" , "urn:iso:std:iec:61970-401:draft:ed-1" , "urn:iso:std:iec:61970-301:ed-7:amd1" ;
+        dcterms:creator       "ENTSO-E CIM WG NC project "@en ;
+        dcterms:description   "This vocabulary is describing the steady state instruction profile."@en ;
+        dcterms:identifier    "urn:uuid:6d01969f-38fd-460d-b260-b839a8123319" ;
+        dcterms:language      "en-GB" ;
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en ;
+        dcterms:modified      "2024-04-08"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:publisher     "ENTSO-E"@en ;
+        dcterms:rightsHolder  "ENTSO-E"@en ;
+        dcterms:title         "Steady state instruction Vocabulary"@en ;
+        owl:priorVersion      <http://entsoe.eu/ns/CIM/SteadyStateInstruction-EU/2.2> ;
+        owl:versionIRI        <https://ap.cim4.eu/SteadyStateInstruction/2.3> ;
+        owl:versionInfo       "2.3.0"@en ;
+        dcat:keyword          "SSI" ;
+        dcat:theme            "vocabulary"@en .
+
+ssi:Package_DocSteadyStateInstructionProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains datatypes used only in the RDFS header." ;
+        rdfs:label    "DocSteadyStateInstructionProfile"@en .
+
+ssi:Package_SteadyStateInstructionProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains steady state instruction profile." ;
+        rdfs:label    "SteadyStateInstructionProfile"@en .
+

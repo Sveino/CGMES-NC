@@ -1,0 +1,554 @@
+@prefix cim:     <https://cim.ucaiug.io/ns#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix iam:     <https://ap.cim4.eu/ImpactAssessmentMatrix#> .
+@prefix nc:      <https://cim4.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix profcim: <https://cim.ucaiug.io/ns/prof-cim#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+
+cim:Date  rdf:type              rdfs:Class ;
+        rdfs:comment            "Date as \"yyyy-mm-dd\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddZ\". A local timezone relative UTC is specified as \"yyyy-mm-dd(+/-)hh:mm\"." ;
+        rdfs:label              "Date"@en ;
+        cims:belongsToCategory  iam:Package_DocImpactAssessmentMatrixProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:DateTime  rdf:type          rdfs:Class ;
+        rdfs:comment            "Date and time as \"yyyy-mm-ddThh:mm:ss.sss\", which conforms with ISO 8601. UTC time zone is specified as \"yyyy-mm-ddThh:mm:ss.sssZ\". A local timezone relative UTC is specified as \"yyyy-mm-ddThh:mm:ss.sss-hh:mm\". The second component (shown here as \"ss.sss\") could have any number of digits in its fractional part to allow any kind of precision beyond seconds." ;
+        rdfs:label              "DateTime"@en ;
+        cims:belongsToCategory  iam:Package_DocImpactAssessmentMatrixProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:Float  rdf:type             rdfs:Class ;
+        rdfs:comment            "A floating point number. The range is unspecified and not limited." ;
+        rdfs:label              "Float"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "Primitive" .
+
+cim:IdentifiedObject  rdf:type  rdfs:Class ;
+        rdfs:comment            "This is a root class to provide common identification for all classes needing identification and naming attributes." ;
+        rdfs:label              "IdentifiedObject"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile .
+
+cim:IdentifiedObject.description
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "description"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:IdentifiedObject.mRID
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:IdentifiedObject.name
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The name is any free human readable and possibly non unique text naming the object." ;
+        rdfs:domain        cim:IdentifiedObject ;
+        rdfs:label         "name"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+cim:String  rdf:type            rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited." ;
+        rdfs:label              "String"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "Primitive" .
+
+iam:Ontology  rdf:type        owl:Ontology ;
+        dcterms:conformsTo    "file://CIM100_CGMES31v01_501-20v02_NC23v62_MM10v01.eap" , "file://iec61970cim17v40_iec61968cim13v13a_iec62325cim03v17a.eap" , "urn:iso:std:iec:61970-401:draft:ed-1" , "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-301:ed-7:amd1" , "urn:iso:std:iec:61970-600-2:ed-1" ;
+        dcterms:creator       "ENTSO-E CIM WG NC project "@en ;
+        dcterms:description   "This vocabulary is describing the impact assessment matrix profile."@en ;
+        dcterms:identifier    "urn:uuid:1eb41c0b-3c58-4762-a79b-33220d051d32" ;
+        dcterms:language      "en-GB" ;
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en ;
+        dcterms:modified      "2024-03-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:publisher     "ENTSO-E"@en ;
+        dcterms:rightsHolder  "ENTSO-E"@en ;
+        dcterms:title         "Impact Assessment Matrix Vocabulary"@en ;
+        owl:priorVersion      <http://entsoe.eu/ns/CIM/ImpactAssessmentMatrix-EU/2.2> ;
+        owl:versionIRI        <https://ap.cim4.eu/ImpactAssessmentMatrix/2.3> ;
+        owl:versionInfo       "2.3.0"@en ;
+        dcat:keyword          "IAM" ;
+        dcat:theme            "vocabulary"@en .
+
+iam:Package_DocImpactAssessmentMatrixProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains datatypes used only in the RDFS header." ;
+        rdfs:label    "DocImpactAssessmentMatrixProfile"@en .
+
+iam:Package_ImpactAssessmentMatrixProfile
+        rdf:type      cims:ClassCategory ;
+        rdfs:comment  "This package contains impact assessment matrix profile." ;
+        rdfs:label    "ImpactAssessmentMatrixProfile"@en .
+
+nc:CalculationBasedImpactAssessmentMatrix
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Calculation based impact assessment matrix. It relates to the remedial action schedule. Calculation-Based is the impact matrix determined by calculating the impact factors (eventually scaled by the intensity of the remedial action) and matching them against a threshold in a determined way described by the methodologies." ;
+        rdfs:label              "CalculationBasedImpactAssessmentMatrix"@en ;
+        rdfs:subClassOf         nc:ImpactAssessmentMatrix ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ConnectingImpactAssessmentMatrix
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Connecting system operator matrix is the impact matrix indicating which system operators are connecting for that specific remedial action. The concept of connecting system operator for a remedial action is defined by CSAm Article 2.1(14)." ;
+        rdfs:label              "ConnectingImpactAssessmentMatrix"@en ;
+        rdfs:subClassOf         nc:ImpactAssessmentMatrix ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:ImpactAgreementKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "The impact agreement for the remedial action." ;
+        rdfs:label              "ImpactAgreementKind"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:ImpactAgreementKind.always
+        rdf:type         nc:ImpactAgreementKind ;
+        rdfs:comment     "An agreement is reached that the remedial action is always impacting whichever the intensity." ;
+        rdfs:label       "always"@en ;
+        cims:stereotype  "enum" .
+
+nc:ImpactAgreementKind.never
+        rdf:type         nc:ImpactAgreementKind ;
+        rdfs:comment     "An agreement is reached that a remedial action is never impacting." ;
+        rdfs:label       "never"@en ;
+        cims:stereotype  "enum" .
+
+nc:ImpactAgreementKind.noAgreement
+        rdf:type         nc:ImpactAgreementKind ;
+        rdfs:comment     "No agreement is reached on the qualitative impact of a remedial action." ;
+        rdfs:label       "noAgreement"@en ;
+        cims:stereotype  "enum" .
+
+nc:ImpactAssessmentMatrix
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "The result of an impact assessment analysis for each remedial action or remedial action schedule onto the grid and operation of each system operator." ;
+        rdfs:label              "ImpactAssessmentMatrix"@en ;
+        rdfs:subClassOf         cim:IdentifiedObject ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" .
+
+nc:ImpactAssessmentMatrix.OutcomeValue
+        rdf:type              rdf:Property ;
+        rdfs:comment          "One of the values of the impact assessment matrix." ;
+        rdfs:domain           nc:ImpactAssessmentMatrix ;
+        rdfs:label            "OutcomeValue"@en ;
+        rdfs:range            nc:OutcomeValue ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:OutcomeValue.ImpactAssessmentMatrix ;
+        cims:multiplicity     cims:M:1..n ;
+        cims:stereotype       "NC" .
+
+nc:ListBasedImpactAssessmentMatrix
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "List-Based is the impact matrix determined by agreement of the system operators involved. System operators jointly decide which Remedial Action (eventually scaled by the intensity of the remedial action) is impacting." ;
+        rdfs:label              "ListBasedImpactAssessmentMatrix"@en ;
+        rdfs:subClassOf         nc:ImpactAssessmentMatrix ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:OutcomeImpactAssessmentKind
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Outcome impact assessments kinds." ;
+        rdfs:label              "OutcomeImpactAssessmentKind"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+nc:OutcomeImpactAssessmentKind.false
+        rdf:type         nc:OutcomeImpactAssessmentKind ;
+        rdfs:comment     "False." ;
+        rdfs:label       "false"@en ;
+        cims:stereotype  "enum" .
+
+nc:OutcomeImpactAssessmentKind.true
+        rdf:type         nc:OutcomeImpactAssessmentKind ;
+        rdfs:comment     "True." ;
+        rdfs:label       "true"@en ;
+        cims:stereotype  "enum" .
+
+nc:OutcomeImpactAssessmentKind.undecided
+        rdf:type         nc:OutcomeImpactAssessmentKind ;
+        rdfs:comment     "Undecided. Used only for list-based impact assessment matrix." ;
+        rdfs:label       "undecided"@en ;
+        cims:stereotype  "enum" .
+
+nc:OutcomeValue  rdf:type       rdfs:Class ;
+        rdfs:comment            "Outcome of an impact assessment matrix." ;
+        rdfs:label              "OutcomeValue"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" .
+
+nc:OutcomeValue.ImpactAssessmentMatrix
+        rdf:type              rdf:Property ;
+        rdfs:comment          "the impact assessment matrix which has this value." ;
+        rdfs:domain           nc:OutcomeValue ;
+        rdfs:label            "ImpactAssessmentMatrix"@en ;
+        rdfs:range            nc:ImpactAssessmentMatrix ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:ImpactAssessmentMatrix.OutcomeValue ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:OutcomeValue.ImpactedSystemOperator
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The impacted system operator that has an outcome value." ;
+        rdfs:domain           nc:OutcomeValue ;
+        rdfs:label            "ImpactedSystemOperator"@en ;
+        rdfs:range            nc:SystemOperator ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:SystemOperator.OutcomeValue ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:OutcomeValue.mRID  rdf:type  rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        nc:OutcomeValue ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:OutcomeValue.outcome
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Outcome value." ;
+        rdfs:domain        nc:OutcomeValue ;
+        rdfs:label         "outcome"@en ;
+        rdfs:range         nc:OutcomeImpactAssessmentKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:OwnerRemedialActionAssessment
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Owner remedial action assessment of the impact of their remedial action on neighboring system operators." ;
+        rdfs:label              "OwnerRemedialActionAssessment"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:OwnerRemedialActionAssessment.ImpactedSystemOperator
+        rdf:type              rdf:Property ;
+        rdfs:comment          "System operator that is evaluated to be impacted by the remedial action done by the remedial action owner." ;
+        rdfs:domain           nc:OwnerRemedialActionAssessment ;
+        rdfs:label            "ImpactedSystemOperator"@en ;
+        rdfs:range            nc:SystemOperator ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:SystemOperator.OwnerRemedialActionAssessment ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:OwnerRemedialActionAssessment.RemedialActionImpact
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Remedial action impact which is evaluated by the owner of the remedial action." ;
+        rdfs:domain           nc:OwnerRemedialActionAssessment ;
+        rdfs:label            "RemedialActionImpact"@en ;
+        rdfs:range            nc:RemedialActionImpact ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialActionImpact.OwnerRemedialActionAssessment ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:OwnerRemedialActionAssessment.mRID
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        nc:OwnerRemedialActionAssessment ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:QualitativeRemedialActionImpact
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Defines the qualitative impact for a remedial action. Relevant remedial action is assumed to have impact when the impact quantity is applied." ;
+        rdfs:label              "QualitativeRemedialActionImpact"@en ;
+        rdfs:subClassOf         nc:RemedialActionImpact ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:QuantitativeRemedialActionImpact
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Defines the quantitative impact for a remedial action. The value if the impact quantity is derived through offline calculation that has coursed an impact of an element that is monitored by the assessed system operator higher than the relevant threshold for the conducting equipment. " ;
+        rdfs:label              "QuantitativeRemedialActionImpact"@en ;
+        rdfs:subClassOf         nc:RemedialActionImpact ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:QuantitativeRemedialActionImpact.SensitivityArea
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Sensitivity area which should be monitored to evaluate the threshold given by the remedial action impact on relevant equipment." ;
+        rdfs:domain           nc:QuantitativeRemedialActionImpact ;
+        rdfs:label            "SensitivityArea"@en ;
+        rdfs:range            nc:SensitivityArea ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:SensitivityArea.QuantitativeRemedialActionImpact ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialAction  rdf:type     rdfs:Class ;
+        rdfs:comment            "Remedial action describes one or more actions that can be performed on a given power system model situation to eliminate one or more identified breaches of constraints. The remedial action can be costly, and have a cost characteristic, or non costly. " ;
+        rdfs:label              "RemedialAction"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" .
+
+nc:RemedialAction.RemedialActionImpact
+        rdf:type              rdf:Property ;
+        rdfs:comment          "This is the impact for a given remedial action." ;
+        rdfs:domain           nc:RemedialAction ;
+        rdfs:label            "RemedialActionImpact"@en ;
+        rdfs:range            nc:RemedialActionImpact ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialActionImpact.RemedialAction ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialAction.RemedialActionOutcomeValue
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action outcome value associated with a remedial action." ;
+        rdfs:domain           nc:RemedialAction ;
+        rdfs:label            "RemedialActionOutcomeValue"@en ;
+        rdfs:range            nc:RemedialActionOutcomeValue ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialActionOutcomeValue.RemedialAction ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionImpact
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Remedial action impact assessment based on a given agreement with a specific system operator. " ;
+        rdfs:label              "RemedialActionImpact"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" .
+
+nc:RemedialActionImpact.AssessingSystemOperator
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The impacted System Operator that assigns a remedial action impact." ;
+        rdfs:domain           nc:RemedialActionImpact ;
+        rdfs:label            "AssessingSystemOperator"@en ;
+        rdfs:range            nc:SystemOperator ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:SystemOperator.RemedialActionImpact ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionImpact.OwnerRemedialActionAssessment
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The owner's assessment to the impacted system operator." ;
+        rdfs:domain           nc:RemedialActionImpact ;
+        rdfs:label            "OwnerRemedialActionAssessment"@en ;
+        rdfs:range            nc:OwnerRemedialActionAssessment ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:OwnerRemedialActionAssessment.RemedialActionImpact ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionImpact.RemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action that has an impact." ;
+        rdfs:domain           nc:RemedialActionImpact ;
+        rdfs:label            "RemedialAction"@en ;
+        rdfs:range            nc:RemedialAction ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialAction.RemedialActionImpact ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionImpact.impactQuantity
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Delta, positive or negative, quantity that when it is applied to the remedial action,  it will cause impact on a conducting equipment monitored by the assessed system operator.\nExample of relevant remedial action changes are redispatching, countertrading, change of set point on HVDC systems or change of taps on phase-shifting transformers." ;
+        rdfs:domain        nc:RemedialActionImpact ;
+        rdfs:label         "impactQuantity"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionImpact.kind
+        rdf:type           rdf:Property ;
+        rdfs:comment       "The impact agreement kind." ;
+        rdfs:domain        nc:RemedialActionImpact ;
+        rdfs:label         "kind"@en ;
+        rdfs:range         nc:ImpactAgreementKind ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionImpact.mRID
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements." ;
+        rdfs:domain        nc:RemedialActionImpact ;
+        rdfs:label         "mRID"@en ;
+        cims:dataType      cim:String ;
+        cims:multiplicity  cims:M:1..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionOutcomeValue
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Outcome of an impact assessment matrix for a remedial action." ;
+        rdfs:label              "RemedialActionOutcomeValue"@en ;
+        rdfs:subClassOf         nc:OutcomeValue ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RemedialActionOutcomeValue.RemedialAction
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action that has a remedial action outcome value." ;
+        rdfs:domain           nc:RemedialActionOutcomeValue ;
+        rdfs:label            "RemedialAction"@en ;
+        rdfs:range            nc:RemedialAction ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialAction.RemedialActionOutcomeValue ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionOutcomeValue.impactQuantity
+        rdf:type           rdf:Property ;
+        rdfs:comment       "Delta, positive or negative, quantity that when it is applied to the remedial action,  it will cause impact on a conducting equipment monitored by the assessed system operator.\nExample of relevant remedial action changes are redispatching, countertrading, change of set point on HVDC systems or change of taps on phase-shifting transformers." ;
+        rdfs:domain        nc:RemedialActionOutcomeValue ;
+        rdfs:label         "impactQuantity"@en ;
+        cims:dataType      cim:Float ;
+        cims:multiplicity  cims:M:0..1 ;
+        cims:stereotype    "NC" ;
+        cims:stereotype    <http://iec.ch/TC57/NonStandard/UML#attribute> .
+
+nc:RemedialActionSchedule
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A schedule for a determined remedial action." ;
+        rdfs:label              "RemedialActionSchedule"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" .
+
+nc:RemedialActionSchedule.RemedialActionScheduleOutcomeValue
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action schedule outcome value associated with a remedial action schedule." ;
+        rdfs:domain           nc:RemedialActionSchedule ;
+        rdfs:label            "RemedialActionScheduleOutcomeValue"@en ;
+        rdfs:range            nc:RemedialActionScheduleOutcomeValue ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialActionScheduleOutcomeValue.RemedialActionSchedule ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:RemedialActionScheduleOutcomeValue
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "Outcome of an impact assessment matrix for a remedial action schedule." ;
+        rdfs:label              "RemedialActionScheduleOutcomeValue"@en ;
+        rdfs:subClassOf         nc:OutcomeValue ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" ;
+        cims:stereotype         <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+nc:RemedialActionScheduleOutcomeValue.RemedialActionSchedule
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action schedule that has a remedial action schedule outcome value." ;
+        rdfs:domain           nc:RemedialActionScheduleOutcomeValue ;
+        rdfs:label            "RemedialActionSchedule"@en ;
+        rdfs:range            nc:RemedialActionSchedule ;
+        cims:AssociationUsed  "Yes" ;
+        cims:inverseRoleName  nc:RemedialActionSchedule.RemedialActionScheduleOutcomeValue ;
+        cims:multiplicity     cims:M:1 ;
+        cims:stereotype       "NC" .
+
+nc:SensitivityArea  rdf:type    rdfs:Class ;
+        rdfs:comment            "A monitoring area that defines the required observability area given by the sensitivity factors." ;
+        rdfs:label              "SensitivityArea"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" .
+
+nc:SensitivityArea.QuantitativeRemedialActionImpact
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Quantitative remedial action impact when the remedial action is influencing equipment included in the sensitivity area." ;
+        rdfs:domain           nc:SensitivityArea ;
+        rdfs:label            "QuantitativeRemedialActionImpact"@en ;
+        rdfs:range            nc:QuantitativeRemedialActionImpact ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:QuantitativeRemedialActionImpact.SensitivityArea ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:SystemOperator  rdf:type     rdfs:Class ;
+        rdfs:comment            "System operator." ;
+        rdfs:label              "SystemOperator"@en ;
+        cims:belongsToCategory  iam:Package_ImpactAssessmentMatrixProfile ;
+        cims:stereotype         "NC" .
+
+nc:SystemOperator.OutcomeValue
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Impact assessment outcome value for this impacted system operator." ;
+        rdfs:domain           nc:SystemOperator ;
+        rdfs:label            "OutcomeValue"@en ;
+        rdfs:range            nc:OutcomeValue ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:OutcomeValue.ImpactedSystemOperator ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:SystemOperator.OwnerRemedialActionAssessment
+        rdf:type              rdf:Property ;
+        rdfs:comment          "Owner's assessment of the remedial action." ;
+        rdfs:domain           nc:SystemOperator ;
+        rdfs:label            "OwnerRemedialActionAssessment"@en ;
+        rdfs:range            nc:OwnerRemedialActionAssessment ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:OwnerRemedialActionAssessment.ImpactedSystemOperator ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+
+nc:SystemOperator.RemedialActionImpact
+        rdf:type              rdf:Property ;
+        rdfs:comment          "The remedial action impact for a given assessing System Operator." ;
+        rdfs:domain           nc:SystemOperator ;
+        rdfs:label            "RemedialActionImpact"@en ;
+        rdfs:range            nc:RemedialActionImpact ;
+        cims:AssociationUsed  "No" ;
+        cims:inverseRoleName  nc:RemedialActionImpact.AssessingSystemOperator ;
+        cims:multiplicity     cims:M:0..n ;
+        cims:stereotype       "NC" .
+profcim:IRI  rdf:type           rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as rdf:resource in RDFXML.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "IRI"@en ;
+        cims:belongsToCategory  iam:Package_DocImpactAssessmentMatrixProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringFixedLanguage
+        rdf:type                rdfs:Class ;
+        rdfs:comment            "A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.\nThe primitive is serialized as literal without language support." ;
+        rdfs:label              "StringFixedLanguage"@en ;
+        cims:belongsToCategory  iam:Package_DocImpactAssessmentMatrixProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:StringIRI  rdf:type     rdfs:Class ;
+        rdfs:comment            "An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.\nThe primitive is serialized as literal without language support.\nIRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.\nIRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.\nIRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names." ;
+        rdfs:label              "StringIRI"@en ;
+        cims:belongsToCategory  iam:Package_DocImpactAssessmentMatrixProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
+profcim:URL  rdf:type           rdfs:Class ;
+        rdfs:comment            "A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably.URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications." ;
+        rdfs:label              "URL"@en ;
+        cims:belongsToCategory  iam:Package_DocImpactAssessmentMatrixProfile ;
+        cims:stereotype         "profcim" , "Primitive" .
+
